@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Conseils Alternance, Digital & Emploi | Cloud Campus</title>
+<meta name="description" content="Le blog Cloud Campus : conseils pour trouver une alternance, tendances du digital, guides métiers et actualités de l'école. Développement web, cybersécurité, commerce.">
+<link rel="canonical" href="https://cloud-campus.fr/blog">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Blog Cloud Campus — Alternance, Digital & Emploi">
+<meta property="og:description" content="Conseils alternance, guides métiers, tendances tech. Tout ce qu'il faut savoir pour lancer sa carrière dans le digital.">
+<meta property="og:url" content="https://cloud-campus.fr/blog">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog Cloud Campus",
+  "url": "https://cloud-campus.fr/blog",
+  "description": "Conseils pour trouver une alternance, guides métiers du digital et actualités Cloud Campus.",
+  "publisher": { "@type": "EducationalOrganization", "name": "Cloud Campus", "url": "https://cloud-campus.fr" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,80px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Category filter */
+  .cat-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+  .cat-btn {
+    padding: 8px 18px; border-radius: var(--r-full); font-size: .82rem; font-weight: 600;
+    border: 1px solid var(--brd); color: var(--tx2); background: var(--card);
+    cursor: default; transition: all .25s; font-family: var(--font);
+  }
+  .cat-btn.active {
+    border-color: var(--acc); color: var(--acc); background: var(--acc-gl);
+  }
+
+  /* Make RSS cards clickable without default underline */
+  a.article-featured, a.article-card { color: inherit; text-decoration: none; display: block; }
+  a.pop-title { color: inherit; text-decoration: none; display: inline; }
+
+  /* Blog layout */
+  .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
+
+  /* Featured article */
+  .article-featured {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    overflow: hidden; margin-bottom: 28px; transition: all .45s var(--ease);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .article-featured:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  [data-theme="dark"] .article-featured:hover { box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+  .af-visual {
+    background: linear-gradient(135deg, var(--acc-gl2), rgba(59,130,246,.1));
+    display: grid; place-items: center; font-size: 5rem; min-height: 260px;
+    position: relative; overflow: hidden;
+  }
+  .af-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 70%, var(--acc-gl), transparent 60%);
+  }
+  .af-body { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+  .af-tag { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; color: var(--acc); font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px; }
+  .af-tag::before { content: ''; width: 16px; height: 2px; background: var(--acc); }
+  .af-body h2 { font-size: 1.35rem; font-weight: 800; line-height: 1.3; margin-bottom: 12px; }
+  .af-body p  { font-size: .86rem; color: var(--tx2); line-height: 1.7; margin-bottom: 20px; }
+  .af-meta { display: flex; align-items: center; gap: 16px; font-size: .76rem; color: var(--tx3); }
+  .af-meta .av { width: 28px; height: 28px; border-radius: 50%; background: var(--acc-gl); border: 1px solid var(--brd); display: grid; place-items: center; font-size: .7rem; font-weight: 700; color: var(--acc); }
+  .af-meta a { color: var(--acc); font-weight: 600; }
+
+  /* Article grid */
+  .articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .article-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    overflow: hidden; transition: all .4s var(--ease);
+  }
+  .article-card:hover { border-color: var(--brd-h); transform: translateY(-5px); }
+  [data-theme="dark"] .article-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+  .ac-visual {
+    height: 140px; display: grid; place-items: center;
+    font-size: 3rem; position: relative; overflow: hidden;
+  }
+  .ac-visual::before { content: ''; position: absolute; inset: 0; }
+  .v-green  { background: linear-gradient(135deg,rgba(0,255,135,.08),rgba(0,255,135,.02)); }
+  .v-blue   { background: linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.02)); }
+  .v-purple { background: linear-gradient(135deg,rgba(168,85,247,.08),rgba(168,85,247,.02)); }
+  .v-amber  { background: linear-gradient(135deg,rgba(245,158,11,.08),rgba(245,158,11,.02)); }
+  .ac-body { padding: 22px 20px; }
+  .ac-cat {
+    font-size: .68rem; font-weight: 700; color: var(--acc); font-family: var(--mono);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;
+  }
+  .article-card h3 { font-size: .95rem; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+  .article-card p  { font-size: .8rem; color: var(--tx2); line-height: 1.6; margin-bottom: 14px; }
+  .ac-meta { display: flex; justify-content: space-between; align-items: center; font-size: .72rem; color: var(--tx3); }
+  .ac-meta .read-time { font-family: var(--mono); }
+  .ac-meta .date { }
+
+  /* Sidebar */
+  .sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
+
+  .sidebar-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl); padding: 24px;
+  }
+  .sidebar-card h4 { font-size: .88rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+  .popular-list { display: flex; flex-direction: column; gap: 12px; }
+  .popular-item { display: flex; gap: 12px; align-items: flex-start; }
+  .pop-num { font-family: var(--mono); font-size: 1.1rem; font-weight: 700; color: var(--acc); min-width: 24px; line-height: 1.4; }
+  .pop-title { font-size: .82rem; font-weight: 600; line-height: 1.4; color: var(--tx2); transition: color .2s; cursor: pointer; }
+  .pop-title:hover { color: var(--acc); }
+
+  .tags-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tag-pill {
+    padding: 5px 12px; border-radius: var(--r-full); font-size: .72rem; font-weight: 600;
+    border: 1px solid var(--brd); color: var(--tx3); font-family: var(--mono);
+    cursor: pointer; transition: all .25s;
+  }
+  .tag-pill:hover { border-color: var(--acc); color: var(--acc); background: var(--acc-gl); }
+
+  .newsletter-card {
+    background: var(--acc-gl); border: 1px solid rgba(0,255,135,.2);
+    border-radius: var(--r-xl); padding: 24px;
+  }
+  .newsletter-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; }
+  .newsletter-card p  { font-size: .78rem; color: var(--tx2); line-height: 1.5; margin-bottom: 14px; }
+  .nl-input-wrap { display: flex; gap: 8px; }
+  .nl-input {
+    flex: 1; padding: 10px 14px; background: var(--bg2); border: 1px solid var(--brd);
+    border-radius: var(--r-full); color: var(--tx); font-size: .82rem; font-family: var(--font);
+    outline: none; transition: border-color .3s; min-width: 0;
+  }
+  .nl-input:focus { border-color: var(--acc); }
+  .nl-input::placeholder { color: var(--tx3); }
+  .nl-btn {
+    padding: 10px 18px; border-radius: var(--r-full); background: var(--acc);
+    color: #000; font-weight: 700; font-size: .8rem; border: none; cursor: pointer;
+    font-family: var(--font); white-space: nowrap; transition: all .3s;
+  }
+  .nl-btn:hover { transform: scale(1.04); }
+
+  /* Load more */
+  .load-more-wrap { text-align: center; margin-top: 36px; }
+
+  @media (max-width: 1024px) {
+    .blog-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .article-featured { grid-template-columns: 1fr; }
+    .af-visual { min-height: 180px; }
+  }
+  @media (max-width: 600px) {
+    .articles-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">Blog</div>
+    <h1 class="sr">Conseils, guides &<br><span style="color:var(--acc)">tendances</span> du digital</h1>
+    <p class="sr">Tout ce qu'il faut savoir pour lancer sa carrière dans le digital, trouver une alternance et rester à jour sur les métiers de demain.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+
+    <!-- CATEGORY FILTERS -->
+    <div class="cat-filter sr">
+      <button class="cat-btn active" type="button">💻 Dev & Tech — actus WIRED (RSS)</button>
+    </div>
+
+    <div class="blog-layout">
+      <!-- MAIN CONTENT -->
+      <div>
+
+        <!-- FEATURED (RSS) -->
+        <a id="rssFeatured" class="article-featured sr" href="#" target="_blank" rel="noopener" style="display:none">
+          <div class="af-visual" aria-hidden="true">📰</div>
+          <div class="af-body">
+            <div class="af-tag">WIRED · Dev & Tech</div>
+            <h2 id="rssFeaturedTitle">Chargement…</h2>
+            <p id="rssFeaturedDesc">Récupération des dernières actus tech depuis le flux RSS de WIRED.</p>
+            <div class="af-meta">
+              <div class="av">W</div>
+              <span>WIRED</span>
+              <span>·</span>
+              <span id="rssFeaturedDate">—</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ARTICLES GRID (RSS) -->
+        <div class="articles-grid" id="rssGrid">
+          <div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus WIRED…</div>
+        </div>
+
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Sidebar blog">
+
+        <div class="newsletter-card sr">
+          <h4>📬 La newsletter</h4>
+          <p>Conseils alternance, tendances tech et actus Cloud Campus — chaque semaine dans votre boîte.</p>
+          <div class="nl-input-wrap">
+            <input type="email" class="nl-input" placeholder="votre@email.fr" id="nlEmail">
+            <button class="nl-btn" onclick="subscribeNl()">OK</button>
+          </div>
+          <p id="nlConfirm" style="display:none;font-size:.74rem;color:var(--acc);margin-top:8px">✓ Inscription confirmée !</p>
+        </div>
+
+        <div class="sidebar-card sr d1">
+          <h4>🔥 Top WIRED</h4>
+          <div class="popular-list" id="popularList">
+            <div style="color:var(--tx2);font-size:.85rem">Chargement…</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card sr d2">
+          <h4>🏷️ Sujets</h4>
+          <div class="tags-cloud">
+            <span class="tag-pill">AI</span>
+            <span class="tag-pill">Cybersecurity</span>
+            <span class="tag-pill">Programming</span>
+            <span class="tag-pill">Web</span>
+            <span class="tag-pill">Startups</span>
+            <span class="tag-pill">Big Tech</span>
+            <span class="tag-pill">Gadgets</span>
+            <span class="tag-pill">Open Source</span>
+            <span class="tag-pill">Privacy</span>
+            <span class="tag-pill">Cloud</span>
+            <span class="tag-pill">Dev Tools</span>
+            <span class="tag-pill">Data</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card sr d3" style="background:var(--acc-gl);border-color:rgba(0,255,135,.2)">
+          <h4>🚀 Prêt à vous lancer ?</h4>
+          <p style="font-size:.82rem;color:var(--tx2);line-height:1.6;margin-bottom:16px">Formations en alternance du Bac+2 au Bac+5. 100% financées, réponse sous 48h.</p>
+          <a href="se-renseigner-et-candidater.html" class="btn-gl" style="display:block;text-align:center;padding:12px">Candidater →</a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const WIRED_FEED_URL = 'https://www.wired.com/feed/rss';
+
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, (m) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  }[m]));
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html || '';
+  return (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+}
+
+function formatDateFr(d) {
+  if (!d) return '';
+  try {
+    return new Date(d).toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' });
+  } catch {
+    return '';
+  }
+}
+
+function pickVisual(i) {
+  const visuals = [
+    { cls: 'v-blue', emoji: '⚙️' },
+    { cls: 'v-purple', emoji: '🧠' },
+    { cls: 'v-green', emoji: '🧪' },
+    { cls: 'v-amber', emoji: '🌐' },
+  ];
+  return visuals[i % visuals.length];
+}
+
+async function fetchRssXml(url) {
+  const apiUrl = `/api/rss?url=${encodeURIComponent(url)}`;
+  const res = await fetch(apiUrl, { cache: 'no-store' });
+  if (!res.ok) throw new Error('RSS proxy failed');
+  return res.text();
+}
+
+function parseRssItems(xmlText) {
+  const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+  if (xml.querySelector('parsererror')) throw new Error('Invalid RSS XML');
+
+  return [...xml.querySelectorAll('item')].map((item) => {
+    const title = item.querySelector('title')?.textContent?.trim() || '';
+    const link = item.querySelector('link')?.textContent?.trim() || '#';
+    const pubDate = item.querySelector('pubDate')?.textContent?.trim() || '';
+    const description = item.querySelector('description')?.textContent?.trim() || '';
+
+    return {
+      title,
+      link,
+      pubDate,
+      descriptionText: stripHtml(description),
+    };
+  }).filter(it => it.title && it.link && it.link !== '#');
+}
+
+function renderFeatured(item) {
+  const featured = document.getElementById('rssFeatured');
+  if (!featured) return;
+
+  featured.style.display = '';
+  featured.href = item.link;
+
+  const titleEl = document.getElementById('rssFeaturedTitle');
+  const descEl = document.getElementById('rssFeaturedDesc');
+  const dateEl = document.getElementById('rssFeaturedDate');
+
+  if (titleEl) titleEl.textContent = item.title;
+  if (descEl) descEl.textContent = item.descriptionText.slice(0, 180) + (item.descriptionText.length > 180 ? '…' : '');
+  if (dateEl) dateEl.textContent = formatDateFr(item.pubDate);
+}
+
+function renderGrid(items) {
+  const grid = document.getElementById('rssGrid');
+  if (!grid) return;
+
+  if (!items.length) {
+    grid.innerHTML = '<div style="color:var(--tx2);font-size:.9rem">Aucune actu trouvée.</div>';
+    return;
+  }
+
+  grid.innerHTML = items.map((it, i) => {
+    const v = pickVisual(i);
+    const summary = it.descriptionText.slice(0, 140) + (it.descriptionText.length > 140 ? '…' : '');
+
+    return `
+      <a class="article-card sr" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">
+        <div class="ac-visual ${v.cls}" aria-hidden="true">${v.emoji}</div>
+        <div class="ac-body">
+          <div class="ac-cat">Dev & Tech · WIRED</div>
+          <h3>${escapeHtml(it.title)}</h3>
+          <p>${escapeHtml(summary)}</p>
+          <div class="ac-meta"><span class="date">${escapeHtml(formatDateFr(it.pubDate))}</span><span class="read-time">wired.com</span></div>
+        </div>
+      </a>
+    `;
+  }).join('');
+
+  if (window.revealObserver) {
+    grid.querySelectorAll('.sr').forEach(el => window.revealObserver.observe(el));
+  }
+}
+
+function renderPopular(items) {
+  const list = document.getElementById('popularList');
+  if (!list) return;
+
+  const top = items.slice(0, 5);
+  if (!top.length) {
+    list.innerHTML = '<div style="color:var(--tx2);font-size:.85rem">—</div>';
+    return;
+  }
+
+  list.innerHTML = top.map((it, idx) => {
+    const n = String(idx + 1).padStart(2, '0');
+    return `
+      <div class="popular-item">
+        <span class="pop-num">${n}</span>
+        <a class="pop-title" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
+      </div>
+    `;
+  }).join('');
+}
+
+async function loadWiredRss() {
+  const featured = document.getElementById('rssFeatured');
+  const grid = document.getElementById('rssGrid');
+  if (featured) featured.style.display = 'none';
+  if (grid) grid.innerHTML = '<div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus WIRED…</div>';
+
+  const xmlText = await fetchRssXml(WIRED_FEED_URL);
+  const items = parseRssItems(xmlText);
+
+  if (items[0]) renderFeatured(items[0]);
+  renderGrid(items.slice(1, 11));
+  renderPopular(items);
+}
+
+loadWiredRss().catch((err) => {
+  console.error(err);
+  const grid = document.getElementById('rssGrid');
+  if (grid) grid.innerHTML = '<div style="color:#ef4444">Impossible de charger le flux RSS de WIRED.</div>';
+  const list = document.getElementById('popularList');
+  if (list) list.innerHTML = '<div style="color:#ef4444">Erreur de chargement.</div>';
+});
+
+function subscribeNl() {
+  const el = document.getElementById('nlEmail');
+  if (!el.value.trim()) { el.style.borderColor = '#ef4444'; return; }
+  el.style.display = 'none';
+  el.nextElementSibling.style.display = 'none';
+  document.getElementById('nlConfirm').style.display = 'block';
+}
+</script>
+</body>
+</html>
