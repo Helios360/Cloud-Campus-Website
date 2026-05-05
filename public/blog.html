@@ -112,7 +112,6 @@
   .article-card p  { font-size: .8rem; color: var(--tx2); line-height: 1.6; margin-bottom: 14px; }
   .ac-meta { display: flex; justify-content: space-between; align-items: center; font-size: .72rem; color: var(--tx3); }
   .ac-meta .read-time { font-family: var(--mono); }
-  .ac-meta .date { }
 
   /* Sidebar */
   .sidebar { position: sticky; top: 90px; display: flex; flex-direction: column; gap: 20px; }
@@ -227,7 +226,7 @@
 
     <!-- CATEGORY FILTERS -->
     <div class="cat-filter sr">
-      <button class="cat-btn active" type="button">💻 Dev & Tech — actus WIRED (RSS)</button>
+      <button class="cat-btn active" type="button">💻 Dev & Tech — actus journaldugeek (RSS)</button>
     </div>
 
     <div class="blog-layout">
@@ -238,12 +237,12 @@
         <a id="rssFeatured" class="article-featured sr" href="#" target="_blank" rel="noopener" style="display:none">
           <div class="af-visual" aria-hidden="true">📰</div>
           <div class="af-body">
-            <div class="af-tag">WIRED · Dev & Tech</div>
+            <div class="af-tag">journaldugeek · Dev & Tech</div>
             <h2 id="rssFeaturedTitle">Chargement…</h2>
-            <p id="rssFeaturedDesc">Récupération des dernières actus tech depuis le flux RSS de WIRED.</p>
+            <p id="rssFeaturedDesc">Récupération des dernières actus tech depuis le flux RSS de journaldugeek.</p>
             <div class="af-meta">
               <div class="av">W</div>
-              <span>WIRED</span>
+              <span>journaldugeek</span>
               <span>·</span>
               <span id="rssFeaturedDate">—</span>
             </div>
@@ -252,7 +251,7 @@
 
         <!-- ARTICLES GRID (RSS) -->
         <div class="articles-grid" id="rssGrid">
-          <div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus WIRED…</div>
+          <div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus journaldugeek…</div>
         </div>
 
 
@@ -272,7 +271,7 @@
         </div>
 
         <div class="sidebar-card sr d1">
-          <h4>🔥 Top WIRED</h4>
+          <h4>🔥 Top journaldugeek</h4>
           <div class="popular-list" id="popularList">
             <div style="color:var(--tx2);font-size:.85rem">Chargement…</div>
           </div>
@@ -356,7 +355,7 @@
 
 <script src="js/main.js"></script>
 <script>
-const WIRED_FEED_URL = 'https://www.wired.com/feed/rss';
+const journaldugeek_FEED_URL = 'https://www.journaldugeek.com/feed/';
 
 function escapeHtml(s) {
   return String(s ?? '').replace(/[&<>"']/g, (m) => ({
@@ -389,6 +388,9 @@ function pickVisual(i) {
     { cls: 'v-purple', emoji: '🧠' },
     { cls: 'v-green', emoji: '🧪' },
     { cls: 'v-amber', emoji: '🌐' },
+    { cls: 'v-blue', emoji: '👾' },
+    { cls: 'v-amber', emoji: '🤖' },
+    { cls: 'v-purple', emoji: '🖥️' },
   ];
   return visuals[i % visuals.length];
 }
@@ -452,10 +454,10 @@ function renderGrid(items) {
       <a class="article-card sr" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">
         <div class="ac-visual ${v.cls}" aria-hidden="true">${v.emoji}</div>
         <div class="ac-body">
-          <div class="ac-cat">Dev & Tech · WIRED</div>
+          <div class="ac-cat">Dev & Tech · journaldugeek</div>
           <h3>${escapeHtml(it.title)}</h3>
           <p>${escapeHtml(summary)}</p>
-          <div class="ac-meta"><span class="date">${escapeHtml(formatDateFr(it.pubDate))}</span><span class="read-time">wired.com</span></div>
+          <div class="ac-meta"><span class="date">${escapeHtml(formatDateFr(it.pubDate))}</span><span class="read-time">journaldugeek.com</span></div>
         </div>
       </a>
     `;
@@ -487,13 +489,13 @@ function renderPopular(items) {
   }).join('');
 }
 
-async function loadWiredRss() {
+async function loadjournaldugeekRss() {
   const featured = document.getElementById('rssFeatured');
   const grid = document.getElementById('rssGrid');
   if (featured) featured.style.display = 'none';
-  if (grid) grid.innerHTML = '<div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus WIRED…</div>';
+  if (grid) grid.innerHTML = '<div style="color:var(--tx2);font-size:.9rem">Chargement des dernières actus journaldugeek…</div>';
 
-  const xmlText = await fetchRssXml(WIRED_FEED_URL);
+  const xmlText = await fetchRssXml(journaldugeek_FEED_URL);
   const items = parseRssItems(xmlText);
 
   if (items[0]) renderFeatured(items[0]);
@@ -501,10 +503,10 @@ async function loadWiredRss() {
   renderPopular(items);
 }
 
-loadWiredRss().catch((err) => {
+loadjournaldugeekRss().catch((err) => {
   console.error(err);
   const grid = document.getElementById('rssGrid');
-  if (grid) grid.innerHTML = '<div style="color:#ef4444">Impossible de charger le flux RSS de WIRED.</div>';
+  if (grid) grid.innerHTML = '<div style="color:#ef4444">Impossible de charger le flux RSS de journaldugeek.</div>';
   const list = document.getElementById('popularList');
   if (list) list.innerHTML = '<div style="color:#ef4444">Erreur de chargement.</div>';
 });
