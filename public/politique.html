@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — RGPD | Cloud Campus</title>
+<meta name="description" content="Politique de confidentialité de Cloud Campus. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.">
+<link rel="canonical" href="https://cloud-campus.fr/politique">
+<meta name="robots" content="noindex, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .legal-hero {
+    padding: clamp(80px,8vw,110px) 0 clamp(40px,5vw,60px);
+    border-bottom: 1px solid var(--brd);
+  }
+  .legal-hero h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 900; letter-spacing: -.02em; margin-bottom: 10px; }
+  .legal-hero p  { font-size: .88rem; color: var(--tx3); font-family: var(--mono); }
+
+  .legal-layout { display: grid; grid-template-columns: 220px 1fr; gap: 52px; align-items: start; padding: 60px 0 100px; }
+
+  .legal-nav { position: sticky; top: 90px; }
+  .legal-nav-title { font-size: .66rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--tx3); font-family: var(--mono); font-weight: 600; margin-bottom: 10px; }
+  .legal-nav a {
+    display: block; padding: 8px 12px; border-radius: var(--r); font-size: .82rem;
+    color: var(--tx3); transition: all .2s; margin-bottom: 2px;
+  }
+  .legal-nav a:hover { color: var(--acc); background: var(--acc-gl); }
+  .legal-nav a.active { color: var(--acc); background: var(--acc-gl); font-weight: 600; }
+
+  .legal-content { max-width: 740px; }
+  .legal-section { margin-bottom: 52px; scroll-margin-top: 100px; }
+  .legal-section h2 {
+    font-size: 1.15rem; font-weight: 700; margin-bottom: 18px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--brd);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .legal-section h3 { font-size: .95rem; font-weight: 700; margin: 20px 0 10px; }
+  .legal-section p  { font-size: .88rem; color: var(--tx2); line-height: 1.8; margin-bottom: 12px; }
+  .legal-section ul { list-style: none; margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .legal-section ul li { font-size: .88rem; color: var(--tx2); line-height: 1.7; padding-left: 18px; position: relative; }
+  .legal-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--acc); font-weight: 700; }
+  .legal-section a { color: var(--acc); text-decoration: underline; }
+
+  .info-box {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r);
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .info-box .ib-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--acc); font-family: var(--mono); margin-bottom: 8px; }
+  .info-box p { font-size: .86rem; color: var(--tx2); line-height: 1.7; margin: 0; }
+  .info-box strong { color: var(--tx); }
+
+  /* Data table */
+  .data-table {
+    width: 100%; border-collapse: collapse; margin: 20px 0;
+    background: var(--card); border-radius: var(--r); overflow: hidden;
+    border: 1px solid var(--brd); font-size: .84rem;
+  }
+  .data-table th {
+    background: var(--bg2); padding: 11px 16px; text-align: left;
+    font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.2px; color: var(--tx3); font-family: var(--mono);
+    border-bottom: 1px solid var(--brd);
+  }
+  .data-table td { padding: 11px 16px; border-bottom: 1px solid var(--brd); color: var(--tx2); vertical-align: top; line-height: 1.6; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--card-h); }
+
+  /* Rights grid */
+  .rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .right-item {
+    display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r);
+    transition: all .3s;
+  }
+  .right-item:hover { border-color: var(--brd-h); }
+  .right-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .right-item h4 { font-size: .84rem; font-weight: 700; margin-bottom: 3px; }
+  .right-item p  { font-size: .76rem; color: var(--tx3); line-height: 1.4; margin: 0; }
+
+  /* RGPD badge */
+  .rgpd-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px;
+    border-radius: var(--r-full); background: var(--acc-gl);
+    border: 1px solid rgba(0,255,135,.2); font-size: .82rem; font-weight: 600;
+    color: var(--acc); margin-bottom: 40px; font-family: var(--mono);
+  }
+
+  .update-badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px;
+    border-radius: var(--r-full); background: var(--card); border: 1px solid var(--brd);
+    font-size: .76rem; color: var(--tx3); font-family: var(--mono); margin-bottom: 40px;
+  }
+
+  @media (max-width: 860px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-nav { display: none; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="ctn">
+    <div class="legal-hero">
+      <div class="stag">Vie privée</div>
+      <h1>Politique de confidentialité</h1>
+      <p>Dernière mise à jour : 1er janvier 2026</p>
+    </div>
+
+    <div class="legal-layout">
+
+      <!-- SIDEBAR NAV -->
+      <nav class="legal-nav" aria-label="Navigation politique de confidentialité">
+        <div class="legal-nav-title">Sommaire</div>
+        <a href="#responsable">1. Responsable du traitement</a>
+        <a href="#collecte">2. Données collectées</a>
+        <a href="#finalites">3. Finalités</a>
+        <a href="#bases">4. Bases légales</a>
+        <a href="#conservation">5. Conservation</a>
+        <a href="#destinataires">6. Destinataires</a>
+        <a href="#transferts">7. Transferts hors UE</a>
+        <a href="#droits">8. Vos droits</a>
+        <a href="#cookies-pol">9. Cookies</a>
+        <a href="#mineurs">10. Mineurs</a>
+        <a href="#modifications">11. Modifications</a>
+        <a href="#contact-rgpd">12. Contact DPO</a>
+      </nav>
+
+      <!-- CONTENT -->
+      <div class="legal-content">
+        <div class="rgpd-badge">🛡️ Conforme au RGPD (UE) 2016/679</div>
+
+        <p style="font-size:.9rem;color:var(--tx2);line-height:1.8;margin-bottom:36px">
+          Cloud Campus SAS accorde une importance primordiale à la protection de vos données personnelles. La présente politique de confidentialité vous informe sur la manière dont nous collectons, utilisons et protégeons vos données dans le cadre de l'utilisation de notre site web et de nos services.
+        </p>
+
+        <!-- 1. RESPONSABLE -->
+        <div class="legal-section" id="responsable">
+          <h2>1. Responsable du traitement</h2>
+          <div class="info-box">
+            <div class="ib-label">Responsable du traitement</div>
+            <p>
+              <strong>Cloud Campus SAS</strong><br>
+              8 Avenue Flandres Dunkerque, 60200 Compiègne, France<br>
+              Email : <a href="mailto:dpo@cloud-campus.fr">dpo@cloud-campus.fr</a><br>
+              Téléphone : 03 44 XX XX XX
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. DONNÉES COLLECTÉES -->
+        <div class="legal-section" id="collecte">
+          <h2>2. Données collectées</h2>
+          <p>Nous collectons les données personnelles suivantes selon les interactions que vous avez avec notre site :</p>
+          <table class="data-table" aria-label="Types de données collectées">
+            <thead>
+              <tr>
+                <th>Contexte</th>
+                <th>Données collectées</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Formulaire de candidature</strong></td>
+                <td>Nom, prénom, email, téléphone, niveau d'études, formation souhaitée, message de motivation</td>
+              </tr>
+              <tr>
+                <td><strong>Formulaire entreprise</strong></td>
+                <td>Nom, prénom, société, email professionnel, téléphone, profil recherché, description du poste</td>
+              </tr>
+              <tr>
+                <td><strong>Formulaire de contact</strong></td>
+                <td>Nom, prénom, email, sujet, message</td>
+              </tr>
+              <tr>
+                <td><strong>Newsletter</strong></td>
+                <td>Adresse email</td>
+              </tr>
+              <tr>
+                <td><strong>Navigation sur le site</strong></td>
+                <td>Adresse IP, type de navigateur, pages visitées, durée de la session (via cookies analytiques avec consentement)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Nous ne collectons que les données strictement nécessaires aux finalités décrites ci-dessous.</p>
+        </div>
+
+        <!-- 3. FINALITÉS -->
+        <div class="legal-section" id="finalites">
+          <h2>3. Finalités du traitement</h2>
+          <p>Vos données personnelles sont collectées et traitées pour les finalités suivantes :</p>
+          <ul>
+            <li>Traitement de votre candidature et suivi du processus d'admission</li>
+            <li>Mise en relation avec des entreprises partenaires pour votre alternance</li>
+            <li>Réponse à vos demandes de contact et d'information</li>
+            <li>Envoi de la newsletter si vous y avez souscrit</li>
+            <li>Amélioration de notre site web et de nos services (analytics anonymisés)</li>
+            <li>Respect de nos obligations légales et réglementaires</li>
+            <li>Gestion comptable et administrative (si vous devenez étudiant ou partenaire)</li>
+          </ul>
+        </div>
+
+        <!-- 4. BASES LÉGALES -->
+        <div class="legal-section" id="bases">
+          <h2>4. Bases légales des traitements</h2>
+          <table class="data-table" aria-label="Bases légales des traitements">
+            <thead>
+              <tr>
+                <th>Traitement</th>
+                <th>Base légale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Traitement des candidatures</td>
+                <td>Mesures précontractuelles (art. 6.1.b RGPD)</td>
+              </tr>
+              <tr>
+                <td>Gestion des contrats étudiants</td>
+                <td>Exécution du contrat (art. 6.1.b RGPD)</td>
+              </tr>
+              <tr>
+                <td>Newsletter</td>
+                <td>Consentement (art. 6.1.a RGPD)</td>
+              </tr>
+              <tr>
+                <td>Cookies analytiques</td>
+                <td>Consentement (art. 6.1.a RGPD)</td>
+              </tr>
+              <tr>
+                <td>Obligations légales (comptabilité, etc.)</td>
+                <td>Obligation légale (art. 6.1.c RGPD)</td>
+              </tr>
+              <tr>
+                <td>Réponse aux demandes de contact</td>
+                <td>Intérêt légitime (art. 6.1.f RGPD)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 5. CONSERVATION -->
+        <div class="legal-section" id="conservation">
+          <h2>5. Durées de conservation</h2>
+          <table class="data-table" aria-label="Durées de conservation des données">
+            <thead>
+              <tr>
+                <th>Catégorie de données</th>
+                <th>Durée de conservation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Candidatures non retenues</td>
+                <td>2 ans à compter de la dernière interaction</td>
+              </tr>
+              <tr>
+                <td>Dossiers étudiants actifs</td>
+                <td>Durée de la formation + 5 ans</td>
+              </tr>
+              <tr>
+                <td>Documents comptables</td>
+                <td>10 ans (obligation légale)</td>
+              </tr>
+              <tr>
+                <td>Abonnés newsletter</td>
+                <td>Jusqu'au désabonnement + 3 ans</td>
+              </tr>
+              <tr>
+                <td>Logs de connexion</td>
+                <td>12 mois</td>
+              </tr>
+              <tr>
+                <td>Demandes de contact</td>
+                <td>3 ans à compter de la dernière interaction</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>À l'expiration de ces délais, vos données sont supprimées ou anonymisées.</p>
+        </div>
+
+        <!-- 6. DESTINATAIRES -->
+        <div class="legal-section" id="destinataires">
+          <h2>6. Destinataires des données</h2>
+          <p>Vos données personnelles peuvent être communiquées aux destinataires suivants :</p>
+          <ul>
+            <li>L'équipe interne Cloud Campus (personnel habilité : pédagogie, relations entreprises, administration)</li>
+            <li>Les entreprises partenaires dans le cadre de la mise en relation pour votre alternance (avec votre accord)</li>
+            <li>Nos sous-traitants techniques (hébergeur, outil d'emailing) dans le cadre de contrats de sous-traitance RGPD</li>
+            <li>Les autorités compétentes sur réquisition légale</li>
+          </ul>
+          <p>Vos données ne sont jamais vendues à des tiers.</p>
+        </div>
+
+        <!-- 7. TRANSFERTS -->
+        <div class="legal-section" id="transferts">
+          <h2>7. Transferts hors Union européenne</h2>
+          <p>Dans la mesure du possible, nous privilégions des prestataires hébergeant vos données au sein de l'Union européenne.</p>
+          <p>Si des transferts hors UE s'avèrent nécessaires (par exemple via certains outils SaaS), ils sont encadrés par des garanties appropriées : clauses contractuelles types de la Commission européenne, décision d'adéquation ou règles d'entreprise contraignantes.</p>
+        </div>
+
+        <!-- 8. DROITS -->
+        <div class="legal-section" id="droits">
+          <h2>8. Vos droits</h2>
+          <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+          <div class="rights-grid">
+            <div class="right-item">
+              <span class="right-icon">👁️</span>
+              <div><h4>Droit d'accès</h4><p>Obtenir une copie de vos données que nous traitons.</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">✏️</span>
+              <div><h4>Droit de rectification</h4><p>Corriger des données inexactes ou incomplètes.</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">🗑️</span>
+              <div><h4>Droit à l'effacement</h4><p>Demander la suppression de vos données (sous conditions).</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">⏸️</span>
+              <div><h4>Droit à la limitation</h4><p>Suspendre temporairement le traitement de vos données.</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">📦</span>
+              <div><h4>Droit à la portabilité</h4><p>Recevoir vos données dans un format structuré et lisible.</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">🚫</span>
+              <div><h4>Droit d'opposition</h4><p>Vous opposer au traitement fondé sur l'intérêt légitime.</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">↩️</span>
+              <div><h4>Retrait du consentement</h4><p>Retirer votre consentement à tout moment (newsletter, cookies).</p></div>
+            </div>
+            <div class="right-item">
+              <span class="right-icon">🏛️</span>
+              <div><h4>Réclamation CNIL</h4><p>Introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.</p></div>
+            </div>
+          </div>
+          <p style="margin-top:20px">Pour exercer ces droits, contactez notre DPO : <a href="mailto:dpo@cloud-campus.fr">dpo@cloud-campus.fr</a>. Nous vous répondrons dans un délai d'un mois.</p>
+        </div>
+
+        <!-- 9. COOKIES -->
+        <div class="legal-section" id="cookies-pol">
+          <h2>9. Politique relative aux cookies</h2>
+          <h3>Cookies strictement nécessaires</h3>
+          <p>Ces cookies sont indispensables au fonctionnement du site. Ils ne peuvent pas être désactivés. Ils comprennent notamment la mémorisation de votre préférence de thème (clair/sombre).</p>
+          <h3>Cookies analytiques</h3>
+          <p>Avec votre consentement, des cookies analytiques anonymisés nous permettent de mesurer l'audience du site et d'améliorer son contenu. Ces données ne sont pas utilisées à des fins commerciales.</p>
+          <h3>Absence de cookies publicitaires</h3>
+          <p>Cloud Campus n'utilise pas de cookies publicitaires ou de profilage sur son site.</p>
+          <h3>Gestion de vos préférences</h3>
+          <p>Vous pouvez modifier vos préférences de cookies à tout moment via les paramètres de votre navigateur ou en nous contactant. La désactivation de certains cookies peut altérer votre expérience de navigation.</p>
+        </div>
+
+        <!-- 10. MINEURS -->
+        <div class="legal-section" id="mineurs">
+          <h2>10. Mineurs</h2>
+          <p>Notre site et nos services sont principalement destinés à des personnes de 16 ans et plus. Si vous avez moins de 16 ans, vous devez obtenir le consentement de votre représentant légal avant de nous soumettre des données personnelles.</p>
+          <p>Si nous apprenons que nous avons collecté des données d'un mineur de moins de 16 ans sans consentement parental, nous prendrons les mesures nécessaires pour supprimer ces données.</p>
+        </div>
+
+        <!-- 11. MODIFICATIONS -->
+        <div class="legal-section" id="modifications">
+          <h2>11. Modifications de la présente politique</h2>
+          <p>Cloud Campus SAS se réserve le droit de modifier la présente politique de confidentialité à tout moment, notamment pour se conformer aux évolutions législatives et réglementaires.</p>
+          <p>En cas de modification substantielle, nous vous en informerons par email ou par un avis visible sur notre site. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+          <p>Nous vous encourageons à consulter régulièrement cette page pour rester informé de nos pratiques en matière de protection des données.</p>
+        </div>
+
+        <!-- 12. CONTACT DPO -->
+        <div class="legal-section" id="contact-rgpd">
+          <h2>12. Contact — Délégué à la Protection des Données</h2>
+          <p>Pour toute question relative à la présente politique ou pour exercer vos droits :</p>
+          <div class="info-box">
+            <div class="ib-label">Délégué à la Protection des Données (DPO)</div>
+            <p>
+              <strong>Cloud Campus SAS — DPO</strong><br>
+              8 Avenue Flandres Dunkerque, 60200 Compiègne<br>
+              Email : <a href="mailto:dpo@cloud-campus.fr">dpo@cloud-campus.fr</a>
+            </p>
+          </div>
+          <div class="info-box">
+            <div class="ib-label">Autorité de contrôle</div>
+            <p>
+              En cas de litige non résolu, vous pouvez saisir la Commission Nationale de l'Informatique et des Libertés (CNIL) :<br>
+              <strong>CNIL</strong> — 3 Place de Fontenoy, 75007 Paris<br>
+              <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>
+            </p>
+          </div>
+          <p>Voir également nos <a href="mentions-legales.html">Mentions légales</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const sections = document.querySelectorAll('.legal-section');
+const navLinks  = document.querySelectorAll('.legal-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) current = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}, { passive: true });
+</script>
+</body>
+</html>

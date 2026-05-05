@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Équipe — Formateurs & Staff | Cloud Campus Compiègne</title>
+<meta name="description" content="Découvrez l'équipe Cloud Campus : formateurs professionnels en activité, chargés de relations entreprises et équipe pédagogique dédiée à votre réussite.">
+<link rel="canonical" href="https://cloud-campus.fr/notre-equipe">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Notre Équipe — Cloud Campus">
+<meta property="og:description" content="Des formateurs qui exercent encore leur métier, une équipe jeune et engagée, 100% au service de votre réussite.">
+<meta property="og:url" content="https://cloud-campus.fr/notre-equipe">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Team grid */
+  .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .team-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px 28px; transition: all .45s var(--ease); position: relative; overflow: hidden;
+  }
+  .team-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--acc), var(--blue));
+    transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease);
+  }
+  .team-card:hover { border-color: var(--brd-h); transform: translateY(-6px); }
+  .team-card:hover::before { transform: scaleX(1); }
+  [data-theme="dark"] .team-card:hover { box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+
+  .team-avatar {
+    width: 72px; height: 72px; border-radius: 50%; margin-bottom: 18px;
+    display: grid; place-items: center; font-size: 1.6rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--acc-gl2), var(--acc-gl));
+    border: 2px solid rgba(0,255,135,.2); color: var(--acc);
+    font-family: var(--mono);
+  }
+  .team-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+  .team-role {
+    font-size: .76rem; font-weight: 600; color: var(--acc); font-family: var(--mono);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;
+  }
+  .team-card p { font-size: .84rem; color: var(--tx2); line-height: 1.65; margin-bottom: 18px; }
+  .team-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .team-tag {
+    font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: var(--r-full);
+    font-family: var(--mono); border: 1px solid var(--brd); color: var(--tx3);
+  }
+
+  /* Staff grid (non-formateurs) */
+  .staff-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .staff-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 22px; text-align: center; transition: all .4s var(--ease);
+  }
+  .staff-card:hover { border-color: var(--brd-h); transform: translateY(-5px); }
+  .staff-av {
+    width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 14px;
+    display: grid; place-items: center; font-size: 1.3rem; font-weight: 700;
+    background: var(--acc-gl); border: 2px solid var(--brd);
+    color: var(--acc); font-family: var(--mono);
+  }
+  .staff-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 4px; }
+  .staff-card .role { font-size: .72rem; color: var(--acc); font-family: var(--mono); font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px; }
+  .staff-card p { font-size: .8rem; color: var(--tx3); line-height: 1.5; }
+
+  /* Values */
+  .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .val-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px 28px; display: flex; gap: 20px; align-items: flex-start;
+    transition: all .4s var(--ease);
+  }
+  .val-card:hover { border-color: var(--brd-h); }
+  .val-icon { font-size: 2rem; flex-shrink: 0; }
+  .val-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .val-card p  { font-size: .86rem; color: var(--tx2); line-height: 1.65; }
+
+  /* Join CTA card */
+  .join-card {
+    background: var(--acc-gl); border: 1px solid rgba(0,255,135,.2);
+    border-radius: var(--r-xl); padding: 52px;
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  }
+  .join-card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
+  .join-card p  { font-size: .92rem; color: var(--tx2); line-height: 1.6; }
+
+  @media (max-width: 1024px) {
+    .team-grid { grid-template-columns: repeat(2,1fr); }
+    .staff-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 640px) {
+    .team-grid, .values-grid { grid-template-columns: 1fr; }
+    .join-card { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">L'équipe</div>
+    <h1 class="sr">Des pros qui <span style="color:var(--acc)">transmettent</span> ce qu'ils vivent</h1>
+    <p class="sr">Nos formateurs ne sont pas des enseignants théoriques. Ce sont des développeurs, experts sécurité et commerciaux qui exercent encore leur métier — et le partagent avec vous.</p>
+  </div>
+</section>
+
+<!-- FORMATEURS -->
+<section style="padding:0 0 100px" id="formateurs">
+  <div class="ctn">
+    <div class="stag sr">Formateurs</div>
+    <h2 class="stit sr">Des experts en activité à vos côtés</h2>
+    <p class="sdesc sr">Chaque formateur Cloud Campus est recruté pour son double profil : expert métier reconnu ET pédagogue passionné.</p>
+    <div class="team-grid">
+
+      <article class="team-card sr d1">
+        <div class="team-avatar">TM</div>
+        <h3>Thomas Mercier</h3>
+        <div class="team-role">Lead Formateur — Dev Full Stack</div>
+        <p>Senior developer avec 10 ans d'expérience en startup et scale-up. Expert React & Node.js, contributeur open source. Il forme la promotion Dev Full Stack depuis 2022.</p>
+        <div class="team-tags">
+          <span class="team-tag">React</span><span class="team-tag">Node.js</span>
+          <span class="team-tag">TypeScript</span><span class="team-tag">CI/CD</span>
+        </div>
+      </article>
+
+      <article class="team-card sr d2">
+        <div class="team-avatar">SB</div>
+        <h3>Sarah Benali</h3>
+        <div class="team-role">Formatrice — Cybersécurité & SI</div>
+        <p>RSSI en ESN et consultante indépendante, certifiée ISO 27001 et AWS. Elle apporte une vision terrain de la sécurité que les manuels ne donnent pas.</p>
+        <div class="team-tags">
+          <span class="team-tag">ISO 27001</span><span class="team-tag">AWS</span>
+          <span class="team-tag">Pentest</span><span class="team-tag">RGPD</span>
+        </div>
+      </article>
+
+      <article class="team-card sr d3">
+        <div class="team-avatar">JL</div>
+        <h3>Julien Lefebvre</h3>
+        <div class="team-role">Formateur — Commerce</div>
+        <p>Directeur commercial dans une PME industrielle et formateur certifié, Julien transmet les techniques de vente et de négociation qu'il pratique chaque semaine.</p>
+        <div class="team-tags">
+          <span class="team-tag">Négociation</span><span class="team-tag">CRM</span>
+          <span class="team-tag">Marketing digital</span><span class="team-tag">B2B</span>
+        </div>
+      </article>
+
+      <article class="team-card sr d4">
+        <div class="team-avatar">AD</div>
+        <h3>Amélie Dubois</h3>
+        <div class="team-role">Formatrice — IA & Data</div>
+        <p>Data scientist en activité et passionnée de pédagogie, Amélie intègre l'IA dans tous les cursus Cloud Campus. Elle forme les étudiants à utiliser l'IA comme un vrai outil de travail.</p>
+        <div class="team-tags">
+          <span class="team-tag">Python</span><span class="team-tag">ML</span>
+          <span class="team-tag">LLM / Prompt</span><span class="team-tag">Data</span>
+        </div>
+      </article>
+
+      <article class="team-card sr d5">
+        <div class="team-avatar">RP</div>
+        <h3>Romain Pires</h3>
+        <div class="team-role">Formateur — DevOps & Cloud</div>
+        <p>Ingénieur DevOps chez un hébergeur cloud européen. Spécialiste Kubernetes, Terraform et sécurité des infrastructures. Son credo : automatiser tout ce qui peut l'être.</p>
+        <div class="team-tags">
+          <span class="team-tag">Docker</span><span class="team-tag">Kubernetes</span>
+          <span class="team-tag">Terraform</span><span class="team-tag">GCP</span>
+        </div>
+      </article>
+
+      <article class="team-card sr d1">
+        <div class="team-avatar">CL</div>
+        <h3>Clara Lemaire</h3>
+        <div class="team-role">Formatrice — Marketing Digital</div>
+        <p>CMO d'une startup SaaS et consultante marketing, Clara enseigne le SEO, la publicité digitale et le marketing de contenu avec des exemples tirés de ses propres campagnes.</p>
+        <div class="team-tags">
+          <span class="team-tag">SEO/SEA</span><span class="team-tag">Meta Ads</span>
+          <span class="team-tag">Analytics</span><span class="team-tag">Copywriting</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- STAFF & ÉQUIPE -->
+<section style="padding:0 0 100px" id="staff">
+  <div class="ctn">
+    <div class="stag sr">Équipe</div>
+    <h2 class="stit sr">L'équipe qui fait tourner Cloud Campus</h2>
+    <p class="sdesc sr">Au-delà des formateurs, une équipe dédiée accompagne chaque étudiant dans son parcours.</p>
+    <div class="staff-grid">
+      <div class="staff-card sr d1">
+        <div class="staff-av">NC</div>
+        <h4>Nicolas Carré</h4>
+        <div class="role">Directeur pédagogique</div>
+        <p>Garant de la qualité des formations et du suivi individuel de chaque apprenant.</p>
+      </div>
+      <div class="staff-card sr d2">
+        <div class="staff-av">ML</div>
+        <h4>Manon Laurent</h4>
+        <div class="role">Relations entreprises</div>
+        <p>Elle tisse le réseau des 500+ entreprises partenaires et organise les jobs datings.</p>
+      </div>
+      <div class="staff-card sr d3">
+        <div class="staff-av">KD</div>
+        <h4>Karim Diallo</h4>
+        <div class="role">Relations entreprises</div>
+        <p>Spécialiste des secteurs tech et industrie, il trouve les meilleures alternances pour les étudiants.</p>
+      </div>
+      <div class="staff-card sr d4">
+        <div class="staff-av">EV</div>
+        <h4>Emma Vidal</h4>
+        <div class="role">Service étudiant</div>
+        <p>Accompagnement social, logement, transport : Emma est le premier contact des nouveaux étudiants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section style="padding:0 0 100px" id="valeurs">
+  <div class="ctn">
+    <div class="stag sr">Nos valeurs</div>
+    <h2 class="stit sr">Ce qui nous rassemble</h2>
+    <div class="values-grid">
+      <div class="val-card sr d1">
+        <div class="val-icon">🎯</div>
+        <div>
+          <h3>L'emploi avant tout</h3>
+          <p>Chaque décision pédagogique est guidée par une seule question : est-ce que ça aide nos étudiants à trouver un bon emploi et à y exceller ?</p>
+        </div>
+      </div>
+      <div class="val-card sr d2">
+        <div class="val-icon">🤝</div>
+        <div>
+          <h3>La proximité</h3>
+          <p>Une école à taille humaine où tout le monde se connaît. Les formateurs répondent sur Discord, l'équipe est joignable 7j/7.</p>
+        </div>
+      </div>
+      <div class="val-card sr d3">
+        <div class="val-icon">🔄</div>
+        <div>
+          <h3>L'amélioration continue</h3>
+          <p>Nos programmes évoluent chaque trimestre en fonction des retours des étudiants et des besoins du marché. On ne reste jamais figés.</p>
+        </div>
+      </div>
+      <div class="val-card sr d4">
+        <div class="val-icon">🌍</div>
+        <div>
+          <h3>L'inclusion</h3>
+          <p>Cloud Campus accueille tous les profils, toutes les origines. La diversité est une force, et l'alternance est le meilleur ascenseur social qui existe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN THE TEAM -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="join-card sr">
+      <div>
+        <h3>Vous voulez rejoindre l'équipe ?</h3>
+        <p>On recrute des formateurs passionnés qui exercent encore leur métier. Si vous avez l'expertise et l'envie de transmettre, on veut vous rencontrer.</p>
+      </div>
+      <a href="nous-contacter.html" class="btn-gl">Postuler →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="ctn">
+    <h2 class="sr">Prêt à rejoindre <span style="color:var(--acc)">cette équipe</span> ?</h2>
+    <p class="sr">En tant qu'étudiant, vous ferez partie de la famille Cloud Campus dès le premier jour.</p>
+    <div class="cta-btns sr">
+      <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+      <a href="pedagogie.html" class="btn-ol">Notre pédagogie</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

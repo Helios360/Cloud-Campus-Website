@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pédagogie & Environnement — 80% Pratique | Cloud Campus Compiègne</title>
+<meta name="description" content="Découvrez la pédagogie Cloud Campus : 80% pratique, formateurs professionnels en activité, IA intégrée, présentiel et télé-présentiel. Une approche immersive tournée vers l'emploi.">
+<link rel="canonical" href="https://cloud-campus.fr/pedagogie-et-environnement">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pédagogie Cloud Campus — 80% pratique, IA intégrée">
+<meta property="og:description" content="Formateurs professionnels en activité, projets réels, alternance au cœur du parcours. Une pédagogie tournée vers l'emploi.">
+<meta property="og:url" content="https://cloud-campus.fr/pedagogie-et-environnement">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Big ratio callout */
+  .ratio-block {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 52px;
+  }
+  .ratio-card {
+    border-radius: var(--r-xl); padding: 48px 36px; text-align: center; position: relative; overflow: hidden;
+  }
+  .ratio-card.prat {
+    background: var(--acc-gl); border: 1px solid rgba(0,255,135,.2);
+  }
+  .ratio-card.theo {
+    background: var(--card); border: 1px solid var(--brd);
+  }
+  .ratio-card .pct {
+    font-family: var(--mono); font-size: clamp(4rem,8vw,6.5rem); font-weight: 700; line-height: 1;
+  }
+  .ratio-card.prat .pct { color: var(--acc); text-shadow: 0 0 60px var(--acc-gl2); }
+  .ratio-card.theo .pct { color: var(--tx3); }
+  .ratio-card h3 { font-size: 1.1rem; font-weight: 700; margin-top: 12px; margin-bottom: 8px; }
+  .ratio-card p  { font-size: .88rem; color: var(--tx2); line-height: 1.6; }
+
+  /* Pillar cards */
+  .pillar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .pillar-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px 28px; transition: all .4s var(--ease);
+  }
+  .pillar-card:hover { border-color: var(--brd-h); transform: translateY(-6px); }
+  .pillar-card .p-icon { font-size: 2.2rem; margin-bottom: 18px; }
+  .pillar-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+  .pillar-card p  { font-size: .86rem; color: var(--tx2); line-height: 1.65; }
+
+  /* Format tabs */
+  .format-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .format-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 36px 32px; transition: all .4s var(--ease);
+  }
+  .format-card:hover { border-color: var(--brd-h); }
+  .format-card .f-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .format-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+  .format-card p  { font-size: .88rem; color: var(--tx2); line-height: 1.65; margin-bottom: 20px; }
+  .format-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .format-card ul li { font-size: .84rem; color: var(--tx2); display: flex; align-items: center; gap: 10px; }
+  .format-card ul li::before { content: '✓'; color: var(--acc); font-weight: 700; flex-shrink: 0; }
+
+  /* Timeline */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+  .tl-item { display: grid; grid-template-columns: 56px 1fr; gap: 24px; position: relative; }
+  .tl-item:not(:last-child)::after {
+    content: ''; position: absolute; left: 27px; top: 52px; bottom: -20px;
+    width: 2px; background: var(--brd); z-index: 0;
+  }
+  .tl-dot {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--card);
+    border: 2px solid var(--brd); display: grid; place-items: center;
+    font-size: 1.3rem; position: relative; z-index: 1; flex-shrink: 0;
+    transition: all .35s var(--ease);
+  }
+  .tl-item:hover .tl-dot { border-color: var(--acc); background: var(--acc-gl); }
+  .tl-body { padding: 12px 0 36px; }
+  .tl-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .tl-body p  { font-size: .86rem; color: var(--tx2); line-height: 1.6; }
+
+  /* Discord banner */
+  .discord-banner {
+    background: linear-gradient(135deg, #5865F2 0%, #7983f5 100%);
+    border-radius: var(--r-xl); padding: 48px 52px;
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+  }
+  .discord-banner h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  .discord-banner p  { font-size: .92rem; color: rgba(255,255,255,.8); line-height: 1.6; }
+  .btn-discord {
+    padding: 14px 28px; border-radius: var(--r-full); background: #fff;
+    color: #5865F2; font-weight: 700; font-size: .92rem; border: none;
+    cursor: pointer; white-space: nowrap; font-family: var(--font);
+    transition: all .3s var(--ease); display: inline-block;
+  }
+  .btn-discord:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+
+  @media (max-width: 900px) {
+    .ratio-block, .format-grid { grid-template-columns: 1fr; }
+    .pillar-grid { grid-template-columns: 1fr 1fr; }
+    .discord-banner { grid-template-columns: 1fr; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .pillar-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">Notre approche</div>
+    <h1 class="sr">Une pédagogie <span style="color:var(--acc)">immersive</span> tournée vers l'emploi</h1>
+    <p class="sr">Chez Cloud Campus, on apprend en faisant. 80% du temps en pratique, des formateurs qui exercent encore leur métier, et l'IA comme outil du quotidien.</p>
+  </div>
+</section>
+
+<!-- RATIO PRATIQUE / THÉORIE -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="ratio-block">
+      <div class="ratio-card prat sr d1">
+        <div class="pct">80%</div>
+        <h3>Pratique</h3>
+        <p>Exercices concrets, projets professionnels, études de cas réels, ateliers en conditions métier. On apprend en faisant, pas en écoutant.</p>
+      </div>
+      <div class="ratio-card theo sr d2">
+        <div class="pct">20%</div>
+        <h3>Théorie</h3>
+        <p>Les fondamentaux indispensables, apportés au bon moment, pour donner du sens à la pratique et ancrer durablement les compétences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILIERS PÉDAGOGIQUES -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="stag sr">Nos piliers</div>
+    <h2 class="stit sr">Ce qui distingue notre pédagogie</h2>
+    <p class="sdesc sr">Six principes qui guident chaque cours, chaque projet, chaque interaction avec nos formateurs.</p>
+    <div class="pillar-grid">
+      <div class="pillar-card sr d1">
+        <div class="p-icon">👨‍💻</div>
+        <h3>Formateurs en activité</h3>
+        <p>Tous nos formateurs exercent leur métier en parallèle. Développeurs, experts cybersécurité, commerciaux — ils transmettent une vision concrète et actuelle.</p>
+      </div>
+      <div class="pillar-card sr d2">
+        <div class="p-icon">🔨</div>
+        <h3>Projets professionnels réels</h3>
+        <p>Pas de cas fictifs. Vous travaillez sur de vrais projets, avec de vraies contraintes, pour de vraies entreprises partenaires.</p>
+      </div>
+      <div class="pillar-card sr d3">
+        <div class="p-icon">🤖</div>
+        <h3>IA comme outil de travail</h3>
+        <p>L'intelligence artificielle est intégrée dans chaque cursus comme un outil professionnel — pas comme un cours à part. Vous l'utilisez dès le premier jour.</p>
+      </div>
+      <div class="pillar-card sr d4">
+        <div class="p-icon">🔄</div>
+        <h3>Feedback continu</h3>
+        <p>Revues de code, debriefs commerciaux, corrections en live. L'apprentissage se fait dans l'itération, pas dans l'attente d'une note finale.</p>
+      </div>
+      <div class="pillar-card sr d5">
+        <div class="p-icon">🤝</div>
+        <h3>Esprit collectif</h3>
+        <p>Pair programming, projets en équipe, entraide sur Discord. On progresse ensemble, comme en entreprise.</p>
+      </div>
+      <div class="pillar-card sr d1">
+        <div class="p-icon">📈</div>
+        <h3>Suivi individualisé</h3>
+        <p>Un référent pédagogique par étudiant. Des points réguliers pour adapter le rythme, lever les blocages et garder le cap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT DE COURS -->
+<section style="padding:0 0 100px" id="format">
+  <div class="ctn">
+    <div class="stag sr">Format des cours</div>
+    <h2 class="stit sr">Présentiel ou télé-présentiel, à vous de choisir</h2>
+    <p class="sdesc sr">Cloud Campus s'adapte à votre vie. Deux formats disponibles, même qualité d'enseignement.</p>
+    <div class="format-grid">
+      <div class="format-card sr d1">
+        <div class="f-icon">🏫</div>
+        <h3>Présentiel — Compiègne</h3>
+        <p>Rejoignez notre centre de formation au 8 Avenue Flandres Dunkerque. Un espace moderne, équipé et conçu pour l'apprentissage technique.</p>
+        <ul>
+          <li>Salles équipées de postes de travail performants</li>
+          <li>Espaces de travail collaboratif</li>
+          <li>Accès fibre & outils cloud fournis</li>
+          <li>Événements & afterworks réguliers</li>
+        </ul>
+      </div>
+      <div class="format-card sr d2">
+        <div class="f-icon">💬</div>
+        <h3>Télé-présentiel — Discord</h3>
+        <p>Full remote via notre serveur Discord dédié. Cours en live, partage d'écran, salons thématiques — l'expérience présentiel à distance.</p>
+        <ul>
+          <li>Sessions live avec le formateur en temps réel</li>
+          <li>Canaux dédiés par formation et par module</li>
+          <li>Support async 7j/7 entre étudiants</li>
+          <li>Enregistrements disponibles en replay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEMAINE TYPE -->
+<section style="padding:0 0 100px" id="semaine-type">
+  <div class="ctn">
+    <div class="stag sr">Semaine type</div>
+    <h2 class="stit sr">À quoi ressemble une semaine de formation ?</h2>
+    <p class="sdesc sr">Intensive, rythmée et toujours tournée vers la pratique.</p>
+    <div class="timeline">
+      <div class="tl-item sr">
+        <div class="tl-dot">📅</div>
+        <div class="tl-body">
+          <h4>Lundi — Lancement de semaine</h4>
+          <p>Briefing collectif, présentation des objectifs de la semaine, mise en place des groupes de travail et rappel des livrables attendus.</p>
+        </div>
+      </div>
+      <div class="tl-item sr d1">
+        <div class="tl-dot">🧠</div>
+        <div class="tl-body">
+          <h4>Mardi & Mercredi — Apports théoriques & ateliers</h4>
+          <p>Sessions avec le formateur, alternance entre apports conceptuels courts et mise en pratique immédiate sur des exercices ciblés.</p>
+        </div>
+      </div>
+      <div class="tl-item sr d2">
+        <div class="tl-dot">🔨</div>
+        <div class="tl-body">
+          <h4>Jeudi — Projet du jour</h4>
+          <p>Journée projet en équipe ou en solo. Vous réalisez un livrable concret : application, analyse, campagne, rapport — en conditions réelles.</p>
+        </div>
+      </div>
+      <div class="tl-item sr d3">
+        <div class="tl-dot">🎤</div>
+        <div class="tl-body">
+          <h4>Vendredi — Restitution & feedback</h4>
+          <p>Présentation des travaux, retours du formateur, auto-évaluation et bilan de semaine. Préparation du retour en entreprise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCORD BANNER -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="discord-banner sr">
+      <div>
+        <h3>💬 Rejoignez la communauté Cloud Campus sur Discord</h3>
+        <p>Étudiants, alumni, formateurs et équipe pédagogique : tout le monde est là. Posez vos questions, partagez vos projets, trouvez vos futurs collègues.</p>
+      </div>
+      <a href="se-renseigner-et-candidater.html" class="btn-discord">Rejoindre le Discord →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="ctn">
+    <h2 class="sr">Prêt à apprendre <span style="color:var(--acc)">autrement</span> ?</h2>
+    <p class="sr">Rejoignez Cloud Campus et découvrez une pédagogie qui vous prépare vraiment à l'emploi.</p>
+    <div class="cta-btns sr">
+      <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+      <a href="nos-formations" class="btn-ol">Voir les formations</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruter un Alternant — Partenaires Entreprises | Cloud Campus</title>
+<meta name="description" content="Recrutez un alternant Cloud Campus formé aux métiers du digital et du commerce. Développeur Full Stack, Expert SI. Aides jusqu'à 6 000€, 0€ de frais de formation.">
+<link rel="canonical" href="https://cloud-campus.fr/recruter-un-alternant">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recruter un Alternant Cloud Campus — Entreprises">
+<meta property="og:description" content="Formés aux dernières technos, IA intégrée, accompagnement 0 frais. Recrutez votre futur talent digital.">
+<meta property="og:url" content="https://cloud-campus.fr/recruter-un-alternant">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent),
+      radial-gradient(ellipse 35% 40% at 80% 80%, rgba(59,130,246,.04), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Avantages chiffres */
+  .avantages-nums { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-bottom: 80px; }
+  .an-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 20px; text-align: center; transition: all .4s var(--ease);
+  }
+  .an-card:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  .an-card .v { font-family: var(--mono); font-size: 2.2rem; font-weight: 700; color: var(--acc); line-height: 1; margin-bottom: 8px; }
+  .an-card .l { font-size: .8rem; color: var(--tx3); line-height: 1.4; }
+
+  /* Profiles grid */
+  .profiles-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .profile-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px 26px; transition: all .45s var(--ease); position: relative; overflow: hidden;
+  }
+  .profile-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--acc), var(--blue));
+    transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease);
+  }
+  .profile-card:hover { border-color: var(--brd-h); transform: translateY(-6px); }
+  .profile-card:hover::after { transform: scaleX(1); }
+  .profile-icon { font-size: 2.2rem; margin-bottom: 16px; }
+  .profile-lvl {
+    display: inline-block; padding: 4px 12px; border-radius: var(--r-full);
+    font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+    margin-bottom: 14px; font-family: var(--mono);
+  }
+  .lvl-2 { background: rgba(245,158,11,.1); color: var(--amber); border: 1px solid rgba(245,158,11,.18); }
+  .lvl-3 { background: rgba(59,130,246,.1);  color: var(--blue);  border: 1px solid rgba(59,130,246,.18); }
+  .lvl-5 { background: rgba(168,85,247,.1);  color: var(--purple);border: 1px solid rgba(168,85,247,.18); }
+  .profile-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .profile-card p  { font-size: .84rem; color: var(--tx2); line-height: 1.6; margin-bottom: 18px; }
+  .profile-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: var(--r-full);
+    font-family: var(--mono); border: 1px solid var(--brd); color: var(--tx3);
+  }
+
+  /* Avantages employeur */
+  .emp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .emp-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px 28px; display: flex; gap: 18px; transition: all .4s var(--ease);
+  }
+  .emp-card:hover { border-color: var(--brd-h); }
+  .emp-icon { font-size: 2rem; flex-shrink: 0; }
+  .emp-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 8px; }
+  .emp-card p  { font-size: .84rem; color: var(--tx2); line-height: 1.65; }
+  .emp-highlight {
+    font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--acc);
+    margin-top: 8px;
+  }
+
+  /* Process */
+  .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; position: relative; }
+  .process-steps::before {
+    content: ''; position: absolute; top: 28px; left: 12%; right: 12%; height: 2px;
+    background: linear-gradient(90deg, var(--acc), var(--blue)); z-index: 0;
+  }
+  .ps { text-align: center; position: relative; z-index: 1; }
+  .ps-num {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--acc); color: #000;
+    font-weight: 800; font-size: 1.1rem; display: grid; place-items: center;
+    margin: 0 auto 16px; font-family: var(--mono);
+    box-shadow: 0 0 0 6px var(--bg), 0 0 0 8px var(--acc-gl);
+  }
+  .ps h4 { font-size: .88rem; font-weight: 700; margin-bottom: 6px; }
+  .ps p  { font-size: .78rem; color: var(--tx2); line-height: 1.5; }
+
+  /* Contact form layout */
+  .contact-layout { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+  .form-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 36px; position: sticky; top: 90px;
+  }
+  .form-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+  .form-card .sub { font-size: .82rem; color: var(--tx2); margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: .78rem; font-weight: 600; color: var(--tx2); margin-bottom: 6px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1px; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 12px 14px; background: var(--bg2);
+    border: 1px solid var(--brd); border-radius: var(--r); color: var(--tx);
+    font-size: .88rem; font-family: var(--font); outline: none; transition: border-color .3s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--acc); }
+  .form-input::placeholder, .form-textarea::placeholder { color: var(--tx3); }
+  .form-select { appearance: none; cursor: pointer; }
+  [data-theme="light"] .form-input,
+  [data-theme="light"] .form-select,
+  [data-theme="light"] .form-textarea { background: var(--bg3); }
+  .form-textarea { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit {
+    width: 100%; padding: 14px; border-radius: var(--r-full); background: var(--acc);
+    color: #000; font-weight: 700; font-size: .95rem; border: none; cursor: pointer;
+    font-family: var(--font); transition: all .35s var(--ease); margin-top: 8px;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--acc-gl2); }
+  .form-note { font-size: .72rem; color: var(--tx3); text-align: center; margin-top: 12px; line-height: 1.5; }
+  .form-success { display: none; text-align: center; padding: 20px 0; }
+  .form-success .s-icon { font-size: 3rem; margin-bottom: 14px; }
+  .form-success h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .form-success p { font-size: .86rem; color: var(--tx2); line-height: 1.6; }
+
+  /* Testimonial employeur */
+  .emp-testi {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 36px; margin-bottom: 32px;
+  }
+  .emp-testi .stars { color: var(--amber); margin-bottom: 14px; }
+  .emp-testi blockquote { font-size: .9rem; color: var(--tx2); line-height: 1.75; font-style: italic; margin-bottom: 18px; }
+  .emp-testi-auth { display: flex; align-items: center; gap: 12px; }
+  .emp-av {
+    width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg,var(--blue),var(--purple));
+    display: grid; place-items: center; color: #fff; font-weight: 700; font-size: .78rem;
+  }
+
+  /* Partners logos strip */
+  .partners-strip { display: flex; flex-wrap: wrap; gap: 10px; }
+  .partner-pill {
+    padding: 7px 16px; border-radius: var(--r-full); background: var(--card);
+    border: 1px solid var(--brd); font-size: .75rem; font-weight: 600;
+    color: var(--tx3); font-family: var(--mono); transition: all .25s;
+  }
+  .partner-pill:hover { border-color: var(--brd-h); color: var(--acc); }
+
+  @media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+    .profiles-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .process-steps::before { display: none; }
+    .avantages-nums { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .profiles-grid, .emp-grid, .avantages-nums { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🏢 Vous recrutez ? — <a href="#deposer-offre">Déposez votre offre d'alternance gratuitement</a>
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">Entreprises</div>
+    <h1 class="sr">Recrutez votre prochain<br><span style="color:var(--acc)">talent digital</span> en alternance</h1>
+    <p class="sr">Des profils formés aux dernières technologies, à l'IA et aux méthodes de travail actuelles. Zéro frais de formation, aides à l'embauche, accompagnement complet.</p>
+    <div class="hero-btns sr" style="margin-top:36px">
+      <a href="#deposer-offre" class="btn-gl">Déposer une offre →</a>
+      <a href="nous-contacter.html" class="btn-ol">Parler à un conseiller</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="avantages-nums">
+      <div class="an-card sr d1"><div class="v">+500</div><div class="l">Entreprises partenaires actives</div></div>
+      <div class="an-card sr d2"><div class="v">6 000€</div><div class="l">D'aides à l'embauche (1ère année)</div></div>
+      <div class="an-card sr d3"><div class="v">0€</div><div class="l">De frais de formation à votre charge</div></div>
+      <div class="an-card sr d4"><div class="v">48h</div><div class="l">Pour recevoir des candidatures</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILS DISPONIBLES -->
+<section style="padding:0 0 100px" id="profils">
+  <div class="ctn">
+    <div class="stag sr">Profils disponibles</div>
+    <h2 class="stit sr">Deux filières, des compétences immédiatement opérationnelles</h2>
+    <p class="sdesc sr">Nos alternants sont formés 80% en pratique sur des projets réels. Ils arrivent en entreprise avec des compétences concrètes, pas juste théoriques.</p>
+    <div class="profiles-grid">
+      <article class="profile-card sr d1">
+        <div class="profile-icon">💻</div>
+        <span class="profile-lvl lvl-3">Bac+3/4</span>
+        <h3>Développeur Web Full Stack</h3>
+        <p>Capable de concevoir et développer des applications web complètes, front et back. À l'aise avec les outils IA pour accélérer le développement.</p>
+        <div class="profile-skills">
+          <span class="skill-tag">React</span><span class="skill-tag">Node.js</span>
+          <span class="skill-tag">SQL</span><span class="skill-tag">Git</span>
+          <span class="skill-tag">Docker</span><span class="skill-tag">IA</span>
+        </div>
+      </article>
+      <article class="profile-card sr d2">
+        <div class="profile-icon">🔒</div>
+        <span class="profile-lvl lvl-5">Bac+5</span>
+        <h3>Expert en Système d'Information</h3>
+        <p>Pilote les projets SI, sécurise les infrastructures et accompagne la transformation digitale. Vision stratégique et technique.</p>
+        <div class="profile-skills">
+          <span class="skill-tag">Cybersécurité</span><span class="skill-tag">AWS</span>
+          <span class="skill-tag">DevSecOps</span><span class="skill-tag">RGPD</span>
+          <span class="skill-tag">ISO 27001</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES EMPLOYEUR -->
+<section style="padding:0 0 100px" id="avantages">
+  <div class="ctn">
+    <div class="stag sr">Avantages employeur</div>
+    <h2 class="stit sr">Pourquoi recruter un alternant Cloud Campus ?</h2>
+    <p class="sdesc sr">Au-delà du talent, recruter en alternance vous offre des avantages financiers et opérationnels significatifs.</p>
+    <div class="emp-grid">
+      <div class="emp-card sr d1">
+        <div class="emp-icon">💶</div>
+        <div>
+          <h3>Aide à l'embauche de l'État</h3>
+          <p>Toute entreprise qui recrute un apprenti bénéficie d'une aide de l'État pour la première année du contrat.</p>
+          <div class="emp-highlight">Jusqu'à 6 000€ la 1ère année</div>
+        </div>
+      </div>
+      <div class="emp-card sr d2">
+        <div class="emp-icon">🏦</div>
+        <div>
+          <h3>Frais de formation pris en charge</h3>
+          <p>Les frais de scolarité sont financés par votre OPCO. Vous ne payez rien pour la formation de votre alternant.</p>
+          <div class="emp-highlight">0€ de frais de formation</div>
+        </div>
+      </div>
+      <div class="emp-card sr d3">
+        <div class="emp-icon">📉</div>
+        <div>
+          <h3>Exonération de charges sociales</h3>
+          <p>Les entreprises de moins de 250 salariés bénéficient d'une exonération quasi-totale des cotisations patronales sur le salaire de l'apprenti.</p>
+          <div class="emp-highlight">Exonération jusqu'à 100%</div>
+        </div>
+      </div>
+      <div class="emp-card sr d4">
+        <div class="emp-icon">🎯</div>
+        <div>
+          <h3>Un profil formé à vos outils</h3>
+          <p>Nos formateurs s'adaptent aux besoins de vos secteurs. Vous pouvez aussi orienter les projets pédagogiques vers vos problématiques métier.</p>
+          <div class="emp-highlight">Formation sur mesure possible</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS RECRUTEMENT -->
+<section style="padding:0 0 100px" id="process">
+  <div class="ctn">
+    <div class="stag sr">Comment ça marche</div>
+    <h2 class="stit sr">Recruter en 4 étapes simples</h2>
+    <p class="sdesc sr">Notre équipe s'occupe de tout — de la publication de votre offre à la signature du contrat.</p>
+    <div class="process-steps">
+      <div class="ps sr d1">
+        <div class="ps-num">1</div>
+        <h4>Déposez votre offre</h4>
+        <p>Décrivez le poste, les missions et vos attentes. Notre équipe la diffuse auprès des candidats correspondants.</p>
+      </div>
+      <div class="ps sr d2">
+        <div class="ps-num">2</div>
+        <h4>Recevez des candidatures</h4>
+        <p>Sous 48h, vous recevez des CV présélectionnés par nos conseillers selon votre profil recherché.</p>
+      </div>
+      <div class="ps sr d3">
+        <div class="ps-num">3</div>
+        <h4>Rencontrez vos candidats</h4>
+        <p>Jobs dating, entretiens individuels ou visio — on organise la mise en relation selon votre disponibilité.</p>
+      </div>
+      <div class="ps sr d4">
+        <div class="ps-num">4</div>
+        <h4>Signez le contrat</h4>
+        <p>On vous accompagne dans les démarches administratives : contrat, OPCO, convention de formation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOSER OFFRE + TÉMOIGNAGE -->
+<section style="padding:0 0 100px" id="deposer-offre">
+  <div class="ctn">
+    <div class="contact-layout">
+      <div>
+        <div class="stag sr">Témoignage partenaire</div>
+        <h2 class="stit sr">Ce que disent nos entreprises partenaires</h2>
+        <div class="emp-testi sr">
+          <div class="stars">★★★★★</div>
+          <blockquote>« Nous recrutons des alternants Cloud Campus depuis 2 ans. Leur niveau technique est impressionnant pour des Bac+3. Ils arrivent avec React et Node.js en main, et surtout avec une vraie culture du travail en équipe. Le prochain, on le prend en CDI à la sortie. »</blockquote>
+          <div class="emp-testi-auth">
+            <div class="emp-av">JM</div>
+            <div>
+              <div style="font-weight:700;font-size:.88rem">Jean-Marc Fortier</div>
+              <div style="font-size:.76rem;color:var(--tx3)">CTO — TechNord SAS, Lille</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stag sr" style="margin-top:40px">Nos partenaires</div>
+        <div class="partners-strip sr">
+          <span class="partner-pill">ATOS</span><span class="partner-pill">ALSTOM</span>
+          <span class="partner-pill">URSSAF</span><span class="partner-pill">FRANCE TRAVAIL</span>
+          <span class="partner-pill">ACTION LOGEMENT</span><span class="partner-pill">ATLAS</span>
+          <span class="partner-pill">GITHUB</span><span class="partner-pill">OPCO EP</span>
+          <span class="partner-pill">+490 autres</span>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <div class="form-card sr">
+          <h3>Déposer une offre d'alternance</h3>
+          <p class="sub">Gratuit · Réponse sous 48h · Accompagnement complet</p>
+          <div id="recrutForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="r-prenom">Prénom</label>
+                <input type="text" id="r-prenom" class="form-input" placeholder="Jean-Marc">
+              </div>
+              <div class="form-group">
+                <label for="r-nom">Nom</label>
+                <input type="text" id="r-nom" class="form-input" placeholder="Fortier">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="r-societe">Société</label>
+              <input type="text" id="r-societe" class="form-input" placeholder="TechNord SAS">
+            </div>
+            <div class="form-group">
+              <label for="r-email">Email professionnel</label>
+              <input type="email" id="r-email" class="form-input" placeholder="jm.fortier@technord.fr">
+            </div>
+            <div class="form-group">
+              <label for="r-tel">Téléphone</label>
+              <input type="tel" id="r-tel" class="form-input" placeholder="03 44 XX XX XX">
+            </div>
+            <div class="form-group">
+              <label for="r-profil">Profil recherché</label>
+              <select id="r-profil" class="form-select">
+                <option value="">Sélectionner un profil…</option>
+                <option>Développeur Web Full Stack (Bac+3/4)</option>
+                <option>Expert en Système d'Information (Bac+5)</option>
+
+                <option>Plusieurs profils</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="r-missions">Description du poste</label>
+              <textarea id="r-missions" class="form-textarea" placeholder="Missions, outils utilisés, localisation du poste…"></textarea>
+            </div>
+            <button class="form-submit" onclick="submitRecrut()">Envoyer mon offre →</button>
+            <p class="form-note">Votre offre est transmise à notre équipe relations entreprises. Nous vous recontactons sous 48h.</p>
+          </div>
+          <div class="form-success" id="recrutSuccess">
+            <div class="s-icon">🤝</div>
+            <h4>Offre reçue !</h4>
+            <p>Merci pour votre intérêt. Notre équipe relations entreprises vous contacte sous <strong>48h</strong> avec des candidatures présélectionnées.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function submitRecrut() {
+  const required = ['r-prenom','r-nom','r-societe','r-email'];
+  let valid = true;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.style.borderColor = '#ef4444'; valid = false; }
+    else el.style.borderColor = '';
+  });
+  if (!valid) return;
+  document.getElementById('recrutForm').style.display = 'none';
+  document.getElementById('recrutSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

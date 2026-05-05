@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Développeur Web Full Stack en Alternance — Bac+3/4 | Cloud Campus Compiègne</title>
+<meta name="description" content="Formation Développeur Web Full Stack en alternance Bac+3/4 à Compiègne. React, Node.js, SQL, IA intégrée. 100% financée, 92% de réussite. Candidatez maintenant.">
+<link rel="canonical" href="https://cloud-campus.fr/formation-dev-web">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Développeur Web Full Stack en Alternance — Cloud Campus">
+<meta property="og:description" content="Bac+3/4 en alternance. React, Node.js, SQL, IA. 100% financée à Compiègne.">
+<meta property="og:url" content="https://cloud-campus.fr/formation-dev-web">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Développeur Web Full Stack",
+  "description": "Formation en alternance Bac+3/4 en développement Front-end et Back-end. React, Node.js, SQL et IA intégrée.",
+  "provider": { "@type": "EducationalOrganization", "name": "Cloud Campus", "url": "https://cloud-campus.fr" },
+  "educationalLevel": "Bac+3/4",
+  "isAccessibleForFree": true,
+  "courseMode": "blended",
+  "inLanguage": "fr",
+  "occupationalCategory": "Développeur Full Stack",
+  "teaches": ["React", "Node.js", "SQL", "Git", "Intelligence Artificielle", "TypeScript"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Page-specific overrides */
+  .hero { text-align: left; }
+  .hero::before {
+    background:
+      radial-gradient(ellipse 50% 60% at 80% 50%, rgba(59,130,246,.07), transparent),
+      radial-gradient(ellipse 40% 50% at 10% 80%, var(--acc-gl), transparent);
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-inner .chips { justify-content: flex-start; }
+  .hero h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); }
+  .hero-btns { justify-content: flex-start; }
+  .hero-stats { justify-content: flex-start; }
+
+  .prog-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .prog-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 24px; transition: all .4s var(--ease);
+  }
+  .prog-card:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  .prog-card .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 700;
+    color: var(--acc); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
+  }
+  .prog-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .prog-card ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .prog-card ul li { font-size: .82rem; color: var(--tx2); display: flex; align-items: center; gap: 8px; }
+  .prog-card ul li::before { content: '›'; color: var(--acc); font-weight: 700; }
+
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .stack-item {
+    display: flex; align-items: center; gap: 8px; padding: 10px 16px;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-full);
+    font-size: .82rem; font-weight: 600; font-family: var(--mono);
+    color: var(--tx2); transition: all .3s;
+  }
+  .stack-item:hover { border-color: var(--brd-h); color: var(--acc); }
+  .stack-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); }
+
+  .rythme-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+  .rythme-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 24px; text-align: center;
+  }
+  .rythme-card .icon { font-size: 2rem; margin-bottom: 12px; }
+  .rythme-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; }
+  .rythme-card p { font-size: .8rem; color: var(--tx2); line-height: 1.5; }
+
+  .debouches-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+  .deb-item {
+    display: flex; align-items: center; gap: 12px; padding: 16px 18px;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r);
+    font-size: .88rem; font-weight: 600; transition: all .3s;
+  }
+  .deb-item:hover { border-color: var(--brd-h); color: var(--acc); }
+  .deb-item .deb-icon { font-size: 1.2rem; }
+
+  .hero-visual {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px; font-family: var(--mono); font-size: .8rem;
+    color: var(--tx2); line-height: 1.8; position: relative; overflow: hidden;
+  }
+  .hero-visual::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--acc), var(--blue));
+  }
+  .hero-visual .bar { display: flex; gap: 6px; margin-bottom: 20px; }
+  .hero-visual .bar span { width: 12px; height: 12px; border-radius: 50%; }
+  .b-r { background: #FF5F57; } .b-y { background: #FFBD2E; } .b-g { background: #28CA41; }
+  .line-green { color: var(--acc); }
+  .line-blue  { color: var(--blue); }
+  .line-gray  { color: var(--tx3); }
+  .line-amber { color: var(--amber); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .prog-grid, .rythme-grid, .debouches-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="https://cloud-campus.fr/se-renseigner-et-candidater">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="ctn hero-inner">
+    <div>
+      <div class="chips">
+        <span class="chip"><span class="d d-b"></span> Bac+3 / Bac+4</span>
+        <span class="chip"><span class="d d-g"></span> Alternance</span>
+        <span class="chip"><span class="d d-p"></span> IA intégrée</span>
+      </div>
+      <h1 id="hero-title">Développeur<br><span style="color:var(--acc)">Web Full Stack</span><br>en alternance</h1>
+      <p class="hero-sub" style="margin-left:0;text-align:left">
+        Maîtrisez le développement Front-end et Back-end. Concevez des applications complètes de A à Z avec les technologies les plus demandées du marché — et l'IA en renfort.
+      </p>
+      <div class="hero-btns">
+        <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+        <a href="nous-contacter.html" class="btn-ol">Poser une question</a>
+      </div>
+      <div class="hero-stats" style="margin-top:40px">
+        <div class="hs"><div class="v">Bac+3/4</div><div class="l">Niveau</div></div>
+        <div class="hs"><div class="v">0€</div><div class="l">Frais</div></div>
+        <div class="hs"><div class="v">92%</div><div class="l">Réussite</div></div>
+        <div class="hs"><div class="v">2 ans</div><div class="l">Durée</div></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="bar"><span class="b-r"></span><span class="b-y"></span><span class="b-g"></span></div>
+      <span class="line-gray">// Formation Développeur Full Stack</span><br>
+      <span class="line-blue">import</span> { React, NodeJS, SQL } <span class="line-blue">from</span> <span class="line-amber">'cloud-campus'</span>;<br><br>
+      <span class="line-blue">const</span> <span class="line-green">formation</span> = {<br>
+      &nbsp;&nbsp;niveau: <span class="line-amber">'Bac+3/4'</span>,<br>
+      &nbsp;&nbsp;durée: <span class="line-amber">'24 mois'</span>,<br>
+      &nbsp;&nbsp;coût: <span class="line-amber">'0€'</span>,<br>
+      &nbsp;&nbsp;IA: <span class="line-blue">true</span>,<br>
+      &nbsp;&nbsp;alternance: <span class="line-blue">true</span>,<br>
+      &nbsp;&nbsp;tauxRéussite: <span class="line-amber">'92%'</span>,<br>
+      };<br><br>
+      <span class="line-blue">export default</span> <span class="line-green">CarrièreDigitale</span>;
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section style="padding:100px 0" id="programme">
+  <div class="ctn">
+    <div class="stag sr">Programme</div>
+    <h2 class="stit sr">Ce que vous allez apprendre</h2>
+    <p class="sdesc sr">Un cursus structuré en 4 blocs progressifs, du fondamental au professionnel, avec l'IA comme fil conducteur.</p>
+    <div class="prog-grid">
+      <div class="prog-card sr d1">
+        <div class="num">Bloc 01</div>
+        <h3>Fondamentaux du Web</h3>
+        <ul>
+          <li>HTML5, CSS3 & design responsive</li>
+          <li>JavaScript ES6+ & TypeScript</li>
+          <li>Git & GitHub, workflow professionnel</li>
+          <li>Accessibilité (WCAG) & SEO</li>
+        </ul>
+      </div>
+      <div class="prog-card sr d2">
+        <div class="num">Bloc 02</div>
+        <h3>Front-end Avancé</h3>
+        <ul>
+          <li>React.js & composants réutilisables</li>
+          <li>State management (Redux, Zustand)</li>
+          <li>Next.js & rendu côté serveur</li>
+          <li>Tests unitaires & d'intégration</li>
+        </ul>
+      </div>
+      <div class="prog-card sr d3">
+        <div class="num">Bloc 03</div>
+        <h3>Back-end & APIs</h3>
+        <ul>
+          <li>Node.js & Express</li>
+          <li>Bases de données SQL & NoSQL</li>
+          <li>API REST & GraphQL</li>
+          <li>Authentification & sécurité</li>
+        </ul>
+      </div>
+      <div class="prog-card sr d4">
+        <div class="num">Bloc 04</div>
+        <h3>IA & DevOps</h3>
+        <ul>
+          <li>Intégration d'APIs IA (OpenAI, etc.)</li>
+          <li>Docker & containerisation</li>
+          <li>CI/CD & déploiement cloud</li>
+          <li>Projet professionnel de fin d'études</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK TECHNOLOGIQUE -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="stag sr">Stack technique</div>
+    <h2 class="stit sr">Les technologies que vous maîtriserez</h2>
+    <div class="stack-grid sr">
+      <span class="stack-item"><span class="dot"></span>HTML / CSS</span>
+      <span class="stack-item"><span class="dot"></span>JavaScript</span>
+      <span class="stack-item"><span class="dot"></span>TypeScript</span>
+      <span class="stack-item"><span class="dot"></span>React.js</span>
+      <span class="stack-item"><span class="dot"></span>Next.js</span>
+      <span class="stack-item"><span class="dot"></span>Node.js</span>
+      <span class="stack-item"><span class="dot"></span>Express.js</span>
+      <span class="stack-item"><span class="dot"></span>SQL / PostgreSQL</span>
+      <span class="stack-item"><span class="dot"></span>MongoDB</span>
+      <span class="stack-item"><span class="dot"></span>Git & GitHub</span>
+      <span class="stack-item"><span class="dot"></span>Docker</span>
+      <span class="stack-item"><span class="dot"></span>APIs IA</span>
+    </div>
+  </div>
+</section>
+
+<!-- RYTHME ALTERNANCE -->
+<section style="padding:0 0 100px" id="rythme">
+  <div class="ctn">
+    <div class="stag sr">Rythme d'alternance</div>
+    <h2 class="stit sr">Organisez votre temps entre école et entreprise</h2>
+    <div class="rythme-grid">
+      <div class="rythme-card sr d1">
+        <div class="icon">🏢</div>
+        <h4>3 semaines en entreprise</h4>
+        <p>Immersion professionnelle pour appliquer vos compétences sur de vrais projets.</p>
+      </div>
+      <div class="rythme-card sr d2">
+        <div class="icon">📚</div>
+        <h4>1 semaine en formation</h4>
+        <p>Cours intensifs en présentiel à Compiègne ou en télé-présentiel sur Discord.</p>
+      </div>
+      <div class="rythme-card sr d3">
+        <div class="icon">💶</div>
+        <h4>Salaire mensuel garanti</h4>
+        <p>Rémunération selon la grille légale de l'apprentissage, dès le premier mois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DÉBOUCHÉS -->
+<section style="padding:0 0 100px" id="debouches">
+  <div class="ctn">
+    <div class="stag sr">Débouchés</div>
+    <h2 class="stit sr">Les métiers auxquels vous prépare cette formation</h2>
+    <div class="debouches-list">
+      <div class="deb-item sr d1"><span class="deb-icon">💻</span> Développeur Front-end</div>
+      <div class="deb-item sr d2"><span class="deb-icon">⚙️</span> Développeur Back-end</div>
+      <div class="deb-item sr d3"><span class="deb-icon">🔁</span> Développeur Full Stack</div>
+      <div class="deb-item sr d4"><span class="deb-icon">📱</span> Développeur d'applications web</div>
+      <div class="deb-item sr d1"><span class="deb-icon">🧪</span> Ingénieur QA / Tests</div>
+      <div class="deb-item sr d2"><span class="deb-icon">🤖</span> Développeur IA / Prompt Engineer</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="ctn">
+    <h2 class="sr">Prêt à coder votre <span style="color:var(--acc)">avenir</span> ?</h2>
+    <p class="sr">Rejoignez la prochaine promotion Développeur Full Stack. Formation 100% financée, démarrage septembre 2026.</p>
+    <div class="cta-btns sr">
+      <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+      <a href="financements.html" class="btn-ol">Comprendre le financement</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

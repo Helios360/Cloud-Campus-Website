@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nous Contacter — Cloud Campus Compiègne</title>
+<meta name="description" content="Contactez Cloud Campus pour toute question sur nos formations en alternance, le financement ou l'admission. Réponse sous 24h. Disponibles 7j/7 sur Discord.">
+<link rel="canonical" href="https://cloud-campus.fr/nous-contacter">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nous Contacter — Cloud Campus">
+<meta property="og:description" content="Une question ? On répond sous 24h. Formulaire, email, téléphone ou Discord — à vous de choisir.">
+<meta property="og:url" content="https://cloud-campus.fr/nous-contacter">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Cloud Campus",
+  "url": "https://cloud-campus.fr/nous-contacter",
+  "mainEntity": {
+    "@type": "EducationalOrganization",
+    "name": "Cloud Campus",
+    "telephone": "+33344XXXXXX",
+    "email": "contact@cloud-campus.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8 Avenue Flandres Dunkerque",
+      "addressLocality": "Compiègne",
+      "postalCode": "60200",
+      "addressCountry": "FR"
+    },
+    "openingHours": "Mo-Fr 09:30-17:30"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,80px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Channels */
+  .channels { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 80px; }
+  .channel-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 20px; text-align: center; transition: all .4s var(--ease);
+    cursor: pointer;
+  }
+  .channel-card:hover { border-color: var(--brd-h); transform: translateY(-5px); }
+  .channel-card a { display: block; }
+  .channel-icon { font-size: 2rem; margin-bottom: 14px; }
+  .channel-card h3 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; }
+  .channel-card p  { font-size: .78rem; color: var(--tx3); line-height: 1.5; margin-bottom: 12px; }
+  .channel-link {
+    font-size: .78rem; font-weight: 600; color: var(--acc); font-family: var(--mono);
+    display: inline-flex; align-items: center; gap: 5px; transition: gap .3s;
+  }
+  .channel-card:hover .channel-link { gap: 10px; }
+
+  /* Main layout */
+  .contact-layout { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+
+  /* Form */
+  .form-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 40px; position: sticky; top: 90px;
+  }
+  .form-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+  .form-card .sub { font-size: .84rem; color: var(--tx2); margin-bottom: 28px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: .75rem; font-weight: 700; color: var(--tx2);
+    margin-bottom: 7px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1.2px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 13px 15px; background: var(--bg2);
+    border: 1px solid var(--brd); border-radius: var(--r); color: var(--tx);
+    font-size: .9rem; font-family: var(--font); outline: none; transition: border-color .3s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--acc); }
+  .form-input::placeholder, .form-textarea::placeholder { color: var(--tx3); }
+  .form-select { appearance: none; cursor: pointer; }
+  [data-theme="light"] .form-input,
+  [data-theme="light"] .form-select,
+  [data-theme="light"] .form-textarea { background: var(--bg3); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-submit {
+    width: 100%; padding: 15px; border-radius: var(--r-full); background: var(--acc);
+    color: #000; font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
+    font-family: var(--font); transition: all .35s var(--ease); margin-top: 4px;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--acc-gl2); }
+  .form-note { font-size: .72rem; color: var(--tx3); text-align: center; margin-top: 12px; line-height: 1.5; }
+  .form-success { display: none; text-align: center; padding: 20px 0; }
+  .form-success .s-icon { font-size: 3rem; margin-bottom: 14px; }
+  .form-success h4 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+  .form-success p  { font-size: .88rem; color: var(--tx2); line-height: 1.65; }
+
+  /* Info panel */
+  .info-block {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 32px; margin-bottom: 20px;
+  }
+  .info-block h3 { font-size: 1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  .info-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+  .info-row:last-child { margin-bottom: 0; }
+  .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .info-row strong { font-size: .88rem; font-weight: 700; display: block; margin-bottom: 2px; }
+  .info-row span { font-size: .82rem; color: var(--tx2); line-height: 1.5; }
+  .info-row a { color: var(--acc); transition: opacity .2s; }
+  .info-row a:hover { opacity: .8; }
+
+  /* Map placeholder */
+  .map-block {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    overflow: hidden; margin-bottom: 20px;
+  }
+  .map-embed {
+    width: 100%; height: 220px; border: none; filter: saturate(.7) brightness(.85);
+    display: block;
+  }
+  [data-theme="light"] .map-embed { filter: none; }
+  .map-label {
+    padding: 14px 18px; display: flex; align-items: center; gap: 10px;
+    font-size: .82rem; color: var(--tx2);
+  }
+  .map-label strong { color: var(--tx); }
+
+  /* Hours */
+  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hour-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 12px; border-radius: var(--r); background: var(--bg2);
+    font-size: .82rem;
+  }
+  .hour-row .day { color: var(--tx2); font-weight: 500; }
+  .hour-row .time { font-family: var(--mono); font-weight: 600; color: var(--acc); font-size: .76rem; }
+  .hour-row .closed { color: var(--tx3); }
+
+  /* Discord CTA */
+  .discord-card {
+    background: linear-gradient(135deg,#5865F2,#7983f5);
+    border-radius: var(--r-xl); padding: 28px;
+    display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+  }
+  .discord-card .d-icon { font-size: 2.2rem; flex-shrink: 0; }
+  .discord-card h4 { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .discord-card p  { font-size: .78rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+  .btn-discord {
+    margin-left: auto; padding: 10px 20px; border-radius: var(--r-full);
+    background: #fff; color: #5865F2; font-weight: 700; font-size: .82rem;
+    border: none; cursor: pointer; white-space: nowrap; font-family: var(--font);
+    transition: all .3s; flex-shrink: 0;
+  }
+  .btn-discord:hover { transform: scale(1.04); }
+
+  @media (max-width: 1024px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+    .channels { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .channels { grid-template-columns: 1fr; }
+    .form-row, .hours-grid { grid-template-columns: 1fr; }
+    .discord-card { flex-wrap: wrap; }
+    .btn-discord { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">Contact</div>
+    <h1 class="sr">On est là pour<br><span style="color:var(--acc)">vous répondre</span></h1>
+    <p class="sr">Une question sur une formation, le financement ou l'admission ? Notre équipe répond sous 24h en semaine, et 7j/7 sur Discord.</p>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section style="padding:0 0 80px">
+  <div class="ctn">
+    <div class="channels">
+      <div class="channel-card sr d1">
+        <div class="channel-icon">📧</div>
+        <h3>Email</h3>
+        <p>Pour toute demande détaillée. Réponse garantie sous 24h en semaine.</p>
+        <a href="mailto:contact@cloud-campus.fr" class="channel-link">Envoyer un mail →</a>
+      </div>
+      <div class="channel-card sr d2">
+        <div class="channel-icon">📞</div>
+        <h3>Téléphone</h3>
+        <p>Du lundi au vendredi, 9h30 à 17h30. Pour parler à quelqu'un directement.</p>
+        <a href="tel:+33344000000" class="channel-link">Appeler →</a>
+      </div>
+      <div class="channel-card sr d3">
+        <div class="channel-icon">💬</div>
+        <h3>Discord</h3>
+        <p>La communauté Cloud Campus. Support 7j/7, étudiants et équipe pédagogique.</p>
+        <a href="se-renseigner-et-candidater.html" class="channel-link">Rejoindre →</a>
+      </div>
+      <div class="channel-card sr d4">
+        <div class="channel-icon">📍</div>
+        <h3>En personne</h3>
+        <p>Venez nous rendre visite à Compiègne. Sur RDV de préférence.</p>
+        <a href="#adresse" class="channel-link">Voir l'adresse →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN LAYOUT -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="contact-layout">
+
+      <!-- LEFT: INFO -->
+      <div>
+
+        <!-- DISCORD -->
+        <div class="discord-card sr">
+          <div class="d-icon">💬</div>
+          <div>
+            <h4>Rejoignez-nous sur Discord</h4>
+            <p>Posez vos questions en direct, rencontrez des étudiants actuels et rejoignez la communauté Cloud Campus.</p>
+          </div>
+          <a href="se-renseigner-et-candidater.html" class="btn-discord">Rejoindre</a>
+        </div>
+
+        <!-- COORDONNÉES -->
+        <div class="info-block sr" id="adresse">
+          <h3>📍 Informations de contact</h3>
+          <div class="info-row">
+            <span class="info-icon">🏢</span>
+            <div>
+              <strong>Adresse</strong>
+              <span>8 Avenue Flandres Dunkerque<br>60200 Compiègne, Hauts-de-France</span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📧</span>
+            <div>
+              <strong>Email général</strong>
+              <span><a href="mailto:contact@cloud-campus.fr">contact@cloud-campus.fr</a></span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📧</span>
+            <div>
+              <strong>Admissions étudiants</strong>
+              <span><a href="mailto:admissions@cloud-campus.fr">admissions@cloud-campus.fr</a></span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📧</span>
+            <div>
+              <strong>Relations entreprises</strong>
+              <span><a href="mailto:entreprises@cloud-campus.fr">entreprises@cloud-campus.fr</a></span>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📞</span>
+            <div>
+              <strong>Téléphone</strong>
+              <span><a href="tel:+33344000000">03 44 XX XX XX</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="map-block sr">
+          <iframe
+            class="map-embed"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=2.808%2C49.408%2C2.832%2C49.422&layer=mapnik&marker=49.415%2C2.820"
+            title="Localisation Cloud Campus — 8 Avenue Flandres Dunkerque, Compiègne"
+            loading="lazy"
+            aria-label="Carte OpenStreetMap indiquant l'adresse de Cloud Campus à Compiègne">
+          </iframe>
+          <div class="map-label">
+            <span>📍</span>
+            <span><strong>Cloud Campus</strong> — 8 Avenue Flandres Dunkerque, 60200 Compiègne</span>
+          </div>
+        </div>
+
+        <!-- HORAIRES -->
+        <div class="info-block sr">
+          <h3>🕐 Horaires d'ouverture</h3>
+          <div class="hours-grid">
+            <div class="hour-row"><span class="day">Lundi</span><span class="time">9h30 – 17h30</span></div>
+            <div class="hour-row"><span class="day">Mardi</span><span class="time">9h30 – 17h30</span></div>
+            <div class="hour-row"><span class="day">Mercredi</span><span class="time">9h30 – 17h30</span></div>
+            <div class="hour-row"><span class="day">Jeudi</span><span class="time">9h30 – 17h30</span></div>
+            <div class="hour-row"><span class="day">Vendredi</span><span class="time">9h30 – 17h30</span></div>
+            <div class="hour-row"><span class="day">Samedi</span><span class="closed">Fermé</span></div>
+            <div class="hour-row"><span class="day">Dimanche</span><span class="closed">Fermé</span></div>
+            <div class="hour-row" style="background:var(--acc-gl);border:1px solid rgba(0,255,135,.15)">
+              <span class="day" style="color:var(--acc)">Discord</span>
+              <span class="time">7j/7</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div>
+        <div class="form-card sr">
+          <h3>Envoyer un message</h3>
+          <p class="sub">On vous répond sous 24h en semaine.</p>
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-prenom">Prénom</label>
+                <input type="text" id="c-prenom" class="form-input" placeholder="Marie" autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="c-nom">Nom</label>
+                <input type="text" id="c-nom" class="form-input" placeholder="Dupont" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" class="form-input" placeholder="marie@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="c-sujet">Sujet</label>
+              <select id="c-sujet" class="form-select">
+                <option value="">Choisir un sujet…</option>
+                <option>Question sur une formation</option>
+                <option>Financement & alternance</option>
+                <option>Processus d'admission</option>
+                <option>Recruter un alternant</option>
+                <option>Devenir formateur</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" class="form-textarea" placeholder="Décrivez votre question ou votre situation…"></textarea>
+            </div>
+            <button class="form-submit" onclick="submitContact()">Envoyer le message →</button>
+            <p class="form-note">Vos données sont utilisées uniquement pour vous répondre. Voir notre <a href="politique.html" style="color:var(--acc)">politique de confidentialité</a>.</p>
+          </div>
+          <div class="form-success" id="contactSuccess">
+            <div class="s-icon">✉️</div>
+            <h4>Message envoyé !</h4>
+            <p>Merci ! Nous vous répondrons sous <strong>24h</strong> en semaine. En attendant, rejoignez notre Discord pour une réponse plus rapide.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function submitContact() {
+  const required = ['c-prenom','c-nom','c-email','c-message'];
+  let valid = true;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.style.borderColor = '#ef4444'; valid = false; }
+    else el.style.borderColor = '';
+  });
+  if (!valid) return;
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('contactSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

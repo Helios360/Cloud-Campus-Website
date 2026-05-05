@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financement de la Formation — Alternance 100% Gratuite | Cloud Campus</title>
+<meta name="description" content="Découvrez comment financer votre formation Cloud Campus via l'alternance et les OPCOs. Zéro frais de scolarité, un salaire mensuel. Atlas, OPCO EP, Akto, et plus.">
+<link rel="canonical" href="https://cloud-campus.fr/financements">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Financement Formation Alternance — Cloud Campus">
+<meta property="og:description" content="0€ de frais de scolarité. Financement 100% via OPCO. Salaire mensuel garanti. On vous explique tout.">
+<meta property="og:url" content="https://cloud-campus.fr/financements">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Big 0€ hero */
+  .zero-block {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 60px; display: grid; grid-template-columns: auto 1fr; gap: 52px;
+    align-items: center; position: relative; overflow: hidden; margin-bottom: 24px;
+  }
+  .zero-block::before {
+    content: ''; position: absolute; top: -60px; left: -60px; width: 280px; height: 280px;
+    border-radius: 50%; background: radial-gradient(circle, var(--acc-gl2), transparent 70%);
+    pointer-events: none;
+  }
+  .zero-num {
+    font-family: var(--mono); font-size: clamp(5rem,9vw,8rem); font-weight: 700;
+    color: var(--acc); line-height: 1; text-shadow: 0 0 80px var(--acc-gl2);
+    position: relative; z-index: 1;
+  }
+  .zero-right { position: relative; z-index: 1; }
+  .zero-right h2 { font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.3; }
+  .zero-right p  { font-size: .95rem; color: var(--tx2); line-height: 1.7; max-width: 540px; }
+
+  /* Steps */
+  .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; margin-top: 32px; }
+  .steps-grid::before {
+    content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, var(--acc), var(--blue)); z-index: 0;
+  }
+  .step {
+    text-align: center; position: relative; z-index: 1; padding: 0 12px;
+  }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--acc);
+    color: #000; font-weight: 800; font-size: 1.1rem; display: grid;
+    place-items: center; margin: 0 auto 16px; font-family: var(--mono);
+    box-shadow: 0 0 0 6px var(--bg2), 0 0 0 8px var(--acc-gl);
+  }
+  .step h4 { font-size: .9rem; font-weight: 700; margin-bottom: 6px; }
+  .step p  { font-size: .78rem; color: var(--tx2); line-height: 1.5; }
+
+  /* OPCO grid */
+  .opco-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .opco-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 24px; transition: all .4s var(--ease);
+  }
+  .opco-card:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  .opco-name {
+    font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--acc);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;
+  }
+  .opco-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 8px; }
+  .opco-card p  { font-size: .82rem; color: var(--tx2); line-height: 1.6; margin-bottom: 14px; }
+  .opco-sectors { display: flex; flex-wrap: wrap; gap: 6px; }
+  .opco-sector {
+    font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: var(--r-full);
+    font-family: var(--mono); border: 1px solid var(--brd); color: var(--tx3);
+  }
+
+  /* Salary table */
+  .salary-table {
+    width: 100%; border-collapse: collapse; margin-top: 32px;
+    background: var(--card); border-radius: var(--r-xl); overflow: hidden;
+    border: 1px solid var(--brd);
+  }
+  .salary-table th {
+    background: var(--bg2); padding: 14px 20px; text-align: left;
+    font-size: .76rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--tx3); font-family: var(--mono);
+    border-bottom: 1px solid var(--brd);
+  }
+  .salary-table td {
+    padding: 14px 20px; font-size: .88rem; border-bottom: 1px solid var(--brd);
+    color: var(--tx2);
+  }
+  .salary-table tr:last-child td { border-bottom: none; }
+  .salary-table tr:hover td { background: var(--card-h); }
+  .salary-table .amt { font-family: var(--mono); font-weight: 700; color: var(--acc); }
+
+  /* Eligibility checklist */
+  .elig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .elig-item {
+    display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r);
+    transition: all .3s;
+  }
+  .elig-item:hover { border-color: var(--brd-h); }
+  .elig-check {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--acc-gl);
+    border: 1.5px solid var(--acc); display: grid; place-items: center;
+    color: var(--acc); font-size: .8rem; font-weight: 700; flex-shrink: 0;
+  }
+  .elig-item h4 { font-size: .88rem; font-weight: 700; margin-bottom: 3px; }
+  .elig-item p  { font-size: .78rem; color: var(--tx3); line-height: 1.4; }
+
+  /* Qualiopi badge */
+  .qualiopi-band {
+    background: var(--card); border: 1px solid rgba(0,255,135,.15);
+    border-radius: var(--r-xl); padding: 40px 48px;
+    display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center;
+  }
+  .quali-icon { font-size: 3.5rem; }
+  .qualiopi-band h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+  .qualiopi-band p  { font-size: .9rem; color: var(--tx2); line-height: 1.65; }
+
+  @media (max-width: 1024px) {
+    .opco-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .steps-grid::before { display: none; }
+  }
+  @media (max-width: 768px) {
+    .zero-block { grid-template-columns: 1fr; gap: 24px; }
+    .opco-grid, .elig-grid { grid-template-columns: 1fr; }
+    .qualiopi-band { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">Financement</div>
+    <h1 class="sr">Votre formation ne vous<br>coûte <span style="color:var(--acc)">pas un centime</span></h1>
+    <p class="sr">En alternance, tout est pris en charge par votre entreprise d'accueil via son OPCO. Zéro frais de scolarité. On vous explique comment ça marche.</p>
+  </div>
+</section>
+
+<!-- ZERO EUROS BLOCK -->
+<section style="padding:0 0 80px">
+  <div class="ctn">
+    <div class="zero-block sr">
+      <div class="zero-num">0€</div>
+      <div class="zero-right">
+        <h2>Aucun frais de scolarité pour l'alternant</h2>
+        <p>En contrat d'apprentissage, les frais de formation sont intégralement pris en charge par l'entreprise qui vous accueille, via son Opérateur de Compétences (OPCO). Vous ne payez rien — et vous percevez un salaire chaque mois.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section style="padding:0 0 100px" id="comment-ca-marche">
+  <div class="ctn">
+    <div class="stag sr">Le mécanisme</div>
+    <h2 class="stit sr">Comment fonctionne le financement ?</h2>
+    <p class="sdesc sr">En 4 étapes simples, de votre candidature à votre premier salaire.</p>
+    <div class="steps-grid">
+      <div class="step sr d1">
+        <div class="step-num">1</div>
+        <h4>Vous candidatez à Cloud Campus</h4>
+        <p>Dossier, entretien de motivation, test de positionnement. On évalue votre projet professionnel.</p>
+      </div>
+      <div class="step sr d2">
+        <div class="step-num">2</div>
+        <h4>On vous aide à trouver une entreprise</h4>
+        <p>Notre équipe relations entreprises vous accompagne pour décrocher votre contrat d'alternance.</p>
+      </div>
+      <div class="step sr d3">
+        <div class="step-num">3</div>
+        <h4>L'OPCO finance la formation</h4>
+        <p>L'entreprise déclare votre contrat à son OPCO, qui prend en charge les frais de scolarité directement.</p>
+      </div>
+      <div class="step sr d4">
+        <div class="step-num">4</div>
+        <h4>Vous percevez un salaire</h4>
+        <p>Dès le premier mois, vous êtes rémunéré par votre entreprise selon la grille légale de l'apprentissage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPCOS PARTENAIRES -->
+<section style="padding:0 0 100px" id="opcos">
+  <div class="ctn">
+    <div class="stag sr">OPCOs partenaires</div>
+    <h2 class="stit sr">Tous les secteurs sont couverts</h2>
+    <p class="sdesc sr">Cloud Campus travaille avec l'ensemble des OPCOs. Quel que soit le secteur d'activité de votre entreprise d'accueil, le financement est possible.</p>
+    <div class="opco-grid">
+      <div class="opco-card sr d1">
+        <div class="opco-name">ATLAS</div>
+        <h3>Services financiers & Conseil</h3>
+        <p>Couvre les entreprises des services financiers, du conseil, de l'audit et de l'assurance.</p>
+        <div class="opco-sectors"><span class="opco-sector">Banque</span><span class="opco-sector">Assurance</span><span class="opco-sector">Conseil</span></div>
+      </div>
+      <div class="opco-card sr d2">
+        <div class="opco-name">OPCO 2i</div>
+        <h3>Industrie</h3>
+        <p>Dédié aux entreprises industrielles : métallurgie, chimie, plasturgie, textile et plus.</p>
+        <div class="opco-sectors"><span class="opco-sector">Industrie</span><span class="opco-sector">Métallurgie</span><span class="opco-sector">Chimie</span></div>
+      </div>
+      <div class="opco-card sr d3">
+        <div class="opco-name">OPCO EP</div>
+        <h3>Enseignement & Formation</h3>
+        <p>Pour les organismes de formation, écoles privées et associations du secteur éducatif.</p>
+        <div class="opco-sectors"><span class="opco-sector">Formation</span><span class="opco-sector">Éducation</span><span class="opco-sector">Associatif</span></div>
+      </div>
+      <div class="opco-card sr d4">
+        <div class="opco-name">AKTO</div>
+        <h3>Services à forte intensité de main-d'œuvre</h3>
+        <p>Commerce de détail, propreté, sécurité, services à la personne et hôtellerie-restauration.</p>
+        <div class="opco-sectors"><span class="opco-sector">Commerce</span><span class="opco-sector">Sécurité</span><span class="opco-sector">Hôtellerie</span></div>
+      </div>
+      <div class="opco-card sr d5">
+        <div class="opco-name">AFDAS</div>
+        <h3>Culture, médias & sport</h3>
+        <p>Secteurs culturels, médias, audiovisuel, sport et loisirs.</p>
+        <div class="opco-sectors"><span class="opco-sector">Médias</span><span class="opco-sector">Culture</span><span class="opco-sector">Sport</span></div>
+      </div>
+      <div class="opco-card sr d1">
+        <div class="opco-name">OPCO MM</div>
+        <h3>Mobilités & Transports</h3>
+        <p>Automobile, transport routier, logistique, navigation et activités annexes.</p>
+        <div class="opco-sectors"><span class="opco-sector">Transport</span><span class="opco-sector">Logistique</span><span class="opco-sector">Auto</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRILLE DE SALAIRE -->
+<section style="padding:0 0 100px" id="salaire">
+  <div class="ctn">
+    <div class="stag sr">Rémunération</div>
+    <h2 class="stit sr">Combien gagnez-vous en alternance ?</h2>
+    <p class="sdesc sr">La rémunération est calculée en pourcentage du SMIC selon votre âge et votre année de formation. Voici les montants indicatifs pour 2026.</p>
+    <table class="salary-table sr" aria-label="Grille de rémunération apprentissage 2026">
+      <thead>
+        <tr>
+          <th>Année de formation</th>
+          <th>Moins de 18 ans</th>
+          <th>18 à 25 ans</th>
+          <th>26 ans et plus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1ère année</td>
+          <td class="amt">~472 €/mois</td>
+          <td class="amt">~787 €/mois</td>
+          <td class="amt">~1 246 €/mois</td>
+        </tr>
+        <tr>
+          <td>2ème année</td>
+          <td class="amt">~551 €/mois</td>
+          <td class="amt">~905 €/mois</td>
+          <td class="amt">~1 246 €/mois</td>
+        </tr>
+        <tr>
+          <td>3ème année (Bac+5)</td>
+          <td class="amt">~709 €/mois</td>
+          <td class="amt">~1 062 €/mois</td>
+          <td class="amt">~1 246 €/mois</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--tx3);margin-top:12px">* Montants indicatifs basés sur le SMIC 2026. La rémunération réelle peut être supérieure selon la convention collective de l'entreprise.</p>
+  </div>
+</section>
+
+<!-- ELIGIBILITÉ -->
+<section style="padding:0 0 100px" id="eligibilite">
+  <div class="ctn">
+    <div class="stag sr">Éligibilité</div>
+    <h2 class="stit sr">Qui peut bénéficier de l'alternance ?</h2>
+    <p class="sdesc sr">Le contrat d'apprentissage est ouvert à une grande majorité de profils.</p>
+    <div class="elig-grid">
+      <div class="elig-item sr d1">
+        <div class="elig-check">✓</div>
+        <div>
+          <h4>Avoir entre 16 et 29 ans révolus</h4>
+          <p>La limite d'âge peut être repoussée à 35 ans pour les travailleurs handicapés ou en cas de projet de création d'entreprise.</p>
+        </div>
+      </div>
+      <div class="elig-item sr d2">
+        <div class="elig-check">✓</div>
+        <div>
+          <h4>Avoir le niveau requis pour entrer en formation</h4>
+          <p>Bac pour les formations Bac+2/3/4, Bac+3 ou équivalent pour le Bac+5.</p>
+        </div>
+      </div>
+      <div class="elig-item sr d3">
+        <div class="elig-check">✓</div>
+        <div>
+          <h4>Trouver une entreprise d'accueil</h4>
+          <p>Notre équipe vous accompagne pour trouver votre contrat parmi nos 500+ entreprises partenaires.</p>
+        </div>
+      </div>
+      <div class="elig-item sr d4">
+        <div class="elig-check">✓</div>
+        <div>
+          <h4>Signer un contrat d'apprentissage</h4>
+          <p>Un contrat de travail en bonne et due forme, avec toutes les protections du Code du travail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIOPI -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="qualiopi-band sr">
+      <div class="quali-icon">✅</div>
+      <div>
+        <h3>Cloud Campus est certifié Qualiopi</h3>
+        <p>La certification Qualiopi est obligatoire pour accéder aux financements publics et mutualisés. Elle atteste de la qualité des processus de formation et garantit aux entreprises et aux OPCOs que leur investissement est entre de bonnes mains. Cloud Campus est certifié pour les actions de formation et les actions de formation par apprentissage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="ctn">
+    <h2 class="sr">Une question sur le <span style="color:var(--acc)">financement</span> ?</h2>
+    <p class="sr">Notre équipe répond à toutes vos questions et vous accompagne dans les démarches de A à Z.</p>
+    <div class="cta-btns sr">
+      <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+      <a href="nous-contacter.html" class="btn-ol">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

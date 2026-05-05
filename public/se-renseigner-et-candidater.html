@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidater — Admissions Rentrée 2026 | Cloud Campus Compiègne</title>
+<meta name="description" content="Candidatez à Cloud Campus pour la rentrée septembre 2026. Développeur Full Stack, Expert SI en alternance. Dossier gratuit, réponse sous 48h.">
+<link rel="canonical" href="https://cloud-campus.fr/se-renseigner-et-candidater">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Candidater à Cloud Campus — Rentrée 2026">
+<meta property="og:description" content="Dossier gratuit, entretien, réponse sous 48h. Formations en alternance Bac+2 à Bac+5.">
+<meta property="og:url" content="https://cloud-campus.fr/se-renseigner-et-candidater">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Urgency bar */
+  .urgency {
+    display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px;
+    border-radius: var(--r-full); background: rgba(245,158,11,.08);
+    border: 1px solid rgba(245,158,11,.2); font-size: .84rem; font-weight: 600;
+    color: var(--amber); margin-bottom: 28px; font-family: var(--mono);
+  }
+  .urgency .pulse {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--amber);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(245,158,11,.4); }
+    50%      { box-shadow: 0 0 0 6px rgba(245,158,11,0); }
+  }
+
+  /* Main layout */
+  .admission-layout { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; }
+
+  /* Steps */
+  .steps-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 52px; }
+  .step-item { display: grid; grid-template-columns: 48px 1fr; gap: 20px; position: relative; }
+  .step-item:not(:last-child)::after {
+    content: ''; position: absolute; left: 23px; top: 50px; bottom: -20px;
+    width: 2px; background: var(--brd); z-index: 0;
+  }
+  .step-dot {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--card);
+    border: 2px solid var(--acc); display: grid; place-items: center;
+    font-family: var(--mono); font-weight: 700; font-size: .9rem; color: var(--acc);
+    position: relative; z-index: 1; flex-shrink: 0; transition: all .3s;
+  }
+  .step-item:hover .step-dot { background: var(--acc); color: #000; }
+  .step-body { padding: 10px 0 36px; }
+  .step-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .step-body p  { font-size: .86rem; color: var(--tx2); line-height: 1.6; }
+  .step-tag {
+    display: inline-block; margin-top: 8px; padding: 3px 10px;
+    border-radius: var(--r-full); font-size: .7rem; font-weight: 700;
+    font-family: var(--mono); background: var(--acc-gl);
+    border: 1px solid rgba(0,255,135,.2); color: var(--acc);
+  }
+
+  /* Formation picker */
+  .form-picker { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pick-card {
+    display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+    background: var(--card); border: 2px solid var(--brd); border-radius: var(--r);
+    cursor: pointer; transition: all .3s; position: relative;
+  }
+  .pick-card:hover { border-color: var(--acc); }
+  .pick-card.selected { border-color: var(--acc); background: var(--acc-gl); }
+  .pick-card input[type="radio"] { display: none; }
+  .pick-radio {
+    width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--brd);
+    display: grid; place-items: center; flex-shrink: 0; transition: all .3s;
+  }
+  .pick-card.selected .pick-radio { border-color: var(--acc); background: var(--acc); }
+  .pick-card.selected .pick-radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #000; }
+  .pick-info { flex: 1; }
+  .pick-info strong { font-size: .9rem; display: block; }
+  .pick-info span { font-size: .76rem; color: var(--tx3); font-family: var(--mono); }
+  .pick-lvl {
+    font-size: .68rem; font-weight: 700; padding: 3px 9px; border-radius: var(--r-full);
+    font-family: var(--mono); border: 1px solid var(--brd); color: var(--tx3);
+  }
+
+  /* Application form card */
+  .form-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 36px; position: sticky; top: 90px;
+  }
+  .form-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+  .form-card .sub { font-size: .82rem; color: var(--tx2); margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: .78rem; font-weight: 600; color: var(--tx2); margin-bottom: 6px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 1px; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; padding: 12px 14px; background: var(--bg2);
+    border: 1px solid var(--brd); border-radius: var(--r); color: var(--tx);
+    font-size: .88rem; font-family: var(--font); outline: none; transition: border-color .3s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--acc); }
+  .form-input::placeholder, .form-textarea::placeholder { color: var(--tx3); }
+  .form-select { appearance: none; cursor: pointer; }
+  [data-theme="light"] .form-input,
+  [data-theme="light"] .form-select,
+  [data-theme="light"] .form-textarea { background: var(--bg3); }
+  .form-textarea { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-submit {
+    width: 100%; padding: 14px; border-radius: var(--r-full); background: var(--acc);
+    color: #000; font-weight: 700; font-size: .95rem; border: none; cursor: pointer;
+    font-family: var(--font); transition: all .35s var(--ease); margin-top: 8px;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px var(--acc-gl2); }
+  .form-note { font-size: .72rem; color: var(--tx3); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+  /* Success state */
+  .form-success {
+    display: none; text-align: center; padding: 20px 0;
+  }
+  .form-success .s-icon { font-size: 3rem; margin-bottom: 14px; }
+  .form-success h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .form-success p { font-size: .86rem; color: var(--tx2); line-height: 1.6; }
+
+  /* Why now section */
+  .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .why-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 28px 22px; text-align: center; transition: all .4s var(--ease);
+  }
+  .why-card:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  .why-card .w-icon { font-size: 2rem; margin-bottom: 12px; }
+  .why-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; }
+  .why-card p  { font-size: .8rem; color: var(--tx2); line-height: 1.5; }
+
+  /* JPO banner */
+  .jpo-banner {
+    background: linear-gradient(135deg, var(--bg2) 0%, var(--card) 100%);
+    border: 1px solid var(--brd); border-radius: var(--r-xl); padding: 40px 48px;
+    display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .jpo-banner::before {
+    content: ''; position: absolute; right: -60px; top: -60px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, var(--acc-gl2), transparent 70%);
+  }
+  .jpo-banner h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+  .jpo-banner p  { font-size: .88rem; color: var(--tx2); line-height: 1.6; }
+  .jpo-date {
+    font-family: var(--mono); font-size: .72rem; color: var(--acc); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;
+  }
+
+  @media (max-width: 1024px) {
+    .admission-layout { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .jpo-banner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .why-grid, .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — Rentrée Septembre 2026 · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="urgency sr"><span class="pulse"></span> Rentrée Septembre 2026 — Places limitées</div>
+    <h1 class="sr">Candidatez à<br><span style="color:var(--acc)">Cloud Campus</span></h1>
+    <p class="sr">Dossier gratuit, entretien de motivation, réponse sous 48h. Votre prochaine aventure professionnelle commence ici.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="admission-layout">
+
+      <!-- LEFT: PROCESS + INFO -->
+      <div>
+        <div class="stag sr">Processus d'admission</div>
+        <h2 class="stit sr">Comment ça se passe ?</h2>
+        <p style="font-size:.92rem;color:var(--tx2);line-height:1.7;margin-bottom:40px" class="sr">Candidater à Cloud Campus est simple et rapide. Voici les 4 étapes qui vous mènent de votre dossier à votre premier jour de formation.</p>
+
+        <div class="steps-list">
+          <div class="step-item sr d1">
+            <div class="step-dot">1</div>
+            <div class="step-body">
+              <h3>Soumettez votre dossier</h3>
+              <p>Remplissez le formulaire ci-contre avec vos informations de base et votre choix de formation. Aucun document n'est requis à ce stade.</p>
+              <span class="step-tag">⚡ 5 minutes</span>
+            </div>
+          </div>
+          <div class="step-item sr d2">
+            <div class="step-dot">2</div>
+            <div class="step-body">
+              <h3>Entretien de motivation</h3>
+              <p>Un conseiller pédagogique vous contacte sous 48h pour un entretien de 30 minutes. On évalue votre projet professionnel, pas vos diplômes.</p>
+              <span class="step-tag">📞 30 min en visio</span>
+            </div>
+          </div>
+          <div class="step-item sr d3">
+            <div class="step-dot">3</div>
+            <div class="step-body">
+              <h3>Test de positionnement</h3>
+              <p>Un court test en ligne pour évaluer votre niveau et personnaliser votre parcours. Pas de bonne ou mauvaise réponse — c'est un outil pédagogique.</p>
+              <span class="step-tag">🧠 20 min en ligne</span>
+            </div>
+          </div>
+          <div class="step-item sr d4">
+            <div class="step-dot">4</div>
+            <div class="step-body">
+              <h3>Réponse & accompagnement</h3>
+              <p>Vous recevez notre décision sous 48h. Si vous êtes admis, notre équipe démarre immédiatement la recherche de votre alternance.</p>
+              <span class="step-tag">✅ Réponse sous 48h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHOISIR SA FORMATION -->
+        <div class="stag sr" style="margin-top:52px">Votre formation</div>
+        <h2 class="stit sr">Quelle formation vous correspond ?</h2>
+
+        <div class="form-picker sr">
+          <label class="pick-card selected" onclick="selectPick(this)">
+            <input type="radio" name="formation" value="dev" checked>
+            <div class="pick-radio"></div>
+            <div class="pick-info">
+              <strong>💻 Développeur Web Full Stack</strong>
+              <span>React, Node.js, SQL, IA — Bac+3/4</span>
+            </div>
+            <span class="pick-lvl">Bac+3/4</span>
+          </label>
+          <label class="pick-card" onclick="selectPick(this)">
+            <input type="radio" name="formation" value="cyber">
+            <div class="pick-radio"></div>
+            <div class="pick-info">
+              <strong>🔒 Expert en Système d'Information</strong>
+              <span>Cybersécurité, Cloud, SI — Bac+5</span>
+            </div>
+            <span class="pick-lvl">Bac+5</span>
+          </label>
+
+        </div>
+
+        <!-- JPO BANNER -->
+        <div class="jpo-banner sr" style="margin-top:52px">
+          <div>
+            <div class="jpo-date">📅 Prochain événement</div>
+            <h3>Journée Portes Ouvertes</h3>
+            <p>Visitez nos locaux, rencontrez les formateurs, discutez avec des étudiants actuels et posez toutes vos questions en direct. Gratuit et sans engagement.</p>
+          </div>
+          <a href="nous-contacter.html" class="btn-gl">S'inscrire →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM CARD -->
+      <div>
+        <div class="form-card sr">
+          <h3>Déposer ma candidature</h3>
+          <p class="sub">Gratuit · Sans engagement · Réponse sous 48h</p>
+
+          <div id="admissionForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" class="form-input" placeholder="Marie" autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" class="form-input" placeholder="Dupont" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-input" placeholder="marie.dupont@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" class="form-input" placeholder="06 12 34 56 78" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="formation-select">Formation souhaitée</label>
+              <select id="formation-select" class="form-select">
+                <option value="">Choisir une formation…</option>
+                <option value="dev">Développeur Web Full Stack (Bac+3/4)</option>
+                <option value="cyber">Expert en Système d'Information (Bac+5)</option>
+
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="niveau">Niveau d'études actuel</label>
+              <select id="niveau" class="form-select">
+                <option value="">Sélectionner…</option>
+                <option>Bac ou équivalent</option>
+                <option>Bac+1</option>
+                <option>Bac+2</option>
+                <option>Bac+3</option>
+                <option>Bac+4 ou plus</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="motivation">Votre motivation (optionnel)</label>
+              <textarea id="motivation" class="form-textarea" placeholder="Parlez-nous de votre projet professionnel…"></textarea>
+            </div>
+            <button class="form-submit" onclick="submitForm()">Envoyer ma candidature →</button>
+            <p class="form-note">En soumettant ce formulaire, vous acceptez d'être recontacté par l'équipe Cloud Campus. Aucun spam, promis.</p>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="s-icon">🎉</div>
+            <h4>Candidature reçue !</h4>
+            <p>Merci pour votre intérêt. Un conseiller pédagogique vous contactera sous <strong>48h</strong> pour organiser votre entretien de motivation.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="stag sr">Pourquoi maintenant</div>
+    <h2 class="stit sr">Ne tardez pas à candidater</h2>
+    <div class="why-grid">
+      <div class="why-card sr d1">
+        <div class="w-icon">🎯</div>
+        <h4>Places limitées par promotion</h4>
+        <p>Chaque promotion est volontairement petite pour garantir un suivi individualisé. Les places partent vite.</p>
+      </div>
+      <div class="why-card sr d2">
+        <div class="w-icon">🤝</div>
+        <h4>Plus tôt vous candidatez, mieux vous trouverez</h4>
+        <p>La recherche d'alternance prend du temps. Candidater en avance vous donne accès aux meilleures offres partenaires.</p>
+      </div>
+      <div class="why-card sr d3">
+        <div class="w-icon">💶</div>
+        <h4>Salaire dès la rentrée</h4>
+        <p>En alternance, vous êtes rémunéré dès septembre. Plus tôt vous êtes admis, plus tôt votre salaire démarre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function selectPick(el) {
+  document.querySelectorAll('.pick-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  const val = el.querySelector('input').value;
+  const map = { dev: '0', cyber: '1' };
+  const sel = document.getElementById('formation-select');
+  if (sel && map[val] !== undefined) sel.selectedIndex = +map[val] + 1;
+}
+
+function submitForm() {
+  const required = ['prenom','nom','email','tel'];
+  let valid = true;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.style.borderColor = '#ef4444'; valid = false; }
+    else el.style.borderColor = '';
+  });
+  if (!valid) return;
+  document.getElementById('admissionForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>

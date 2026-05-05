@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Questions Fréquentes | Cloud Campus Compiègne</title>
+<meta name="description" content="Toutes les réponses à vos questions sur Cloud Campus : formations, alternance, financement, admission, pédagogie et vie étudiante.">
+<link rel="canonical" href="https://cloud-campus.fr/FAQ">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="FAQ Cloud Campus — Toutes vos questions">
+<meta property="og:description" content="Alternance, financement, admissions, pédagogie — on répond à tout.">
+<meta property="og:url" content="https://cloud-campus.fr/FAQ">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Les formations Cloud Campus sont-elles gratuites ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, en alternance toutes nos formations sont 100% financées par l'entreprise d'accueil via son OPCO. L'alternant ne paie aucun frais de scolarité et perçoit un salaire mensuel." } },
+    { "@type": "Question", "name": "Quelles formations propose Cloud Campus ?", "acceptedAnswer": { "@type": "Answer", "text": "Cloud Campus propose deux parcours : Développeur Web Full Stack (Bac+3/4) et Expert en Système d'Information et Sécurité (Bac+5). Toutes intègrent l'intelligence artificielle." } },
+    { "@type": "Question", "name": "Cloud Campus aide-t-il à trouver une alternance ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, 92% de nos étudiants trouvent leur alternance grâce à notre accompagnement : chargés de relations entreprises, jobs dating, coaching CV et entretiens, et +500 entreprises partenaires." } },
+    { "@type": "Question", "name": "Les cours sont-ils en présentiel ou à distance ?", "acceptedAnswer": { "@type": "Answer", "text": "Cloud Campus propose un format hybride : présentiel dans notre centre de Compiègne et télé-présentiel en full remote sur Discord selon les formations." } },
+    { "@type": "Question", "name": "Quelle est la durée des formations ?", "acceptedAnswer": { "@type": "Answer", "text": "Les formations durent 2 ans : 2 ans pour le Développeur Full Stack (Bac+3/4) et 2 ans pour l'Expert en SI (Bac+5 en 2 ans après un Bac+3)." } },
+    { "@type": "Question", "name": "Cloud Campus est-il certifié Qualiopi ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, Cloud Campus est certifié Qualiopi pour les actions de formation et les actions de formation par apprentissage." } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .page-hero {
+    padding: clamp(80px,10vw,130px) 0 clamp(60px,8vw,100px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 20px; }
+  .page-hero p  { font-size: 1.1rem; color: var(--tx2); line-height: 1.75; }
+
+  /* Search bar */
+  .faq-search-wrap { max-width: 560px; margin: 0 auto 60px; position: relative; }
+  .faq-search {
+    width: 100%; padding: 16px 20px 16px 52px;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-full);
+    color: var(--tx); font-size: .95rem; font-family: var(--font);
+    outline: none; transition: border-color .3s;
+  }
+  .faq-search:focus { border-color: var(--acc); }
+  .faq-search::placeholder { color: var(--tx3); }
+  .faq-search-icon {
+    position: absolute; left: 18px; top: 50%; translate: 0 -50%;
+    color: var(--tx3); font-size: 1.1rem; pointer-events: none;
+  }
+
+  /* Category tabs */
+  .faq-cats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+  .faq-cat {
+    padding: 8px 18px; border-radius: var(--r-full); font-size: .82rem; font-weight: 600;
+    border: 1px solid var(--brd); color: var(--tx2); background: var(--card);
+    cursor: pointer; transition: all .25s; font-family: var(--font);
+  }
+  .faq-cat:hover, .faq-cat.active { border-color: var(--acc); color: var(--acc); background: var(--acc-gl); }
+
+  /* FAQ layout */
+  .faq-layout { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start; }
+  .faq-sidebar { position: sticky; top: 90px; }
+  .faq-sidebar-title { font-size: .7rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--tx3); font-family: var(--mono); font-weight: 600; margin-bottom: 12px; }
+  .faq-sidebar nav { display: flex; flex-direction: column; gap: 2px; }
+  .faq-sidebar a {
+    padding: 9px 14px; border-radius: var(--r); font-size: .86rem; font-weight: 500;
+    color: var(--tx2); transition: all .25s; display: flex; align-items: center; gap: 8px;
+  }
+  .faq-sidebar a:hover { background: var(--acc-gl); color: var(--acc); }
+  .faq-sidebar a.active { background: var(--acc-gl); color: var(--acc); font-weight: 600; }
+
+  /* FAQ sections */
+  .faq-section { margin-bottom: 52px; }
+  .faq-section-title {
+    font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--brd);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .faq-section-title .ico { font-size: 1.3rem; }
+
+  .faq-item { border-bottom: 1px solid var(--brd); }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 0; cursor: pointer; font-weight: 600; font-size: .92rem;
+    transition: color .3s; gap: 16px;
+  }
+  .faq-q:hover { color: var(--acc); }
+  .faq-q .arrow { font-size: 1.1rem; transition: transform .4s var(--ease); color: var(--tx3); flex-shrink: 0; }
+  .faq-item.open .faq-q .arrow { transform: rotate(45deg); color: var(--acc); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .5s var(--ease), padding .5s var(--ease);
+    font-size: .88rem; color: var(--tx2); line-height: 1.75;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+  .faq-a a { color: var(--acc); text-decoration: underline; }
+
+  /* Still need help */
+  .help-card {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 40px; text-align: center; margin-top: 52px;
+  }
+  .help-card .h-icon { font-size: 2.5rem; margin-bottom: 14px; }
+  .help-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .help-card p { font-size: .88rem; color: var(--tx2); margin-bottom: 24px; line-height: 1.65; }
+  .help-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 900px) {
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-sidebar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="announce" role="banner">
+  🔥 Inscriptions ouvertes — <a href="se-renseigner-et-candidater.html">Rentrée Septembre 2026</a> · Places limitées
+</div>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          
+        </div>
+      </div>
+      <a href="financements.html" class="nl">Financement</a>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="ctn page-hero-inner">
+    <div class="stag sr">FAQ</div>
+    <h1 class="sr">Toutes les réponses à<br>vos <span style="color:var(--acc)">questions</span></h1>
+    <p class="sr">Formations, alternance, financement, admissions, vie étudiante — on a tout prévu. Et si vous ne trouvez pas, on est là.</p>
+    <div class="faq-search-wrap sr">
+      <span class="faq-search-icon">🔍</span>
+      <input type="search" class="faq-search" placeholder="Rechercher une question…" id="faqSearch" aria-label="Rechercher dans la FAQ">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ CONTENT -->
+<section style="padding:0 0 100px">
+  <div class="ctn">
+    <div class="faq-layout">
+
+      <!-- SIDEBAR NAV -->
+      <aside class="faq-sidebar" aria-label="Navigation FAQ">
+        <div class="faq-sidebar-title">Catégories</div>
+        <nav>
+          <a href="#formations" class="active">📚 Formations</a>
+          <a href="#alternance">🔄 Alternance</a>
+          <a href="#financement">💶 Financement</a>
+          <a href="#admissions">📝 Admissions</a>
+          <a href="#pedagogie">🎯 Pédagogie</a>
+          <a href="#vie-etudiante">🎓 Vie étudiante</a>
+          <a href="#entreprises">🏢 Entreprises</a>
+        </nav>
+      </aside>
+
+      <!-- FAQ QUESTIONS -->
+      <div id="faqContent">
+
+        <!-- FORMATIONS -->
+        <div class="faq-section" id="formations">
+          <div class="faq-section-title"><span class="ico">📚</span> Formations</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelles formations propose Cloud Campus ?<span class="arrow">+</span></div>
+            <div class="faq-a">Cloud Campus propose deux parcours en alternance : <a href="formation-dev-web.html">Développeur Web Full Stack</a> (Bac+3/4) et <a href="chef-de-projet-cyber.html">Expert en Système d'Information et Sécurité</a> (Bac+5). Toutes intègrent l'intelligence artificielle comme outil de travail.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la durée des formations ?<span class="arrow">+</span></div>
+            <div class="faq-a">Toutes nos formations durent 2 ans : Développeur Full Stack (Bac+3/4) et Expert en SI (Bac+5 en 2 ans après un Bac+3).</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les titres sont-ils reconnus par l'État ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui. Les titres Développeur Full Stack et Expert en SI sont inscrits au Répertoire National des Certifications Professionnelles (RNCP), reconnus par l'État au niveau Bac+3/4 et Bac+5.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Y a-t-il des prérequis techniques pour entrer en développement ?<span class="arrow">+</span></div>
+            <div class="faq-a">Non, aucune expérience de code n'est requise pour entrer en Développeur Full Stack. On évalue votre motivation, votre logique et votre projet professionnel — pas vos connaissances techniques préalables.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on continuer en Bac+5 après le Bac+3/4 Dev Full Stack ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, les diplômés du parcours Développeur Full Stack peuvent candidater à la formation Expert en SI pour valider un Bac+5 en 2 ans supplémentaires, toujours en alternance.</div>
+          </div>
+        </div>
+
+        <!-- ALTERNANCE -->
+        <div class="faq-section" id="alternance">
+          <div class="faq-section-title"><span class="ico">🔄</span> Alternance</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud Campus aide-t-il à trouver une entreprise d'alternance ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, c'est l'un de nos points forts. 92% de nos étudiants trouvent leur alternance grâce à notre équipe de chargés de relations entreprises, nos jobs datings, notre coaching CV & entretiens et notre réseau de +500 entreprises partenaires.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quel est le rythme d'alternance ?<span class="arrow">+</span></div>
+            <div class="faq-a">Le rythme standard est de 3 semaines en entreprise pour 1 semaine en formation. Ce rythme peut varier légèrement selon les formations et les périodes.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle différence entre contrat d'apprentissage et contrat de professionnalisation ?<span class="arrow">+</span></div>
+            <div class="faq-a">Cloud Campus privilégie le contrat d'apprentissage, qui offre une meilleure rémunération et des avantages fiscaux pour les entreprises. Le contrat de professionnalisation peut être envisagé dans certains cas spécifiques — contactez-nous pour en discuter.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je faire mon alternance à distance ou dans une autre ville ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, votre entreprise d'alternance peut être située n'importe où en France. Pour les cours, vous pouvez opter pour le format télé-présentiel (full remote sur Discord) si vous ne pouvez pas vous déplacer à Compiègne.</div>
+          </div>
+        </div>
+
+        <!-- FINANCEMENT -->
+        <div class="faq-section" id="financement">
+          <div class="faq-section-title"><span class="ico">💶</span> Financement</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les formations sont-elles vraiment gratuites ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, totalement. En alternance, les frais de formation sont pris en charge par l'entreprise d'accueil via son OPCO. L'alternant ne paie rien — ni à l'inscription, ni en cours de formation, ni à la fin.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Qu'est-ce qu'un OPCO ?<span class="arrow">+</span></div>
+            <div class="faq-a">Un OPCO (Opérateur de Compétences) est un organisme chargé de financer la formation professionnelle des entreprises de son secteur. Il collecte les contributions des employeurs et les redistribue pour financer les formations en alternance. Cloud Campus travaille avec tous les OPCOs (Atlas, OPCO EP, Akto, AFDAS, OPCO 2i, etc.).</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Combien gagne-t-on en alternance ?<span class="arrow">+</span></div>
+            <div class="faq-a">La rémunération dépend de votre âge et de votre année de formation. À titre indicatif, entre 18 et 25 ans, vous percevez entre 787€ et 1 062€ brut/mois selon l'année. Consultez notre <a href="financements.html">page financement</a> pour la grille complète.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud Campus est-il certifié Qualiopi ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, Cloud Campus est certifié Qualiopi pour les actions de formation et les actions de formation par apprentissage. Cette certification est obligatoire pour accéder aux financements publics et mutualisés.</div>
+          </div>
+        </div>
+
+        <!-- ADMISSIONS -->
+        <div class="faq-section" id="admissions">
+          <div class="faq-section-title"><span class="ico">📝</span> Admissions</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment se déroule le processus d'admission ?<span class="arrow">+</span></div>
+            <div class="faq-a">Le processus se déroule en 3 étapes : (1) soumission de votre dossier en ligne, (2) entretien de motivation avec un conseiller pédagogique, (3) test de positionnement pour évaluer votre niveau et adapter votre accompagnement. Une réponse est donnée sous 48h.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quand ouvrent les inscriptions ?<span class="arrow">+</span></div>
+            <div class="faq-a">Les inscriptions sont ouvertes toute l'année pour la rentrée de septembre. Nous recommandons de candidater au plus tôt (dès janvier) pour maximiser vos chances de trouver une bonne alternance.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quel niveau est requis pour intégrer chaque formation ?<span class="arrow">+</span></div>
+            <div class="faq-a">Développeur Full Stack : niveau Bac (toutes filières, aucune expérience code requise). Expert en SI : niveau Bac+3 minimum en informatique ou SI.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on candidater si on est déjà en emploi ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui. Si vous êtes en emploi et souhaitez vous reconvertir, l'alternance est possible via un contrat de professionnalisation ou via un CPF. Contactez-nous pour étudier votre situation personnelle.</div>
+          </div>
+        </div>
+
+        <!-- PEDAGOGIE -->
+        <div class="faq-section" id="pedagogie">
+          <div class="faq-section-title"><span class="ico">🎯</span> Pédagogie</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les cours sont-ils en présentiel ou à distance ?<span class="arrow">+</span></div>
+            <div class="faq-a">Les deux. Cloud Campus propose un format hybride : présentiel dans notre centre de Compiègne et télé-présentiel en full remote sur Discord. Vous choisissez selon vos contraintes.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les cours sont-ils enregistrés ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, les sessions en télé-présentiel sont enregistrées et disponibles en replay sur la plateforme pédagogique pendant toute la durée de la formation.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">L'IA est-elle vraiment intégrée dans les cours ?<span class="arrow">+</span></div>
+            <div class="faq-a">Absolument. L'IA n'est pas un cours à part — elle est utilisée comme outil de travail dans chaque module. Que vous soyez développeur, expert sécurité ou commercial, vous apprenez à utiliser l'IA pour être plus efficace dans votre métier.</div>
+          </div>
+        </div>
+
+        <!-- VIE ÉTUDIANTE -->
+        <div class="faq-section" id="vie-etudiante">
+          <div class="faq-section-title"><span class="ico">🎓</span> Vie étudiante</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Y a-t-il un accompagnement au logement ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, notre service étudiant vous aide à trouver un logement à Compiègne et peut vous orienter vers Action Logement pour bénéficier d'aides financières à l'installation.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Y a-t-il des événements organisés par l'école ?<span class="arrow">+</span></div>
+            <div class="faq-a">Oui, Cloud Campus organise régulièrement des MasterClass avec des professionnels, des jobs datings, des afterworks entre étudiants et des voyages à l'étranger pour certaines promotions.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment contacter l'équipe en cas de problème ?<span class="arrow">+</span></div>
+            <div class="faq-a">Notre équipe est disponible 7j/7 sur Discord pour les questions pédagogiques, et par email ou téléphone pour les questions administratives. Vous n'êtes jamais seul.</div>
+          </div>
+        </div>
+
+        <!-- ENTREPRISES -->
+        <div class="faq-section" id="entreprises">
+          <div class="faq-section-title"><span class="ico">🏢</span> Entreprises</div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quels avantages pour une entreprise qui recrute un alternant Cloud Campus ?<span class="arrow">+</span></div>
+            <div class="faq-a">Recruter un alternant Cloud Campus, c'est intégrer un profil formé aux dernières technologies avec une approche pratique. L'entreprise bénéficie d'aides à l'embauche (jusqu'à 6 000€ la 1ère année), d'une exonération partielle de charges et d'un financement des frais de formation via l'OPCO.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment recruter un alternant Cloud Campus ?<span class="arrow">+</span></div>
+            <div class="faq-a">Rendez-vous sur notre page <a href="recruter-un-alternant.html">Recruter un alternant</a> pour déposer votre offre ou contacter notre équipe relations entreprises. Nous organisons également des jobs datings réguliers.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">L'entreprise doit-elle être à Compiègne ?<span class="arrow">+</span></div>
+            <div class="faq-a">Non. Vos alternants peuvent suivre les cours en télé-présentiel et travailler depuis n'importe quelle ville en France. Nous travaillons avec des entreprises sur toute la France.</div>
+          </div>
+        </div>
+
+        <!-- STILL NEED HELP -->
+        <div class="help-card sr">
+          <div class="h-icon">💬</div>
+          <h3>Vous n'avez pas trouvé votre réponse ?</h3>
+          <p>Notre équipe répond à toutes vos questions, généralement sous 24h en semaine.</p>
+          <div class="help-btns">
+            <a href="nous-contacter.html" class="btn-gl">Nous contacter →</a>
+            <a href="se-renseigner-et-candidater.html" class="btn-ol">Prendre RDV</a>
+          </div>
+        </div>
+
+      </div><!-- end faqContent -->
+    </div><!-- end faq-layout -->
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
+        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* ── FAQ LIVE SEARCH ── */
+const searchInput = document.getElementById('faqSearch');
+searchInput.addEventListener('input', function () {
+  const q = this.value.toLowerCase().trim();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? '' : 'none';
+  });
+  document.querySelectorAll('.faq-section').forEach(section => {
+    const visible = [...section.querySelectorAll('.faq-item')].some(i => i.style.display !== 'none');
+    section.style.display = visible ? '' : 'none';
+  });
+});
+
+/* ── SIDEBAR ACTIVE STATE ON SCROLL ── */
+const sections = document.querySelectorAll('.faq-section');
+const sideLinks = document.querySelectorAll('.faq-sidebar a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  sideLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
