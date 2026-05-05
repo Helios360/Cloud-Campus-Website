@@ -13,11 +13,8 @@
     { t: 'métiers',     c: false },
     { t: 'du',          c: false },
     { t: 'digital',     c: true  },
-    { t: 'et',          c: false },
-    { t: 'du',          c: false },
-    { t: 'commerce',    c: true  },
     { t: 'en',          c: false },
-    { t: 'alternance',  c: false },
+    { t: 'alternance',  c: true },
   ];
 
   h1.innerHTML = words.map((w, i) => {

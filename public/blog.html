@@ -135,27 +135,6 @@
   }
   .tag-pill:hover { border-color: var(--acc); color: var(--acc); background: var(--acc-gl); }
 
-  .newsletter-card {
-    background: var(--acc-gl); border: 1px solid rgba(0,255,135,.2);
-    border-radius: var(--r-xl); padding: 24px;
-  }
-  .newsletter-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: 6px; }
-  .newsletter-card p  { font-size: .78rem; color: var(--tx2); line-height: 1.5; margin-bottom: 14px; }
-  .nl-input-wrap { display: flex; gap: 8px; }
-  .nl-input {
-    flex: 1; padding: 10px 14px; background: var(--bg2); border: 1px solid var(--brd);
-    border-radius: var(--r-full); color: var(--tx); font-size: .82rem; font-family: var(--font);
-    outline: none; transition: border-color .3s; min-width: 0;
-  }
-  .nl-input:focus { border-color: var(--acc); }
-  .nl-input::placeholder { color: var(--tx3); }
-  .nl-btn {
-    padding: 10px 18px; border-radius: var(--r-full); background: var(--acc);
-    color: #000; font-weight: 700; font-size: .8rem; border: none; cursor: pointer;
-    font-family: var(--font); white-space: nowrap; transition: all .3s;
-  }
-  .nl-btn:hover { transform: scale(1.04); }
-
   /* Load more */
   .load-more-wrap { text-align: center; margin-top: 36px; }
 
@@ -260,38 +239,10 @@
       <!-- SIDEBAR -->
       <aside class="sidebar" aria-label="Sidebar blog">
 
-        <div class="newsletter-card sr">
-          <h4>📬 La newsletter</h4>
-          <p>Conseils alternance, tendances tech et actus Cloud Campus — chaque semaine dans votre boîte.</p>
-          <div class="nl-input-wrap">
-            <input type="email" class="nl-input" placeholder="votre@email.fr" id="nlEmail">
-            <button class="nl-btn" onclick="subscribeNl()">OK</button>
-          </div>
-          <p id="nlConfirm" style="display:none;font-size:.74rem;color:var(--acc);margin-top:8px">✓ Inscription confirmée !</p>
-        </div>
-
         <div class="sidebar-card sr d1">
           <h4>🔥 Top journaldugeek</h4>
           <div class="popular-list" id="popularList">
             <div style="color:var(--tx2);font-size:.85rem">Chargement…</div>
-          </div>
-        </div>
-
-        <div class="sidebar-card sr d2">
-          <h4>🏷️ Sujets</h4>
-          <div class="tags-cloud">
-            <span class="tag-pill">AI</span>
-            <span class="tag-pill">Cybersecurity</span>
-            <span class="tag-pill">Programming</span>
-            <span class="tag-pill">Web</span>
-            <span class="tag-pill">Startups</span>
-            <span class="tag-pill">Big Tech</span>
-            <span class="tag-pill">Gadgets</span>
-            <span class="tag-pill">Open Source</span>
-            <span class="tag-pill">Privacy</span>
-            <span class="tag-pill">Cloud</span>
-            <span class="tag-pill">Dev Tools</span>
-            <span class="tag-pill">Data</span>
           </div>
         </div>
 
@@ -396,7 +347,7 @@ function pickVisual(i) {
 }
 
 async function fetchRssXml(url) {
-  const apiUrl = `/api/rss?url=${encodeURIComponent(url)}`;
+  const apiUrl = `/api/rss.php?url=${encodeURIComponent(url)}`;
   const res = await fetch(apiUrl, { cache: 'no-store' });
   if (!res.ok) throw new Error('RSS proxy failed');
   return res.text();
@@ -511,13 +462,6 @@ loadjournaldugeekRss().catch((err) => {
   if (list) list.innerHTML = '<div style="color:#ef4444">Erreur de chargement.</div>';
 });
 
-function subscribeNl() {
-  const el = document.getElementById('nlEmail');
-  if (!el.value.trim()) { el.style.borderColor = '#ef4444'; return; }
-  el.style.display = 'none';
-  el.nextElementSibling.style.display = 'none';
-  document.getElementById('nlConfirm').style.display = 'block';
-}
 </script>
 </body>
 </html>
