@@ -121,3 +121,25 @@ window.addEventListener('scroll', () => {
     heroGrid.style.transform = `translateY(${window.scrollY * .3}px)`;
   }
 }, { passive: true });
+
+
+/* ─── FORMS (mailto helper) ─── */
+function buildMailtoUrl({ to, subject = '', body = '' }) {
+  const params = new URLSearchParams();
+  if (subject) params.set('subject', subject);
+  if (body) params.set('body', body);
+  const qs = params.toString();
+  // Keep the address readable (no percent-encoding for "@" etc.)
+  return `mailto:${to}${qs ? `?${qs}` : ''}`;
+}
+
+function openMailto({ to, subject = '', body = '' }) {
+  const url = buildMailtoUrl({ to, subject, body });
+  // Must be triggered by a user gesture (click/submit) to avoid popup blockers
+  window.location.href = url;
+}
+
+// Expose globally for inline handlers on static pages
+window.openMailto = openMailto;
+
+// EOF

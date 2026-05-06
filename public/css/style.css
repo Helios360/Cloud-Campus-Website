@@ -280,6 +280,16 @@ header {
   color: var(--tx3); opacity: .4; white-space: nowrap; transition: all .3s;
 }
 .mq span:hover { opacity: 1; color: var(--acc); }
+
+/* Logo mode (images) */
+.mq img {
+  height: 28px;
+  width: auto;
+  opacity: .45;
+  filter: grayscale(1);
+  transition: opacity .3s, filter .3s;
+}
+.mq img:hover { opacity: 1; filter: none; }
 @keyframes mq {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -547,6 +557,16 @@ header {
 }
 .pc:hover { border-color: var(--brd-h); color: var(--acc); }
 
+/* Logo mode (images) */
+.partner-logo {
+  height: 34px;
+  width: auto;
+  opacity: .55;
+  filter: grayscale(1);
+  transition: opacity .25s, filter .25s, transform .25s;
+}
+.partner-logo:hover { opacity: 1; filter: none; transform: translateY(-2px); }
+
 /* ═══════════════════════════════
    FOOTER
    ═══════════════════════════════ */
@@ -564,6 +584,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--brd); padding: 68px
   display: flex; align-items: center; gap: 9px;
 }
 .ft-q span { font-size: 1.3rem; }
+.ft-q img.qualiopi-logo { height: 28px; width: auto; flex-shrink: 0; }
 .ft-q p { font-size: .7rem; color: var(--tx3); line-height: 1.4; }
 footer h5 {
   font-size: .7rem; text-transform: uppercase; letter-spacing: 2.5px;
@@ -583,6 +604,7 @@ footer ul a:hover { color: var(--acc); }
   width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--brd);
   display: grid; place-items: center; color: var(--tx3); font-size: .82rem; transition: all .25s;
 }
+.ft-soc svg { width: 16px; height: 16px; fill: currentColor; }
 .ft-soc a:hover { border-color: var(--acc); color: var(--acc); }
 
 /* ═══════════════════════════════

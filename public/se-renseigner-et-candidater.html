@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <title>Candidater — Admissions Rentrée 2026 | Cloud Campus Compiègne</title>
 <meta name="description" content="Candidatez à Cloud Campus pour la rentrée septembre 2026. Développeur Full Stack, Expert SI en alternance. Dossier gratuit, réponse sous 48h.">
 <link rel="canonical" href="https://cloud-campus.fr/se-renseigner-et-candidater">
@@ -12,6 +13,17 @@
 <meta property="og:title" content="Candidater à Cloud Campus — Rentrée 2026">
 <meta property="og:description" content="Dossier gratuit, entretien, réponse sous 48h. Formations en alternance Bac+2 à Bac+5.">
 <meta property="og:url" content="https://cloud-campus.fr/se-renseigner-et-candidater">
+<meta property="og:site_name" content="Cloud Campus">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://cloud-campus.fr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cloud Campus — École du Digital en Alternance à Compiègne">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cloud_campus">
+<meta name="twitter:title" content="Candidater à Cloud Campus — Rentrée 2026">
+<meta name="twitter:description" content="Dossier gratuit, entretien, réponse sous 48h. Formations en alternance Bac+3 à Bac+5.">
+<meta name="twitter:image" content="https://cloud-campus.fr/assets/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,10 +191,6 @@
 </head>
 <body>
 
-<div class="announce" role="banner">
-  🔥 Inscriptions ouvertes — Rentrée Septembre 2026 · Places limitées
-</div>
-
 <header role="banner">
   <nav class="ctn nav" aria-label="Navigation principale">
     <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
@@ -203,7 +211,6 @@
           
         </div>
       </div>
-      <a href="financements.html" class="nl">Financement</a>
       <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
       <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
     </div>
@@ -243,7 +250,7 @@
             <div class="step-dot">1</div>
             <div class="step-body">
               <h3>Soumettez votre dossier</h3>
-              <p>Remplissez le formulaire ci-contre avec vos informations de base et votre choix de formation. Aucun document n'est requis à ce stade.</p>
+              <p>Envoyez-nous un email avec votre prénom, nom, formation souhaitée et quelques mots sur votre projet. Aucun document n'est requis à ce stade.</p>
               <span class="step-tag">⚡ 5 minutes</span>
             </div>
           </div>
@@ -273,32 +280,6 @@
           </div>
         </div>
 
-        <!-- CHOISIR SA FORMATION -->
-        <div class="stag sr" style="margin-top:52px">Votre formation</div>
-        <h2 class="stit sr">Quelle formation vous correspond ?</h2>
-
-        <div class="form-picker sr">
-          <label class="pick-card selected" onclick="selectPick(this)">
-            <input type="radio" name="formation" value="dev" checked>
-            <div class="pick-radio"></div>
-            <div class="pick-info">
-              <strong>💻 Développeur Web Full Stack</strong>
-              <span>React, Node.js, SQL, IA — Bac+3/4</span>
-            </div>
-            <span class="pick-lvl">Bac+3/4</span>
-          </label>
-          <label class="pick-card" onclick="selectPick(this)">
-            <input type="radio" name="formation" value="cyber">
-            <div class="pick-radio"></div>
-            <div class="pick-info">
-              <strong>🔒 Expert en Système d'Information</strong>
-              <span>Cybersécurité, Cloud, SI — Bac+5</span>
-            </div>
-            <span class="pick-lvl">Bac+5</span>
-          </label>
-
-        </div>
-
         <!-- JPO BANNER -->
         <div class="jpo-banner sr" style="margin-top:52px">
           <div>
@@ -310,64 +291,24 @@
         </div>
       </div>
 
-      <!-- RIGHT: FORM CARD -->
+      <!-- RIGHT: MAILTO CARD -->
       <div>
         <div class="form-card sr">
           <h3>Déposer ma candidature</h3>
           <p class="sub">Gratuit · Sans engagement · Réponse sous 48h</p>
-
-          <div id="admissionForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" class="form-input" placeholder="Marie" autocomplete="given-name">
-              </div>
-              <div class="form-group">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" class="form-input" placeholder="Dupont" autocomplete="family-name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" class="form-input" placeholder="marie.dupont@email.com" autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="tel">Téléphone</label>
-              <input type="tel" id="tel" class="form-input" placeholder="06 12 34 56 78" autocomplete="tel">
-            </div>
-            <div class="form-group">
-              <label for="formation-select">Formation souhaitée</label>
-              <select id="formation-select" class="form-select">
-                <option value="">Choisir une formation…</option>
-                <option value="dev">Développeur Web Full Stack (Bac+3/4)</option>
-                <option value="cyber">Expert en Système d'Information (Bac+5)</option>
-
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="niveau">Niveau d'études actuel</label>
-              <select id="niveau" class="form-select">
-                <option value="">Sélectionner…</option>
-                <option>Bac ou équivalent</option>
-                <option>Bac+1</option>
-                <option>Bac+2</option>
-                <option>Bac+3</option>
-                <option>Bac+4 ou plus</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="motivation">Votre motivation (optionnel)</label>
-              <textarea id="motivation" class="form-textarea" placeholder="Parlez-nous de votre projet professionnel…"></textarea>
-            </div>
-            <button class="form-submit" onclick="submitForm()">Envoyer ma candidature →</button>
-            <p class="form-note">En soumettant ce formulaire, vous acceptez d'être recontacté par l'équipe Cloud Campus. Aucun spam, promis.</p>
+          <div style="background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:18px 20px;margin-bottom:20px;font-size:.85rem;color:var(--tx2);line-height:1.7">
+            <strong style="display:block;margin-bottom:8px;color:var(--tx)">Dans votre email, indiquez :</strong>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:5px;padding:0;margin:0">
+              <li style="display:flex;gap:8px"><span style="color:var(--acc);font-weight:700">›</span> Votre prénom et nom</li>
+              <li style="display:flex;gap:8px"><span style="color:var(--acc);font-weight:700">›</span> La formation souhaitée (Dev Full Stack ou Expert SI)</li>
+              <li style="display:flex;gap:8px"><span style="color:var(--acc);font-weight:700">›</span> Votre niveau d'études actuel</li>
+              <li style="display:flex;gap:8px"><span style="color:var(--acc);font-weight:700">›</span> Votre projet professionnel en quelques mots</li>
+            </ul>
           </div>
-
-          <div class="form-success" id="formSuccess">
-            <div class="s-icon">🎉</div>
-            <h4>Candidature reçue !</h4>
-            <p>Merci pour votre intérêt. Un conseiller pédagogique vous contactera sous <strong>48h</strong> pour organiser votre entretien de motivation.</p>
-          </div>
+          <a href="mailto:candidat@cloud-campus.fr?subject=Candidature%20Cloud%20Campus" class="form-submit" style="display:block;text-align:center;text-decoration:none;line-height:normal;padding:15px">
+            ✉️ Envoyer ma candidature →
+          </a>
+          <p class="form-note" style="margin-top:16px">Cliquez sur le bouton — votre application mail s'ouvre avec l'adresse pré-remplie.<br>Ou écrivez directement à <a href="mailto:candidat@cloud-campus.fr" style="color:var(--acc)">candidat@cloud-campus.fr</a></p>
         </div>
       </div>
 
@@ -393,8 +334,8 @@
       </div>
       <div class="why-card sr d3">
         <div class="w-icon">💶</div>
-        <h4>Salaire dès la rentrée</h4>
-        <p>En alternance, vous êtes rémunéré dès septembre. Plus tôt vous êtes admis, plus tôt votre salaire démarre.</p>
+        <h4>Rémunéré dès le début du contrat</h4>
+        <p>En alternance, vous percevez un salaire dès la signature de votre contrat. Plus tôt vous êtes admis, plus vite vous pouvez démarrer.</p>
       </div>
     </div>
   </div>
@@ -407,8 +348,8 @@
     <div class="ft-g">
       <div>
         <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
-        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
-        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance. Formations 100% financées en apprentissage, avec l'intelligence artificielle intégrée dans chaque cursus.</p>
+        <div class="ft-q"><img src="assets/qualiopi-officiel.svg" alt="Logo Qualiopi" class="qualiopi-logo"><p>Certification Qualiopi — Actions de formation et formation par apprentissage</p></div>
       </div>
       <div>
         <h5>À propos</h5>
@@ -439,37 +380,20 @@
     <div class="ft-bottom">
       <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
       <div class="ft-soc">
-        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" aria-label="LinkedIn Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.12h.05c.53-1.01 1.83-2.12 3.77-2.12 4.03 0 4.78 2.65 4.78 6.09v9.43h-4v-8.36c0-1.99-.04-4.56-2.78-4.56-2.78 0-3.2 2.17-3.2 4.42v8.5h-4V7.98z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cloud_campus/" aria-label="Instagram Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.2A4.8 4.8 0 1 0 16.8 12 4.81 4.81 0 0 0 12 7.2zm0 7.6A2.8 2.8 0 1 1 14.8 12 2.81 2.81 0 0 1 12 14.8zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@cloud_campus" aria-label="TikTok Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.7 3c.6 2.6 2.4 4.4 4.9 4.9v3.7c-1.6.1-3.1-.4-4.4-1.2v6.5c0 3.7-3 6.7-6.7 6.7S4 20.6 4 16.9s3-6.7 6.7-6.7c.3 0 .6 0 .9.1v3.9c-.3-.1-.6-.2-.9-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9V3h3.1z"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-function selectPick(el) {
-  document.querySelectorAll('.pick-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  const val = el.querySelector('input').value;
-  const map = { dev: '0', cyber: '1' };
-  const sel = document.getElementById('formation-select');
-  if (sel && map[val] !== undefined) sel.selectedIndex = +map[val] + 1;
-}
-
-function submitForm() {
-  const required = ['prenom','nom','email','tel'];
-  let valid = true;
-  required.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el.value.trim()) { el.style.borderColor = '#ef4444'; valid = false; }
-    else el.style.borderColor = '';
-  });
-  if (!valid) return;
-  document.getElementById('admissionForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-}
-</script>
 </body>
 </html>

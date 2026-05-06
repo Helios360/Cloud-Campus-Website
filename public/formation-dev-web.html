@@ -3,15 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <title>Développeur Web Full Stack en Alternance — Bac+3/4 | Cloud Campus Compiègne</title>
-<meta name="description" content="Formation Développeur Web Full Stack en alternance Bac+3/4 à Compiègne. React, Node.js, SQL, IA intégrée. 100% financée, 92% de réussite. Candidatez maintenant.">
+<meta name="description" content="Formation Développeur Web Full Stack en alternance Bac+3/4 à Compiègne. React, Node.js, PHP, Laravel, SQL, IA intégrée. 100% financée, 93% de réussite. Candidatez maintenant.">
 <link rel="canonical" href="https://cloud-campus.fr/formation-dev-web">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Développeur Web Full Stack en Alternance — Cloud Campus">
-<meta property="og:description" content="Bac+3/4 en alternance. React, Node.js, SQL, IA. 100% financée à Compiègne.">
+<meta property="og:description" content="Bac+3/4 en alternance. React, Node.js, PHP, Laravel, SQL, IA. 100% financée.">
 <meta property="og:url" content="https://cloud-campus.fr/formation-dev-web">
+<meta property="og:site_name" content="Cloud Campus">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://cloud-campus.fr/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cloud Campus — École du Digital en Alternance à Compiègne">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cloud_campus">
+<meta name="twitter:title" content="Développeur Web Full Stack en Alternance — Cloud Campus">
+<meta name="twitter:description" content="Bac+3/4 en alternance. React, Node.js, PHP, Laravel, SQL, IA. 100% financée.">
+<meta name="twitter:image" content="https://cloud-campus.fr/assets/og-image.png">
 
 <script type="application/ld+json">
 {
@@ -112,13 +124,101 @@
     .hero-visual { display: none; }
     .prog-grid, .rythme-grid, .debouches-list { grid-template-columns: 1fr; }
   }
+
+  /* ── INLINE KEYWORD CHIP ──────────────────────── */
+  .kw {
+    display: inline;
+    padding: 1px 5px 2px;
+    border-radius: 3px;
+    border: 1px solid var(--brd);
+    background: var(--card);
+    font-family: var(--mono);
+    font-size: .8em;
+    font-weight: 700;
+    color: var(--acc);
+    white-space: nowrap;
+  }
+
+  /* ── INFO CARDS ───────────────────────────────── */
+  .info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+  .ic { background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl); padding: 28px 24px; transition: border-color .3s; }
+  .ic:hover { border-color: var(--brd-h); }
+  .ic-icon { font-size: 1.5rem; margin-bottom: 14px; }
+  .ic-title { font-size: .72rem; font-family: var(--mono); font-weight: 700; color: var(--acc); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+  .ic-body { font-size: .88rem; color: var(--tx2); line-height: 1.65; }
+  .ic-body strong { color: var(--tx); }
+
+  /* ── RNCP BADGE ───────────────────────────────── */
+  .rncp-badge {
+    background: var(--card); border: 1px solid rgba(0,255,135,.2);
+    border-radius: var(--r-xl); padding: 28px 36px;
+    margin-bottom: 32px; display: flex; align-items: center; gap: 32px;
+    position: relative; overflow: hidden;
+  }
+  .rncp-badge::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--acc), var(--blue));
+  }
+  .rncp-badge .rncp-num {
+    font-family: var(--mono); font-size: 1.6rem; font-weight: 700;
+    color: var(--acc); white-space: nowrap; line-height: 1.2;
+  }
+  .rncp-badge .rncp-info { flex: 1; }
+  .rncp-badge .rncp-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .rncp-badge .rncp-info p { font-size: .82rem; color: var(--tx2); line-height: 1.7; }
+  .rncp-tag {
+    padding: 6px 16px; border-radius: var(--r-full);
+    background: var(--acc-gl); color: var(--acc);
+    font-size: .78rem; font-weight: 700; font-family: var(--mono); white-space: nowrap;
+  }
+
+  /* ── YEAR TOGGLE ──────────────────────────────── */
+  .yr-toggle { display: flex; gap: 0; margin-bottom: 36px; }
+  .yr-btn { padding: 10px 28px; font-size: .88rem; font-weight: 700; background: var(--card); border: 1px solid var(--brd); color: var(--tx2); cursor: pointer; transition: all .25s; font-family: inherit; }
+  .yr-btn:first-child { border-radius: var(--r) 0 0 var(--r); }
+  .yr-btn:last-child  { border-radius: 0 var(--r) var(--r) 0; border-left: none; }
+  .yr-btn.active { background: var(--acc-gl); border-color: var(--brd-h); color: var(--acc); }
+
+  /* ── CURRICULUM LAYOUT ────────────────────────── */
+  .cur-layout { display: grid; grid-template-columns: 190px 1fr; gap: 20px; }
+  .wk-nav { display: flex; flex-direction: column; gap: 8px; }
+  .wk-btn { width: 100%; padding: 12px 16px; text-align: left; background: var(--card); border: 1px solid var(--brd); border-radius: var(--r); font-size: .82rem; font-weight: 600; color: var(--tx2); cursor: pointer; transition: all .25s; font-family: var(--mono); }
+  .wk-btn:hover { border-color: var(--brd-h); color: var(--tx); }
+  .wk-btn.active { background: var(--acc-gl); border-color: var(--brd-h); color: var(--acc); }
+  .wk-panel-wrap { background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl); padding: 36px; min-height: 420px; }
+  .wk-panel { display: none; }
+  .wk-panel.active { display: block; }
+  .wk-panel h3 { font-size: 1.05rem; font-weight: 800; margin: 0 0 6px; }
+  .wk-panel h4 { font-size: .88rem; font-weight: 700; color: var(--tx2); margin: 18px 0 6px; }
+  .wk-panel p  { font-size: .88rem; color: var(--tx2); line-height: 1.7; margin-bottom: 10px; }
+
+  /* ── INFO TABS ────────────────────────────────── */
+  .it-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .it-btn { padding: 9px 18px; font-size: .82rem; font-weight: 600; background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-full); color: var(--tx2); cursor: pointer; transition: all .25s; font-family: inherit; }
+  .it-btn:hover { border-color: var(--brd-h); color: var(--tx); }
+  .it-btn.active { background: var(--acc-gl); border-color: var(--brd-h); color: var(--acc); }
+  .it-panel { display: none; background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl); padding: 36px; }
+  .it-panel.active { display: block; }
+  .it-panel h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 14px; }
+  .it-panel h4 { font-size: .88rem; font-weight: 700; color: var(--tx2); margin: 20px 0 6px; }
+  .it-panel p  { font-size: .88rem; color: var(--tx2); line-height: 1.7; margin-bottom: 10px; }
+  .it-panel ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .it-panel ul li { font-size: .88rem; color: var(--tx2); line-height: 1.6; padding-left: 16px; position: relative; }
+  .it-panel ul li::before { content: '›'; position: absolute; left: 0; color: var(--acc); font-weight: 700; }
+  .it-panel .sal { font-weight: 700; color: var(--tx); font-family: var(--mono); font-size: .85em; }
+
+  @media (max-width: 900px) {
+    .rncp-badge { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .info-cards { grid-template-columns: 1fr; }
+    .cur-layout  { grid-template-columns: 1fr; }
+    .wk-nav { flex-direction: row; flex-wrap: wrap; }
+    .wk-btn { width: auto; flex: 1; min-width: 80px; text-align: center; }
+    .yr-toggle { width: 100%; }
+    .yr-btn { flex: 1; text-align: center; }
+  }
 </style>
 </head>
 <body>
-
-<div class="announce" role="banner">
-  🔥 Inscriptions ouvertes — <a href="https://cloud-campus.fr/se-renseigner-et-candidater">Rentrée Septembre 2026</a> · Places limitées
-</div>
 
 <header role="banner">
   <nav class="ctn nav" aria-label="Navigation principale">
@@ -140,7 +240,6 @@
           
         </div>
       </div>
-      <a href="financements.html" class="nl">Financement</a>
       <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
       <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
     </div>
@@ -176,7 +275,7 @@
       <div class="hero-stats" style="margin-top:40px">
         <div class="hs"><div class="v">Bac+3/4</div><div class="l">Niveau</div></div>
         <div class="hs"><div class="v">0€</div><div class="l">Frais</div></div>
-        <div class="hs"><div class="v">92%</div><div class="l">Réussite</div></div>
+        <div class="hs"><div class="v">93%</div><div class="l">Réussite</div></div>
         <div class="hs"><div class="v">2 ans</div><div class="l">Durée</div></div>
       </div>
     </div>
@@ -190,7 +289,7 @@
       &nbsp;&nbsp;coût: <span class="line-amber">'0€'</span>,<br>
       &nbsp;&nbsp;IA: <span class="line-blue">true</span>,<br>
       &nbsp;&nbsp;alternance: <span class="line-blue">true</span>,<br>
-      &nbsp;&nbsp;tauxRéussite: <span class="line-amber">'92%'</span>,<br>
+      &nbsp;&nbsp;tauxRéussite: <span class="line-amber">'93%'</span>,<br>
       };<br><br>
       <span class="line-blue">export default</span> <span class="line-green">CarrièreDigitale</span>;
     </div>
@@ -229,6 +328,7 @@
         <h3>Back-end & APIs</h3>
         <ul>
           <li>Node.js & Express</li>
+          <li>PHP & Laravel</li>
           <li>Bases de données SQL & NoSQL</li>
           <li>API REST & GraphQL</li>
           <li>Authentification & sécurité</li>
@@ -261,6 +361,8 @@
       <span class="stack-item"><span class="dot"></span>Next.js</span>
       <span class="stack-item"><span class="dot"></span>Node.js</span>
       <span class="stack-item"><span class="dot"></span>Express.js</span>
+      <span class="stack-item"><span class="dot"></span>PHP</span>
+      <span class="stack-item"><span class="dot"></span>Laravel</span>
       <span class="stack-item"><span class="dot"></span>SQL / PostgreSQL</span>
       <span class="stack-item"><span class="dot"></span>MongoDB</span>
       <span class="stack-item"><span class="dot"></span>Git & GitHub</span>
@@ -270,27 +372,374 @@
   </div>
 </section>
 
+<!-- PROGRAMME DÉTAILLÉ -->
+<section style="padding:0 0 100px" id="programme-detail">
+  <div class="ctn">
+    <div class="stag sr">Semaine par semaine</div>
+    <h2 class="stit sr">Programme détaillé — 26 semaines</h2>
+    <p class="sdesc sr">Retrouvez le contenu précis de chaque semaine de formation sur les 2 années du cursus.</p>
+
+    <div class="yr-toggle sr">
+      <button class="yr-btn active" id="yr-btn-1">Année 1 — Bac+3</button>
+      <button class="yr-btn" id="yr-btn-2">Année 2 — Bac+4</button>
+    </div>
+
+    <!-- ── ANNÉE 1 ── -->
+    <div class="cur-layout" id="yr-panel-1">
+      <div class="wk-nav" role="tablist" aria-label="Semaines — Année 1">
+        <button class="wk-btn active" role="tab" aria-selected="true"  aria-controls="wk1-0" id="wk1-tab-0">Sem. 1–2</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk1-1" id="wk1-tab-1">Sem. 3–5</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk1-2" id="wk1-tab-2">Sem. 6</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk1-3" id="wk1-tab-3">Sem. 7–8</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk1-4" id="wk1-tab-4">Sem. 9–10</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk1-5" id="wk1-tab-5">Sem. 11–13</button>
+      </div>
+      <div class="wk-panel-wrap">
+        <div class="wk-panel active" id="wk1-0" role="tabpanel" aria-labelledby="wk1-tab-0">
+          <h3>Semaine 1 — Bases du développement web</h3>
+          <h4>Introduction (1 jour, 7h)</h4>
+          <p>Découverte du fonctionnement général du web (client/serveur, <span class="kw">HTTP</span>, bases de données). Installation de l'environnement (<span class="kw">LAMP</span>, <span class="kw">Node.js</span>, <span class="kw">VS Code</span>).</p>
+          <h4><span class="kw">HTML</span> & <span class="kw">CSS</span> (4 jours, 28h)</h4>
+          <p>Structure <span class="kw">HTML</span>, sémantique, <span class="kw">CSS</span> (sélecteurs, flexbox, grid, animations) et outils de développement.</p>
+          <h3>Semaine 2 — Responsive design</h3>
+          <h4>Prototypage avec <span class="kw">Figma</span> (2 jours, 14h)</h4>
+          <p>Création de prototypes d'interfaces. Introduction aux principes d'ergonomie : alignement, hiérarchie visuelle, feedback utilisateur.</p>
+          <h4>Responsive design (3 jours, 21h)</h4>
+          <p>Techniques <span class="kw">CSS</span> avancées (flexbox, media queries, <span class="kw">Bootstrap</span>). Approche « mobile first » et navigation responsive.</p>
+        </div>
+
+        <div class="wk-panel" id="wk1-1" role="tabpanel" aria-labelledby="wk1-tab-1">
+          <h3>Semaine 3 — Travail en équipe</h3>
+          <h4>Gestion de projet agile (3 jours, 21h)</h4>
+          <p>Cycles de développement (cascade, spirale, agilité). Formation à <span class="kw">Scrum</span> : terminologie, étapes d'un sprint, pair programming.</p>
+          <h4>Versionnage avec <span class="kw">Git</span> (2 jours, 14h)</h4>
+          <p>Système de versionnage <span class="kw">Git</span>, gestion des branches, utilisation de <span class="kw">GitHub</span>, bonnes pratiques.</p>
+          <h3>Semaine 4 — JavaScript niveau I</h3>
+          <h4>Introduction à <span class="kw">JavaScript</span> (5 jours, 35h)</h4>
+          <p>Bases de la programmation (variables, conditions, boucles, fonctions). Manipulation du <span class="kw">DOM</span> et des événements. Découverte des <span class="kw">API</span> du navigateur.</p>
+          <h3>Semaine 5 — JavaScript niveau II</h3>
+          <h4>Approfondissement (5 jours, 35h)</h4>
+          <p>Concepts avancés : closures, prototypes, async/await, normes ES6 à ES8. Programmation asynchrone et gestion des promesses.</p>
+        </div>
+
+        <div class="wk-panel" id="wk1-2" role="tabpanel" aria-labelledby="wk1-tab-2">
+          <h3>Semaine 6 — Référencement naturel & UI/UX Design</h3>
+          <h4>Référencement naturel (3 jours, 21h)</h4>
+          <p>Optimisation <span class="kw">SEO</span> : métadonnées, accessibilité, minification, lazy loading. Utilisation de <span class="kw">Google Analytics</span> et <span class="kw">Ahrefs</span>.</p>
+          <h4>UI/UX Design (2 jours, 14h)</h4>
+          <p>Notions clés de design et ergonomie : conventions, enjeux, alignement.</p>
+        </div>
+
+        <div class="wk-panel" id="wk1-3" role="tabpanel" aria-labelledby="wk1-tab-3">
+          <h3>Semaine 7 — Découverte de React</h3>
+          <h4><span class="kw">React</span> — composants & routage (5 jours, 35h)</h4>
+          <p>Introduction à <span class="kw">React</span> : composants, syntaxe fonctionnelle, routage, gestion des dépendances via <span class="kw">NPM</span>.</p>
+          <h3>Semaine 8 — L'écosystème React</h3>
+          <h4>(5 jours, 35h)</h4>
+          <p><span class="kw">Redux</span> pour la gestion d'état, <span class="kw">Immer</span> pour l'immutabilité, <span class="kw">Material UI</span> pour les interfaces utilisateur.</p>
+        </div>
+
+        <div class="wk-panel" id="wk1-4" role="tabpanel" aria-labelledby="wk1-tab-4">
+          <h3>Semaine 9 — La persistance des données</h3>
+          <h4><span class="kw">API REST</span> (2 jours)</h4>
+          <p>Utilisation d'<span class="kw">API REST</span> avec <span class="kw">React</span> : concepts, <span class="kw">useEffect</span>, gestion des erreurs.</p>
+          <h4>Stockage navigateur (3 jours)</h4>
+          <p><span class="kw">cookies</span>, <span class="kw">localStorage</span>, <span class="kw">IndexedDB</span> pour conserver des données entre sessions.</p>
+          <h3>Semaine 10 — Le pipeline de production</h3>
+          <h4>Automatisation avec <span class="kw">Webpack</span> (2 jours)</h4>
+          <p>Configuration de <span class="kw">Webpack</span> et <span class="kw">Babel</span>, optimisation pour différents environnements.</p>
+          <h4>Tests avec <span class="kw">Mocha</span> & <span class="kw">Chai</span> (3 jours)</h4>
+          <p>Tests unitaires, d'intégration et end-to-end.</p>
+        </div>
+
+        <div class="wk-panel" id="wk1-5" role="tabpanel" aria-labelledby="wk1-tab-5">
+          <h3>Semaine 11 — React Native</h3>
+          <h4>Applications mobiles avec <span class="kw">React Native</span> (5 jours, 35h)</h4>
+          <p>Développement mobile natif : différences avec <span class="kw">React</span> web, composants natifs, projets avec <span class="kw">Expo</span>, export <span class="kw">APK</span>.</p>
+          <h3>Semaine 12 — Présentation de projet</h3>
+          <h4>Expression orale & supports (3 jours)</h4>
+          <p>Structurer un discours et concevoir des supports visuels pour présenter un projet.</p>
+          <h4>Marketing de soi (2 jours)</h4>
+          <p>Personal branding, CV, portfolio, <span class="kw">LinkedIn</span>. Techniques de communication et de diplomatie.</p>
+          <h3>Semaine 13 — Mémoire & projet</h3>
+          <p>Élaboration du mémoire et du projet. Attendus, modalités d'évaluation. Rendez-vous individuels pour affiner la problématique.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ANNÉE 2 ── -->
+    <div class="cur-layout" id="yr-panel-2" style="display:none">
+      <div class="wk-nav" role="tablist" aria-label="Semaines — Année 2">
+        <button class="wk-btn active" role="tab" aria-selected="true"  aria-controls="wk2-0" id="wk2-tab-0">Sem. 14–15</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk2-1" id="wk2-tab-1">Sem. 16–17</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk2-2" id="wk2-tab-2">Sem. 18–19</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk2-3" id="wk2-tab-3">Sem. 20–21</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk2-4" id="wk2-tab-4">Sem. 22–23</button>
+        <button class="wk-btn"        role="tab" aria-selected="false" aria-controls="wk2-5" id="wk2-tab-5">Sem. 24–26</button>
+      </div>
+      <div class="wk-panel-wrap">
+        <div class="wk-panel active" id="wk2-0" role="tabpanel" aria-labelledby="wk2-tab-0">
+          <h3>Semaine 14 — PHP procédural</h3>
+          <h4>Programmation procédurale en <span class="kw">PHP</span> (5 jours, 35h)</h4>
+          <p>Syntaxe <span class="kw">PHP</span>, portée des variables, tableaux associatifs, variables superglobales, sessions et cookies. Utilisation des <span class="kw">API</span> standards de <span class="kw">PHP</span>.</p>
+          <h3>Semaine 15 — PHP orienté objets</h3>
+          <h4>Programmation orientée objets en <span class="kw">PHP</span> (5 jours, 35h)</h4>
+          <p>Classes, objets, instanciation, diagrammes <span class="kw">UML</span>, héritage, getters/setters, classes abstraites. Patron <span class="kw">MVC</span>, réécriture d'URL et autoloading.</p>
+        </div>
+
+        <div class="wk-panel" id="wk2-1" role="tabpanel" aria-labelledby="wk2-tab-1">
+          <h3>Semaine 16 — MySQL & Laravel</h3>
+          <h4>Bases de données <span class="kw">MySQL</span> (2 jours, 14h)</h4>
+          <p>SGBD <span class="kw">MySQL</span>, création avec <span class="kw">PhpMyAdmin</span>, types de données, syntaxe <span class="kw">SQL</span>, modélisation MCD/MLD/MPD.</p>
+          <h4>Introduction à <span class="kw">Laravel</span> (3 jours, 21h)</h4>
+          <p>Architecture <span class="kw">MVC</span>, routes, contrôleurs, vues, ORM <span class="kw">Eloquent</span>. Applications robustes et maintenables.</p>
+          <h3>Semaine 17 — MySQL avec PHP</h3>
+          <h4>Sécurité des bases de données (2 jours, 14h)</h4>
+          <p>Injection <span class="kw">SQL</span>, requêtes préparées, authentification et autorisation.</p>
+          <h4>Stockage en <span class="kw">PHP</span> (3 jours, 21h)</h4>
+          <p>Connexion <span class="kw">PDO</span>, requêtes complexes, <span class="kw">SQLite</span>, lecture/écriture de fichiers.</p>
+        </div>
+
+        <div class="wk-panel" id="wk2-2" role="tabpanel" aria-labelledby="wk2-tab-2">
+          <h3>Semaine 18 — Administration système</h3>
+          <h4>Introduction à la cryptographie (2 jours, 14h)</h4>
+          <p>Chiffrement symétrique/asymétrique, échange de clés <span class="kw">Diffie-Hellman</span>, hashage, signatures, protocole <span class="kw">TLS</span> 1.3.</p>
+          <h4>Configuration de la stack <span class="kw">LAMP</span> (3 jours, 21h)</h4>
+          <p>Installation et configuration d'<span class="kw">Apache2</span>, <span class="kw">PHP-FPM</span>, tests de performances et sécurisation en production.</p>
+          <h3>Semaine 19 — L'écosystème PHP</h3>
+          <h4>Gestionnaire de dépendances & tests (5 jours, 35h)</h4>
+          <p>Gestionnaire <span class="kw">Composer</span>, archives <span class="kw">PHAR</span>, tests avec <span class="kw">PHPUnit</span>.</p>
+        </div>
+
+        <div class="wk-panel" id="wk2-3" role="tabpanel" aria-labelledby="wk2-tab-3">
+          <h3>Semaine 20 — Node.js</h3>
+          <h4>Introduction à <span class="kw">Node.js</span> (5 jours, 35h)</h4>
+          <p><span class="kw">JavaScript</span> côté serveur, création d'<span class="kw">API REST</span> avec <span class="kw">Express.js</span>, middlewares, configuration <span class="kw">CORS</span>.</p>
+          <h3>Semaine 21 — MongoDB</h3>
+          <h4>Bases de données <span class="kw">NoSQL</span> (5 jours, 35h)</h4>
+          <p>Conception et implémentation avec <span class="kw">MongoDB</span> : syntaxe, différences avec <span class="kw">MySQL</span>, théorème <span class="kw">CAP</span>.</p>
+        </div>
+
+        <div class="wk-panel" id="wk2-4" role="tabpanel" aria-labelledby="wk2-tab-4">
+          <h3>Semaine 22 — Docker</h3>
+          <h4>Conteneurisation avec <span class="kw">Docker</span> (5 jours, 35h)</h4>
+          <p>Création de conteneurs via <span class="kw">Dockerfiles</span>, interactions entre conteneurs, automatisation avec <span class="kw">Docker Compose</span>.</p>
+          <h3>Semaine 23 — Architecture micro-services</h3>
+          <h4>Micro-services (3 jours, 21h)</h4>
+          <p>Services indépendants, <span class="kw">API Gateway</span>, services stateless/stateful.</p>
+          <h4>SSR & prerendering (2 jours, 14h)</h4>
+          <p>Rendu côté serveur (<span class="kw">SSR</span>) avec <span class="kw">Express.js</span>, hydratation client, amélioration du <span class="kw">SEO</span>.</p>
+        </div>
+
+        <div class="wk-panel" id="wk2-5" role="tabpanel" aria-labelledby="wk2-tab-5">
+          <h3>Semaine 24 — Authentification</h3>
+          <h4>Introduction à l'authentification (5 jours, 35h)</h4>
+          <p>Authentification, délégation, contrôle d'accès en micro-services. Tokens <span class="kw">JWT</span>, <span class="kw">OAuth2</span>, <span class="kw">OpenID Connect</span>.</p>
+          <h3>Semaine 25 — Droit & santé au travail</h3>
+          <h4>Droit de l'informatique & SST (5 jours, 35h)</h4>
+          <p>Droit de l'informatique, protection des données, <span class="kw">RGPD</span>, licences logicielles. Santé & sécurité : risques professionnels, prévention, gestion du stress pour les développeurs.</p>
+          <h3>Semaine 26 — Finalisation & soutenance</h3>
+          <h4>Mémoire & projet (5 jours, 35h)</h4>
+          <p>Relecture et finalisation du mémoire, vérification des projets, préparation de la soutenance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- RYTHME ALTERNANCE -->
 <section style="padding:0 0 100px" id="rythme">
   <div class="ctn">
     <div class="stag sr">Rythme d'alternance</div>
-    <h2 class="stit sr">Organisez votre temps entre école et entreprise</h2>
+    <h2 class="stit sr">910 heures sur 24 mois, depuis partout en France</h2>
     <div class="rythme-grid">
       <div class="rythme-card sr d1">
         <div class="icon">🏢</div>
         <h4>3 semaines en entreprise</h4>
-        <p>Immersion professionnelle pour appliquer vos compétences sur de vrais projets.</p>
+        <p>Immersion professionnelle en continu pour appliquer vos compétences sur de vrais projets.</p>
       </div>
       <div class="rythme-card sr d2">
         <div class="icon">📚</div>
         <h4>1 semaine en formation</h4>
-        <p>Cours intensifs en présentiel à Compiègne ou en télé-présentiel sur Discord.</p>
+        <p>26 semaines de cours, 9h30–17h30, en télé-présentiel interactif. Conseil de classe chaque trimestre.</p>
       </div>
       <div class="rythme-card sr d3">
         <div class="icon">💶</div>
         <h4>Salaire mensuel garanti</h4>
         <p>Rémunération selon la grille légale de l'apprentissage, dès le premier mois.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS DE LA FORMATION -->
+<section style="padding:0 0 100px" id="infos">
+  <div class="ctn">
+    <div class="stag sr">À propos</div>
+    <h2 class="stit sr">Ce qu'il faut savoir sur la formation</h2>
+    <div class="rncp-badge sr">
+      <div class="rncp-num">RNCP<br>38606</div>
+      <div class="rncp-info">
+        <h3>Développeur(se) Web Full Stack — Bac+4 / Mastère 1</h3>
+        <p>Enregistrée auprès de France Compétences le 09/02/2024 · Niveau 6 du Cadre européen des certifications</p>
+      </div>
+      <span class="rncp-tag">Niveau 6</span>
+    </div>
+
+    <div class="info-cards">
+      <div class="ic sr d1">
+        <div class="ic-icon">📋</div>
+        <div class="ic-title">Prérequis</div>
+        <div class="ic-body">
+          Niveau <strong>Bac+2 / titre RNCP niveau 5</strong>, avec appétence pour le développement web.<br>
+          Intégration directe en 2ème année (Bac+4) possible pour les titulaires d'un Bac+3 lié au développement web, e-commerce ou programmation.
+        </div>
+      </div>
+      <div class="ic sr d3">
+        <div class="ic-icon">🌐</div>
+        <div class="ic-title">Téléprésentiel & e-learning</div>
+        <div class="ic-body">
+          Cours 100% à distance avec vos formateurs.<br>
+          <strong>Synchrone :</strong> classe virtuelle en direct.<br>
+          <strong>Asynchrone :</strong> accès aux cours e-learning, replays, ressources en ligne via partenariat Google.
+        </div>
+      </div>
+      <div class="ic sr d4">
+        <div class="ic-icon">👨‍💻</div>
+        <div class="ic-title">Formateurs experts</div>
+        <div class="ic-body">
+          Des experts dans les technologies qu'ils enseignent — beaucoup sont également chefs d'entreprise en parallèle. La trame pédagogique évolue au même rythme que les besoins du marché.
+        </div>
+      </div>
+      <div class="ic sr d1">
+        <div class="ic-icon">🎯</div>
+        <div class="ic-title">80% pratique</div>
+        <div class="ic-body">
+          <strong>20% théorie, 80% pratique.</strong> Exercices concrets, projets fil rouge et mises en situation réelles tout au long du cursus.
+        </div>
+      </div>
+      <div class="ic sr d2">
+        <div class="ic-icon">🤖</div>
+        <div class="ic-title">IA intégrée</div>
+        <div class="ic-body">
+          L'intelligence artificielle est un outil de travail transversal à chaque module. Prenez une longueur d'avance sur le marché de l'emploi dès votre formation.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMATIONS PRATIQUES -->
+<section style="padding:0 0 100px" id="pratique">
+  <div class="ctn">
+    <div class="stag sr">Informations pratiques</div>
+    <h2 class="stit sr">Admission, objectifs, financement et plus</h2>
+
+    <div class="it-nav sr" role="tablist" aria-label="Onglets informations pratiques">
+      <button class="it-btn active" role="tab" aria-selected="true"  aria-controls="it-admission"   id="it-tab-admission">Admission</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-objectifs"   id="it-tab-objectifs">Objectifs</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-financement" id="it-tab-financement">Financement</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-evaluations" id="it-tab-evaluations">Évaluations</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-debouches"   id="it-tab-debouches">Débouchés</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-corresp"     id="it-tab-corresp">Passerelles</button>
+      <button class="it-btn"        role="tab" aria-selected="false" aria-controls="it-acces"       id="it-tab-acces">Accessibilité</button>
+    </div>
+
+    <div class="it-panel active" id="it-admission" role="tabpanel" aria-labelledby="it-tab-admission">
+      <h3>Comment nous rejoindre ?</h3>
+      <ul>
+        <li>Remplir le formulaire de candidature avec un CV à jour</li>
+        <li>Participer à la réunion d'information</li>
+        <li>Trouver une entreprise d'accueil pour l'alternance (notre équipe de chargés de relations entreprises vous accompagne)</li>
+      </ul>
+      <h4>Délai d'accès & promotions</h4>
+      <p>15 jours à 1 mois — Une rentrée tous les 2 à 3 mois — Promotions de 15 à 20 étudiants.</p>
+      <h4>Niveaux d'entrée</h4>
+      <p><strong>1ère année (Bac+3)</strong> — niveau Bac+2 ou certification RNCP niveau 5 en lien avec l'informatique, le développement web ou l'e-commerce.</p>
+      <p><strong>2ème année (Bac+4)</strong> — niveau Bac+3 ou titre RNCP niveau 6 en lien avec le développement web ou l'e-commerce.</p>
+      <div style="margin-top:24px">
+        <a href="se-renseigner-et-candidater.html" class="btn-gl">Candidater maintenant →</a>
+      </div>
+    </div>
+
+    <div class="it-panel" id="it-objectifs" role="tabpanel" aria-labelledby="it-tab-objectifs">
+      <h3>Objectifs de la formation</h3>
+      <ul>
+        <li><strong>A1</strong> — Concevoir et modéliser une application (web, hybride, mobile ou desktop) ou l'évolution d'une application existante</li>
+        <li><strong>A2</strong> — Développer la partie front-end d'une application</li>
+        <li><strong>A3</strong> — Développer la partie back-end d'une application</li>
+        <li><strong>A4</strong> — Déployer et assurer le maintien en production d'une application</li>
+      </ul>
+      <h4>Valider le diplôme RNCP38606 — Développeur Fullstack Bac+4</h4>
+      <p>Certification reconnue par France Compétences (enregistrement du 09/02/2024), équivalant à un niveau Bac+4 / Mastère 1.</p>
+    </div>
+
+    <div class="it-panel" id="it-financement" role="tabpanel" aria-labelledby="it-tab-financement">
+      <h3>Comment financer la formation ?</h3>
+      <h4>Pour l'étudiant en alternance</h4>
+      <p>Art. L6211-1 : « La formation est gratuite pour l'apprenti et pour son représentant légal. » En alternance, vous ne payez aucun frais de scolarité et percevez un salaire mensuel.</p>
+      <h4>Pour l'entreprise d'accueil</h4>
+      <p>Le tarif est aligné sur le montant de prise en charge de l'OPCO concerné. <strong>Zéro reste à charge pour les entreprises du secteur privé.</strong></p>
+      <p>Tarif de la formation = montant de la prise en charge OPCO (jusqu'à 14 000 € par an maximum).</p>
+      <p>Le montant peut varier selon la convention collective de l'employeur et les besoins particuliers (complément pour apprentis en situation de handicap).</p>
+      <div style="margin-top:20px">
+        <a href="financements.html" class="btn-gl">En savoir plus sur les financements →</a>
+      </div>
+    </div>
+
+    <div class="it-panel" id="it-evaluations" role="tabpanel" aria-labelledby="it-tab-evaluations">
+      <h3>Déroulement des examens & conditions de validation</h3>
+      <ul>
+        <li>Mémoire écrit composé de deux parties : rapport d'alternance et dossier de conception du projet</li>
+        <li>Conception d'une application web : Front-end & Back-end</li>
+        <li>Soutenance du mémoire et du projet devant un jury</li>
+        <li>Évaluation des compétences en entreprise par le maître d'apprentissage</li>
+      </ul>
+    </div>
+
+    <div class="it-panel" id="it-debouches" role="tabpanel" aria-labelledby="it-tab-debouches">
+      <h3>Les métiers auxquels vous prépare cette formation</h3>
+      <ul>
+        <li>Développeur Full Stack — <span class="sal">29 000 – 46 000 €</span></li>
+        <li>Développeur web Front-End — <span class="sal">26 000 – 36 000 €</span></li>
+        <li>Développeur Back-End / Lead Développeur — <span class="sal">à partir de 40 000 €</span></li>
+        <li>Développeur PHP, Node.js, Laravel, Symfony — <span class="sal">24 000 – 38 000 €</span></li>
+        <li>Développeur d'application mobile — <span class="sal">28 000 – 45 000 €</span></li>
+        <li>Analyste-Programmeur — <span class="sal">27 000 – 40 000 €</span></li>
+        <li>Chef de projets étude et développement</li>
+      </ul>
+      <p style="font-size:.78rem;color:var(--tx3);margin-top:12px">Source : Point emploi 2023</p>
+      <h4>Poursuite d'études possible</h4>
+      <ul>
+        <li>Expert en Management des SI et Transformation Digitale</li>
+        <li>Référent Opérationnel en Sécurité Informatique</li>
+        <li>Responsable de la Sécurité des Systèmes d'Information</li>
+      </ul>
+    </div>
+
+    <div class="it-panel" id="it-corresp" role="tabpanel" aria-labelledby="it-tab-corresp">
+      <h3>Correspondances & passerelles</h3>
+      <p>Dans le cadre de son enregistrement, la certification RNCP38606 fait apparaître les correspondances suivantes :</p>
+      <ul>
+        <li><strong>Correspondance totale</strong> — RNCP28194 — Développeur d'application full stack (IT-AKADEMY)</li>
+        <li><strong>Correspondance totale</strong> — RNCP36400 — Développeur full stack (IT-AKADEMY)</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36926 (IFOCOP) — BC02 « Concevoir et développer des interfaces front-end »</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36926 (IFOCOP) — BC03 « Concevoir et développer des interfaces back-end »</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36146 (HETIC) — BC01 « Concevoir et spécifier une solution digitale »</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36135 (42) — BC01 « Réalisation de l'analyse technique des besoins »</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36135 (42) — BC05 « Mise en production et maintenance des applications »</li>
+        <li><strong>Correspondance partielle</strong> — RNCP36135 (42) — BC02 (Développement web & mobile) et BC04 (Tests et corrections)</li>
+      </ul>
+    </div>
+
+    <div class="it-panel" id="it-acces" role="tabpanel" aria-labelledby="it-tab-acces">
+      <h3>Accessibilité & référent handicap</h3>
+      <p>Cloud Campus dispose d'interlocuteurs dédiés pour accompagner les étudiants face à leurs problématiques quotidiennes : handicap, isolement, dépression, santé, discrimination, harcèlement.</p>
+      <p>La référente handicap vous aide à trouver des solutions d'aménagements :</p>
+      <ul>
+        <li><a href="mailto:laetitia@cloud-campus.fr">laetitia@cloud-campus.fr</a> — 06 40 81 46 86</li>
+      </ul>
+      <p>Locaux accessibles aux personnes à mobilité réduite (normes ERP) pour les soutenances et événements.</p>
     </div>
   </div>
 </section>
@@ -325,13 +774,60 @@
 
 </main>
 
+<script>
+(function () {
+  /* ── Year toggle ── */
+  var yrBtns   = [document.getElementById('yr-btn-1'),   document.getElementById('yr-btn-2')];
+  var yrPanels = [document.getElementById('yr-panel-1'), document.getElementById('yr-panel-2')];
+
+  yrBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () {
+      yrBtns.forEach(function (b) { b.classList.remove('active'); });
+      yrPanels.forEach(function (p) { p.style.display = 'none'; });
+      btn.classList.add('active');
+      yrPanels[i].style.display = 'grid';
+      var firstWk = yrPanels[i].querySelector('.wk-btn');
+      if (firstWk) firstWk.click();
+    });
+  });
+
+  /* ── Week nav (one handler per cur-layout) ── */
+  document.querySelectorAll('.cur-layout').forEach(function (layout) {
+    var wkBtns   = layout.querySelectorAll('.wk-btn');
+    var wkPanels = layout.querySelectorAll('.wk-panel');
+    wkBtns.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        wkBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        wkPanels.forEach(function (p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        wkPanels[i].classList.add('active');
+      });
+    });
+  });
+
+  /* ── Info tabs ── */
+  var itBtns   = document.querySelectorAll('.it-btn');
+  var itPanels = document.querySelectorAll('.it-panel');
+  itBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () {
+      itBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      itPanels.forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      itPanels[i].classList.add('active');
+    });
+  });
+})();
+</script>
+
 <footer role="contentinfo">
   <div class="ctn">
     <div class="ft-g">
       <div>
         <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
-        <p class="ft-desc">École supérieure du digital et du commerce en alternance à Compiègne, Hauts-de-France.</p>
-        <div class="ft-q"><span>✅</span><p>Certification Qualiopi — Formation et apprentissage</p></div>
+        <p class="ft-desc">École supérieure du digital et du commerce en alternance. Formations 100% financées en apprentissage, avec l'intelligence artificielle intégrée dans chaque cursus.</p>
+        <div class="ft-q"><img src="assets/qualiopi-officiel.svg" alt="Logo Qualiopi" class="qualiopi-logo"><p>Certification Qualiopi — Actions de formation et formation par apprentissage</p></div>
       </div>
       <div>
         <h5>À propos</h5>
@@ -362,9 +858,15 @@
     <div class="ft-bottom">
       <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a></span>
       <div class="ft-soc">
-        <a href="https://www.linkedin.com/company/cloudcampusparis/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/cloud_campus/" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-        <a href="https://www.tiktok.com/@cloud_campus" target="_blank" rel="noopener" aria-label="TikTok">tt</a>
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" aria-label="LinkedIn Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.12h.05c.53-1.01 1.83-2.12 3.77-2.12 4.03 0 4.78 2.65 4.78 6.09v9.43h-4v-8.36c0-1.99-.04-4.56-2.78-4.56-2.78 0-3.2 2.17-3.2 4.42v8.5h-4V7.98z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cloud_campus/" aria-label="Instagram Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.2A4.8 4.8 0 1 0 16.8 12 4.81 4.81 0 0 0 12 7.2zm0 7.6A2.8 2.8 0 1 1 14.8 12 2.81 2.81 0 0 1 12 14.8zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@cloud_campus" aria-label="TikTok Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.7 3c.6 2.6 2.4 4.4 4.9 4.9v3.7c-1.6.1-3.1-.4-4.4-1.2v6.5c0 3.7-3 6.7-6.7 6.7S4 20.6 4 16.9s3-6.7 6.7-6.7c.3 0 .6 0 .9.1v3.9c-.3-.1-.6-.2-.9-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9V3h3.1z"/></svg>
+        </a>
       </div>
     </div>
   </div>
