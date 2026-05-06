@@ -25,15 +25,24 @@
 })();
 
 
-/* ─── THEME TOGGLE ─── */
-function toggleTheme() {
-  const html = document.documentElement;
-  const btn  = document.querySelector('.theme-btn');
-  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-  if (btn) btn.textContent = html.dataset.theme === 'dark' ? '🌙' : '☀️';
+/* ─── THEME TOGGLE + PERSISTENCE ─── */
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = document.querySelector('.theme-btn');
+  if (btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
 }
-// Expose globally so inline onclick works
+
+function toggleTheme() {
+  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+}
 window.toggleTheme = toggleTheme;
+
+// Sync button icon with stored theme on load
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme(localStorage.getItem('theme') || document.documentElement.dataset.theme || 'dark');
+});
 
 
 /* ─── INTERSECTION OBSERVER — SCROLL REVEALS ─── */
@@ -95,6 +104,71 @@ document.querySelectorAll('.btn-gl, .btn-g').forEach(btn => {
     setTimeout(() => { btn.style.transition = ''; }, 500);
   });
 });
+
+
+/* ─── MOBILE MENU ─── */
+(function () {
+  const mobBtn  = document.querySelector('.mob-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (!mobBtn || !navLinks) return;
+
+  // Build overlay + sliding panel
+  const overlay = document.createElement('div');
+  overlay.className = 'mob-overlay';
+  overlay.setAttribute('aria-hidden', 'true');
+
+  const panel = document.createElement('nav');
+  panel.className = 'mob-nav';
+  panel.setAttribute('aria-label', 'Navigation mobile');
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'mob-close';
+  closeBtn.setAttribute('aria-label', 'Fermer le menu');
+  closeBtn.textContent = '✕';
+  panel.appendChild(closeBtn);
+
+  navLinks.querySelectorAll('.nl').forEach(nl => {
+    if (nl.classList.contains('has-dd')) {
+      const label = document.createElement('div');
+      label.className = 'mob-section';
+      label.textContent = nl.firstChild.textContent.trim().replace(/[▾\s]+$/, '').trim();
+      panel.appendChild(label);
+      nl.querySelectorAll('.dd a').forEach(a => {
+        const link = a.cloneNode(true);
+        link.className = 'mob-link';
+        panel.appendChild(link);
+      });
+    } else {
+      const link = nl.cloneNode(true);
+      link.className = 'mob-link';
+      panel.appendChild(link);
+    }
+  });
+
+  overlay.appendChild(panel);
+  document.body.appendChild(overlay);
+
+  function openMenu() {
+    document.body.classList.add('mob-open');
+    overlay.removeAttribute('aria-hidden');
+    mobBtn.setAttribute('aria-expanded', 'true');
+    mobBtn.textContent = '✕';
+  }
+
+  function closeMenu() {
+    document.body.classList.remove('mob-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    mobBtn.setAttribute('aria-expanded', 'false');
+    mobBtn.textContent = '☰';
+  }
+
+  mobBtn.addEventListener('click', () =>
+    document.body.classList.contains('mob-open') ? closeMenu() : openMenu()
+  );
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+})();
 
 
 /* ─── NAVBAR HIDE / SHOW ON SCROLL ─── */
