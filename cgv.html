@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;})()</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<title>Conditions Générales de Vente | Cloud Campus</title>
+<meta name="description" content="Conditions Générales de Vente de Cloud Campus — modalités d'inscription, financement, obligations des parties, annulation et résiliation.">
+<link rel="canonical" href="https://cloud-campus.fr/cgv">
+<meta name="robots" content="noindex, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .legal-hero {
+    padding: clamp(80px,8vw,110px) 0 clamp(40px,5vw,60px);
+    border-bottom: 1px solid var(--brd);
+  }
+  .legal-hero h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 900; letter-spacing: -.02em; margin-bottom: 10px; }
+  .legal-hero p  { font-size: .88rem; color: var(--tx3); font-family: var(--mono); }
+
+  .legal-layout { display: grid; grid-template-columns: 220px 1fr; gap: 52px; align-items: start; padding: 60px 0 100px; }
+
+  .legal-nav { position: sticky; top: 90px; }
+  .legal-nav-title { font-size: .66rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--tx3); font-family: var(--mono); font-weight: 600; margin-bottom: 10px; }
+  .legal-nav a {
+    display: block; padding: 8px 12px; border-radius: var(--r); font-size: .82rem;
+    color: var(--tx3); transition: all .2s; margin-bottom: 2px;
+  }
+  .legal-nav a:hover { color: var(--acc); background: var(--acc-gl); }
+  .legal-nav a.active { color: var(--acc); background: var(--acc-gl); font-weight: 600; }
+
+  .legal-content { max-width: 740px; }
+  .legal-section { margin-bottom: 52px; scroll-margin-top: 100px; }
+  .legal-section h2 {
+    font-size: 1.15rem; font-weight: 700; margin-bottom: 18px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--brd);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .legal-section h3 { font-size: .95rem; font-weight: 700; margin: 20px 0 10px; color: var(--tx); }
+  .legal-section p  { font-size: .88rem; color: var(--tx2); line-height: 1.8; margin-bottom: 12px; }
+  .legal-section ul { list-style: none; margin-bottom: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .legal-section ul li { font-size: .88rem; color: var(--tx2); line-height: 1.7; padding-left: 18px; position: relative; }
+  .legal-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--acc); font-weight: 700; }
+  .legal-section a { color: var(--acc); text-decoration: underline; }
+
+  .info-box {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r);
+    padding: 20px 22px; margin-bottom: 16px;
+  }
+  .info-box .ib-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--acc); font-family: var(--mono); margin-bottom: 8px; }
+  .info-box p { font-size: .86rem; color: var(--tx2); line-height: 1.7; margin: 0; }
+  .info-box strong { color: var(--tx); }
+
+  .update-badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px;
+    border-radius: var(--r-full); background: var(--card); border: 1px solid var(--brd);
+    font-size: .76rem; color: var(--tx3); font-family: var(--mono); margin-bottom: 40px;
+  }
+
+  @media (max-width: 860px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .legal-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <nav class="ctn nav" aria-label="Navigation principale">
+    <a href="index.html" class="logo"><span class="logo-mark">CC</span> Cloud Campus</a>
+    <div class="nav-links">
+      <div class="nl has-dd" tabindex="0">L'école ▾
+        <div class="dd">
+          <a href="pedagogie.html"><strong>💚 Pédagogie</strong><span>80% pratique, 20% théorie</span></a>
+          <a href="notre-equipe.html"><strong>👥 Notre équipe</strong><span>Formateurs en activité</span></a>
+          <a href="financements.html"><strong>📜 Financements</strong><span>Formation 100% gratuite</span></a>
+          <a href="faq.html"><strong>❓ FAQ</strong><span>Toutes vos questions</span></a>
+          <a href="blog.html"><strong>📝 Blog</strong><span>Conseils alternance & actus de l'école</span></a>
+        </div>
+      </div>
+      <div class="nl has-dd" tabindex="0">Formations ▾
+        <div class="dd" style="min-width:360px">
+          <a href="formation-dev-web.html"><strong>💻 Développeur Full Stack</strong><span>Bac+3/4 — Front-end & Back-end</span></a>
+          <a href="chef-de-projet-cyber.html"><strong>🔒 Expert Système d'Information</strong><span>Bac+5 — Cybersécurité & SI</span></a>
+          <a href="formation-integrateur-ia.html"><strong>🤖 Développeur Intégrateur d'IA</strong><span>Bac+4/5 — Full Stack & Intelligence Artificielle</span></a>
+        </div>
+      </div>
+      <a href="recruter-un-alternant.html" class="nl">Entreprises</a>
+      <a href="se-renseigner-et-candidater.html" class="nl">Admissions</a>
+    </div>
+    <div class="nav-r">
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="nous-contacter.html" class="btn-o">Contact</a>
+      <a href="se-renseigner-et-candidater.html" class="btn-g">Candidature</a>
+      <button class="mob-btn">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="ctn">
+    <div class="legal-hero">
+      <div class="stag">Informations contractuelles</div>
+      <h1>Conditions Générales de Vente</h1>
+      <p>Dernière mise à jour : 1er janvier 2026</p>
+    </div>
+
+    <div class="legal-layout">
+
+      <!-- SIDEBAR NAV -->
+      <nav class="legal-nav" aria-label="Navigation CGV">
+        <div class="legal-nav-title">Sommaire</div>
+        <a href="#objet">1. Objet</a>
+        <a href="#services">2. Services proposés</a>
+        <a href="#inscription">3. Modalités d'inscription</a>
+        <a href="#prix">4. Prix et financement</a>
+        <a href="#pedagogie">5. Modalités pédagogiques</a>
+        <a href="#obligations">6. Obligations des parties</a>
+        <a href="#annulation">7. Annulation et résiliation</a>
+        <a href="#propriete">8. Propriété intellectuelle</a>
+        <a href="#responsabilite">9. Responsabilité</a>
+        <a href="#donnees">10. Données personnelles</a>
+        <a href="#droit">11. Droit applicable</a>
+        <a href="#contact-cgv">12. Contact</a>
+      </nav>
+
+      <!-- CONTENT -->
+      <div class="legal-content">
+        <div class="update-badge">📅 Mise à jour : 1er janvier 2026</div>
+
+        <!-- 1. OBJET -->
+        <div class="legal-section" id="objet">
+          <h2>1. Objet</h2>
+          <p>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>Cloud Campus SAS</strong> (ci-après « Cloud Campus » ou « l'École ») et toute personne physique ou morale (ci-après « le Client ») souhaitant bénéficier des services de formation proposés.</p>
+          <p>Cloud Campus est un organisme de formation certifié <strong>Qualiopi</strong> pour les actions de formation et les actions de formation par apprentissage. Toute inscription à une formation emporte acceptation pleine et entière des présentes CGV.</p>
+          <div class="info-box">
+            <div class="ib-label">Organisme de formation</div>
+            <p>
+              <strong>Cloud Campus SAS</strong><br>
+              SIRET : XXX XXX XXX XXXXX<br>
+              Numéro de déclaration d'activité de formation : XX XX XXXXXXXX X<br>
+              Certification Qualiopi (actions de formation et formation par apprentissage)<br>
+              Email : <a href="mailto:contact@cloud-campus.fr">contact@cloud-campus.fr</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. SERVICES -->
+        <div class="legal-section" id="services">
+          <h2>2. Services proposés</h2>
+          <p>Cloud Campus propose des formations supérieures en alternance dans le domaine du numérique, dispensées en télé-présentiel (à distance, en sessions live interactives). Les formations disponibles sont :</p>
+          <ul>
+            <li><strong>Développeur Web Full Stack (Bac+3/4)</strong> — 2 ans en alternance</li>
+            <li><strong>Expert en Système d'Information et Sécurité (Bac+5)</strong> — 1 an en alternance</li>
+            <li><strong>Développeur Intégrateur d'Intelligence Artificielle (Bac+4/5)</strong> — 1 ou 2 ans en alternance</li>
+          </ul>
+          <p>Ces formations sont accessibles depuis toute la France. L'ensemble des cours est dispensé à distance, via des sessions live interactives, avec accès aux replays et aux ressources pédagogiques en ligne.</p>
+        </div>
+
+        <!-- 3. INSCRIPTION -->
+        <div class="legal-section" id="inscription">
+          <h2>3. Modalités d'inscription</h2>
+          <h3>Processus d'admission</h3>
+          <p>L'inscription à une formation Cloud Campus se déroule en plusieurs étapes :</p>
+          <ul>
+            <li>Dépôt d'un dossier de candidature en ligne (gratuit)</li>
+            <li>Étude du dossier et contact de l'équipe admissions sous 48h</li>
+            <li>Entretien de motivation avec un conseiller pédagogique</li>
+            <li>Notification d'admission ou de refus</li>
+            <li>En cas d'admission : signature de la convention de formation et du contrat d'alternance avec l'entreprise d'accueil</li>
+          </ul>
+          <h3>Conditions d'admission</h3>
+          <p>L'admission est subordonnée à :</p>
+          <ul>
+            <li>La validation des prérequis académiques propres à chaque formation</li>
+            <li>La réussite de l'entretien de motivation</li>
+            <li>La signature d'un contrat d'apprentissage ou de professionnalisation avec une entreprise partenaire</li>
+          </ul>
+          <p>Cloud Campus se réserve le droit de refuser toute candidature ne remplissant pas les conditions d'admission.</p>
+          <h3>Effectivité de l'inscription</h3>
+          <p>L'inscription est définitive à la date de signature de la convention de formation entre Cloud Campus, l'apprenant et l'entreprise d'accueil, et à réception de la prise en charge financière par l'OPCO compétent.</p>
+        </div>
+
+        <!-- 4. PRIX ET FINANCEMENT -->
+        <div class="legal-section" id="prix">
+          <h2>4. Prix et financement</h2>
+          <h3>Tarifs</h3>
+          <p>Les tarifs des formations sont définis dans la convention de formation transmise à l'entreprise d'accueil et à l'OPCO. Ces tarifs sont fixés conformément aux niveaux de prise en charge définis par France Compétences.</p>
+          <h3>Financement en alternance</h3>
+          <p>Dans le cadre de l'alternance, les frais de formation sont intégralement pris en charge par l'OPCO (Opérateur de Compétences) de l'entreprise d'accueil. L'apprenant ne paie aucun frais de scolarité et perçoit un salaire mensuel versé par l'entreprise.</p>
+          <ul>
+            <li>Zéro frais de scolarité à la charge de l'apprenant</li>
+            <li>Financement assuré par l'OPCO dans la limite des niveaux de prise en charge en vigueur</li>
+            <li>Salaire mensuel garanti versé par l'entreprise d'accueil conformément à la réglementation</li>
+          </ul>
+          <h3>Facturation</h3>
+          <p>La facturation est adressée à l'OPCO et/ou à l'entreprise d'accueil selon les modalités prévues dans la convention de formation. En cas de reste à charge, ce dernier est précisé dans la convention et facturé directement à l'entreprise.</p>
+        </div>
+
+        <!-- 5. MODALITÉS PÉDAGOGIQUES -->
+        <div class="legal-section" id="pedagogie">
+          <h2>5. Modalités pédagogiques</h2>
+          <h3>Format des formations</h3>
+          <p>Les formations Cloud Campus sont dispensées en télé-présentiel : les sessions de cours se tiennent à distance, en direct, via des outils de visioconférence et de collaboration (Discord, et autres plateformes). Les apprenants bénéficient de :</p>
+          <ul>
+            <li>Sessions live interactives avec les formateurs</li>
+            <li>Accès aux replays des sessions dans un délai de 48h</li>
+            <li>Ressources pédagogiques en ligne (cours, exercices, projets)</li>
+            <li>Accompagnement individualisé et suivi de progression</li>
+            <li>Projets pratiques sur des cas réels</li>
+          </ul>
+          <h3>Rythme d'alternance</h3>
+          <p>Le rythme d'alternance entre les périodes en centre de formation et les périodes en entreprise est défini dans le contrat d'apprentissage ou de professionnalisation, conformément à la réglementation en vigueur.</p>
+          <h3>Évaluation et certification</h3>
+          <p>L'obtention du titre professionnel ou de la certification est conditionnée à la réussite des épreuves d'évaluation définies par le certificateur. Cloud Campus accompagne les apprenants dans la préparation de ces épreuves.</p>
+        </div>
+
+        <!-- 6. OBLIGATIONS DES PARTIES -->
+        <div class="legal-section" id="obligations">
+          <h2>6. Obligations des parties</h2>
+          <h3>Obligations de Cloud Campus</h3>
+          <p>Cloud Campus s'engage à :</p>
+          <ul>
+            <li>Mettre à disposition les ressources pédagogiques et les formateurs qualifiés pour assurer les formations</li>
+            <li>Délivrer les attestations de présence, relevés de notes et documents pédagogiques nécessaires</li>
+            <li>Accompagner les apprenants dans leur recherche d'entreprise d'alternance</li>
+            <li>Maintenir la certification Qualiopi et respecter les référentiels de qualité associés</li>
+            <li>Traiter les données personnelles des apprenants conformément à la réglementation RGPD</li>
+          </ul>
+          <h3>Obligations de l'apprenant</h3>
+          <p>L'apprenant s'engage à :</p>
+          <ul>
+            <li>Assister aux sessions de formation et respecter les horaires définis</li>
+            <li>Réaliser les travaux, projets et évaluations demandés</li>
+            <li>Respecter le règlement intérieur de Cloud Campus</li>
+            <li>Informer Cloud Campus de toute difficulté ou absence dans les meilleurs délais</li>
+            <li>Respecter les obligations liées à son contrat d'alternance avec l'entreprise d'accueil</li>
+          </ul>
+          <h3>Obligations de l'entreprise d'accueil</h3>
+          <p>L'entreprise d'accueil s'engage à respecter les obligations liées au contrat d'apprentissage ou de professionnalisation, notamment en matière de tutorat, de conditions de travail et de rémunération de l'alternant.</p>
+        </div>
+
+        <!-- 7. ANNULATION ET RÉSILIATION -->
+        <div class="legal-section" id="annulation">
+          <h2>7. Annulation et résiliation</h2>
+          <h3>Annulation par l'apprenant</h3>
+          <p>Toute demande d'annulation ou de désistement doit être notifiée par écrit à Cloud Campus. En cas de désistement avant le début de la formation, aucun frais ne sera facturé à l'apprenant. En cas de désistement après le début de la formation, les frais déjà engagés et non récupérables auprès de l'OPCO pourront être mis à la charge de l'entreprise conformément à la convention de formation.</p>
+          <h3>Rupture du contrat d'alternance</h3>
+          <p>En cas de rupture du contrat d'apprentissage ou de professionnalisation, les parties devront en informer Cloud Campus dans les meilleurs délais. Cloud Campus accompagnera l'apprenant dans la recherche d'une nouvelle entreprise dans la mesure du possible. En cas d'impossibilité de trouver une nouvelle entreprise dans un délai raisonnable, la convention de formation pourra être résiliée.</p>
+          <h3>Résiliation par Cloud Campus</h3>
+          <p>Cloud Campus se réserve le droit de mettre fin à la formation d'un apprenant en cas de :</p>
+          <ul>
+            <li>Manquements graves et répétés aux obligations pédagogiques</li>
+            <li>Comportement incompatible avec le bon déroulement de la formation</li>
+            <li>Non-paiement des frais de formation par l'OPCO ou l'entreprise, sans régularisation dans un délai de 30 jours</li>
+          </ul>
+          <h3>Annulation de session par Cloud Campus</h3>
+          <p>Cloud Campus se réserve le droit d'annuler ou de reporter une session de formation en cas de force majeure, d'absence de l'intervenant ou de nombre insuffisant de participants. Les apprenants seront informés dans les meilleurs délais et une session de remplacement sera proposée.</p>
+        </div>
+
+        <!-- 8. PROPRIÉTÉ INTELLECTUELLE -->
+        <div class="legal-section" id="propriete">
+          <h2>8. Propriété intellectuelle</h2>
+          <p>L'ensemble des supports pédagogiques, cours, exercices, vidéos, code source et ressources mis à disposition dans le cadre des formations Cloud Campus sont protégés par le droit de la propriété intellectuelle et demeurent la propriété exclusive de Cloud Campus SAS.</p>
+          <p>Les apprenants bénéficient d'un droit d'utilisation personnel, non exclusif et non transférable des supports pédagogiques, strictement limité à l'usage dans le cadre de la formation. Toute reproduction, diffusion, vente ou exploitation commerciale des supports sans autorisation écrite préalable de Cloud Campus est interdite.</p>
+        </div>
+
+        <!-- 9. RESPONSABILITÉ -->
+        <div class="legal-section" id="responsabilite">
+          <h2>9. Responsabilité</h2>
+          <p>Cloud Campus s'engage à mettre en œuvre tous les moyens nécessaires pour assurer la qualité des formations dispensées. Cependant, Cloud Campus ne saurait être tenu responsable :</p>
+          <ul>
+            <li>De l'échec d'un apprenant aux évaluations ou à l'obtention de sa certification</li>
+            <li>De l'impossibilité pour un apprenant de trouver une entreprise d'alternance</li>
+            <li>Des dommages résultant d'une interruption du service liée à des causes indépendantes de sa volonté (force majeure, panne technique, etc.)</li>
+            <li>Des conséquences d'une rupture de contrat d'alternance à l'initiative de l'entreprise d'accueil ou de l'apprenant</li>
+          </ul>
+          <p>La responsabilité de Cloud Campus ne pourra en aucun cas excéder le montant des frais de formation effectivement perçus au titre de la période de formation concernée.</p>
+        </div>
+
+        <!-- 10. DONNÉES PERSONNELLES -->
+        <div class="legal-section" id="donnees">
+          <h2>10. Données personnelles</h2>
+          <p>Dans le cadre des présentes CGV, Cloud Campus est amené à collecter et traiter des données personnelles relatives aux apprenants et aux représentants des entreprises partenaires. Ce traitement est réalisé conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.</p>
+          <p>Pour en savoir plus sur le traitement de vos données personnelles, vos droits et la manière de les exercer, veuillez consulter notre <a href="politique.html">Politique de confidentialité</a>.</p>
+        </div>
+
+        <!-- 11. DROIT APPLICABLE -->
+        <div class="legal-section" id="droit">
+          <h2>11. Droit applicable et règlement des litiges</h2>
+          <p>Les présentes CGV sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution sera soumis, à défaut de résolution amiable, à la compétence exclusive des tribunaux français.</p>
+          <h3>Médiation</h3>
+          <p>Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, en cas de litige avec un consommateur, il est possible de recourir à une procédure de médiation. Pour toute difficulté non résolue à l'amiable, vous pouvez contacter le médiateur de la consommation dont relève Cloud Campus SAS.</p>
+        </div>
+
+        <!-- 12. CONTACT -->
+        <div class="legal-section" id="contact-cgv">
+          <h2>12. Contact</h2>
+          <p>Pour toute question relative aux présentes Conditions Générales de Vente :</p>
+          <div class="info-box">
+            <div class="ib-label">Contact</div>
+            <p>
+              <strong>Cloud Campus SAS</strong><br>
+              Email : <a href="mailto:contact@cloud-campus.fr">contact@cloud-campus.fr</a><br>
+              DPO : <a href="mailto:dpo@cloud-campus.fr">dpo@cloud-campus.fr</a>
+            </p>
+          </div>
+          <p>Voir aussi nos <a href="mentions-legales.html">Mentions légales</a> et notre <a href="politique.html">Politique de confidentialité</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="ctn">
+    <div class="ft-g">
+      <div>
+        <div class="ft-brand"><span class="fm">CC</span> Cloud Campus</div>
+        <p class="ft-desc">École supérieure du digital en alternance. Formations 100% financées en apprentissage, avec l'intelligence artificielle intégrée dans chaque cursus.</p>
+        <div class="ft-q"><img src="assets/qualiopi-officiel.png" alt="Logo Qualiopi" class="qualiopi-logo"><p>Certification Qualiopi — Actions de formation et formation par apprentissage</p></div>
+      </div>
+      <div>
+        <h5>À propos</h5>
+        <ul>
+          <li><a href="pedagogie.html">Pédagogie</a></li>
+          <li><a href="notre-equipe.html">Notre équipe</a></li>
+          <li><a href="financements.html">Financements</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Formations</h5>
+        <ul>
+          <li><a href="formation-dev-web.html">Développeur Full Stack</a></li>
+          <li><a href="chef-de-projet-cyber.html">Expert en SI</a></li>
+          <li><a href="formation-integrateur-ia.html">Intégrateur d'IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="nous-contacter.html">Nous contacter</a></li>
+          <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
+          <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Cloud Campus — <a href="mentions-legales.html">Mentions légales</a> · <a href="politique.html">Confidentialité</a> · <a href="cgv.html">CGV</a></span>
+      <div class="ft-soc">
+        <a href="https://www.linkedin.com/company/cloudcampusparis/" aria-label="LinkedIn Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.12h.05c.53-1.01 1.83-2.12 3.77-2.12 4.03 0 4.78 2.65 4.78 6.09v9.43h-4v-8.36c0-1.99-.04-4.56-2.78-4.56-2.78 0-3.2 2.17-3.2 4.42v8.5h-4V7.98z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/cloud_campus/" aria-label="Instagram Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.2A4.8 4.8 0 1 0 16.8 12 4.81 4.81 0 0 0 12 7.2zm0 7.6A2.8 2.8 0 1 1 14.8 12 2.81 2.81 0 0 1 12 14.8zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@cloud_campus" aria-label="TikTok Cloud Campus" rel="noopener noreferrer" target="_blank">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.7 3c.6 2.6 2.4 4.4 4.9 4.9v3.7c-1.6.1-3.1-.4-4.4-1.2v6.5c0 3.7-3 6.7-6.7 6.7S4 20.6 4 16.9s3-6.7 6.7-6.7c.3 0 .6 0 .9.1v3.9c-.3-.1-.6-.2-.9-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9V3h3.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+const sections = document.querySelectorAll('.legal-section');
+const navLinks  = document.querySelectorAll('.legal-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) current = s.id; });
+  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}, { passive: true });
+</script>
+</body>
+</html>

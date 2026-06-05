@@ -1,107 +1,15 @@
-# ══════════════════════════════════════════════════════
-#  Cloud Campus — Apache configuration for OVH Web Hosting
-# ══════════════════════════════════════════════════════
-
-Options -Indexes
-ServerSignature Off
-
-# ─── Rewrite engine ───────────────────────────────────
+# BEGIN WordPress
+# Les directives (lignes) entre « BEGIN WordPress » et « END WordPress » sont générées
+# dynamiquement, et doivent être modifiées uniquement via les filtres WordPress.
+# Toute modification des directives situées entre ces marqueurs sera surchargée.
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # 1. Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-  # 2. Remove www (canonical non-www)
-  RewriteCond %{HTTP_HOST} ^www\.cloud-campus\.fr [NC]
-  RewriteRule ^ https://cloud-campus.fr%{REQUEST_URI} [R=301,L]
-
-  # 3. Clean URLs — strip .html extension
-  #    e.g. /faq → /faq.html served transparently
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^([^.]+)/?$ $1.html [L]
-
-  # 4. Redirect .html suffix to clean URL (avoids duplicate content)
-  RewriteCond %{THE_REQUEST} \s/(.+)\.html[\s?] [NC]
-  RewriteRule ^ /%1 [R=301,L]
-
-  # 5. Redirect /FAQ to /faq (case fix already in canonical, belt-and-suspenders)
-  RewriteRule ^FAQ/?$ /faq [R=301,L]
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 </IfModule>
 
-# ─── Custom error pages ───────────────────────────────
-ErrorDocument 404 /index.html
-
-# ─── Compression ──────────────────────────────────────
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml text/xml application/xml
-</IfModule>
-
-# ─── Browser caching ──────────────────────────────────
-<IfModule mod_expires.c>
-  ExpiresActive On
-
-  # HTML — short cache, content changes
-  ExpiresByType text/html                 "access plus 1 hour"
-
-  # CSS & JS — long cache (force refresh via filename hash when needed)
-  ExpiresByType text/css                  "access plus 1 year"
-  ExpiresByType application/javascript    "access plus 1 year"
-  ExpiresByType text/javascript           "access plus 1 year"
-
-  # Images & fonts
-  ExpiresByType image/png                 "access plus 1 year"
-  ExpiresByType image/jpeg                "access plus 1 year"
-  ExpiresByType image/webp                "access plus 1 year"
-  ExpiresByType image/svg+xml             "access plus 1 year"
-  ExpiresByType image/x-icon              "access plus 1 year"
-  ExpiresByType font/woff2                "access plus 1 year"
-  ExpiresByType font/woff                 "access plus 1 year"
-  ExpiresByType application/font-woff2    "access plus 1 year"
-
-  # Data
-  ExpiresByType application/json          "access plus 1 hour"
-  ExpiresByType text/xml                  "access plus 1 hour"
-  ExpiresByType application/xml           "access plus 1 hour"
-</IfModule>
-
-# ─── Cache-Control headers ────────────────────────────
-<IfModule mod_headers.c>
-  # Immutable static assets
-  <FilesMatch "\.(css|js|png|jpg|jpeg|webp|svg|ico|woff|woff2)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-
-  # HTML — revalidate each visit
-  <FilesMatch "\.html$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
-  </FilesMatch>
-
-  # ─── Security headers ─────────────────────────────
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set X-XSS-Protection "1; mode=block"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-
-  # HSTS — tell browsers to always use HTTPS (1 year)
-  # Enable only after confirming HTTPS works correctly on production
-  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-</IfModule>
-
-# ─── MIME types ───────────────────────────────────────
-<IfModule mod_mime.c>
-  AddType image/webp          .webp
-  AddType font/woff2          .woff2
-  AddType font/woff           .woff
-  AddType application/json    .json
-</IfModule>
-
-# ─── PHP (RSS feed) ───────────────────────────────────
-<IfModule mod_php.c>
-  php_flag display_errors Off
-</IfModule>
+# END WordPress
