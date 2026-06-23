@@ -675,3 +675,19 @@ body.mob-open .mob-nav { transform: translateX(0); }
   .accomp-big { font-size: 4.5rem; }
   .nav-r .btn-o { display: none; }
 }
+
+
+.ticket{
+  padding:1rem;
+  background: none;
+  color:var(--acc);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid var(--acc-d);
+  border-radius: 1rem;
+  transition: all 0.2s linear;
+}
+.ticket:hover{
+  background-color: var(--acc);
+  color:var(--bg);
+}
