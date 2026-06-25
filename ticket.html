@@ -5,108 +5,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/favicon.png">
-<title>Cloud Campus — Formation Digital en Alternance | Bac+3/4 à Bac+5</title>
-<meta name="description" content="Cloud Campus, école supérieure du digital en alternance 100% en ligne. Formations 100% financées du Bac+3/4 au Bac+5 : Développeur Full Stack, Expert SI. 92% de taux de réussite, +500 entreprises partenaires. IA intégrée.">
-<meta name="keywords" content="formation alternance digital, développeur full stack alternance, expert système information, formation gratuite alternance, école digitale Hauts-de-France">
-<link rel="canonical" href="https://cloud-campus.fr/">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="author" content="Cloud Campus">
+<title>Support — Ouvrir un ticket | Cloud Campus</title>
+<meta name="description" content="Une question, un bug, un problème ? Ouvrez un ticket auprès du support Cloud Campus. Réponse sous 24h ouvrées, suivi personnalisé de votre demande.">
+<link rel="canonical" href="https://cloud-campus.fr/ticket">
+<meta name="robots" content="noindex, follow">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cloud Campus — École du Digital en Alternance en ligne">
-<meta property="og:description" content="Formations 100% financées du Bac+3/4 au Bac+5. Développeur Full Stack, Expert SI. 92% de réussite, +500 entreprises partenaires.">
-<meta property="og:url" content="https://cloud-campus.fr/">
+<meta property="og:title" content="Support — Ouvrir un ticket | Cloud Campus">
+<meta property="og:description" content="Besoin d'aide ? Ouvrez un ticket et suivez votre demande. Le support Cloud Campus répond sous 24h ouvrées.">
+<meta property="og:url" content="https://cloud-campus.fr/ticket">
 <meta property="og:site_name" content="Cloud Campus">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://cloud-campus.fr/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Cloud Campus — École du Digital en Alternance">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@cloud_campus">
-<meta name="twitter:title" content="Cloud Campus — Formation Digital en Alternance">
-<meta name="twitter:description" content="Du Bac+3 au Bac+5, formations 100% financées en alternance. IA intégrée, 0€ de frais.">
-<meta name="twitter:image" content="https://cloud-campus.fr/assets/og-image.png">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Schema.org JSON-LD: EducationalOrganization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Cloud Campus",
-  "url": "https://cloud-campus.fr",
-  "description": "École supérieure du digital en alternance 100% en ligne. Formations du Bac+3/4 au Bac+5 : Développeur Full Stack, Expert en Système d'Information.",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.7",
-    "bestRating": "5",
-    "ratingCount": "120"
-  },
-  "hasCredential": {
-    "@type": "EducationalOccupationalCredential",
-    "credentialCategory": "Qualiopi"
-  },
-  "areaServed": "France",
-  "sameAs": [
-    "https://www.linkedin.com/company/cloudcampusparis/",
-    "https://www.instagram.com/cloud_campus/",
-    "https://www.tiktok.com/@cloud_campus"
-  ]
-}
-</script>
-
-<!-- Schema.org JSON-LD: FAQ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Les formations Cloud Campus sont-elles gratuites ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, en alternance toutes nos formations sont 100% financées par l'entreprise d'accueil via son OPCO. L'alternant ne paie aucun frais de scolarité et perçoit un salaire."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelles formations propose Cloud Campus ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cloud Campus propose deux parcours : Développeur Full Stack (Bac+3/4) et Expert en Système d'Information et Sécurité (Bac+5). Toutes intègrent l'intelligence artificielle."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Les cours sont-ils en présentiel ou à distance ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les cours sont dispensés en télé-présentiel : sessions live interactives sur Discord. Vous pouvez suivre la formation depuis partout en France."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Cloud Campus aide-t-il à trouver une alternance ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, 81% de nos étudiants trouvent leur alternance grâce à notre accompagnement : chargés de relations entreprises, jobs dating, coaching personnalisé et +500 entreprises partenaires."
-      }
-    }
-  ]
-}
-</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-<!-- Stylesheet -->
 <link rel="stylesheet" href="./css/style.css">
+
+<style>
+  /* ─── Page hero ─── */
+  .page-hero {
+    padding: clamp(90px,11vw,140px) 0 clamp(50px,7vw,80px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 50% at 50% -5%, var(--acc-gl2), transparent);
+    pointer-events: none;
+  }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .page-hero h1 {
+    font-size: clamp(2.4rem,5vw,4rem); font-weight: 900;
+    letter-spacing: -.03em; line-height: 1.08; margin: 16px 0 18px;
+  }
+  .page-hero h1 .hl { color: var(--acc); }
+  .page-hero .lead {
+    font-size: clamp(1rem,1.3vw,1.15rem); color: var(--tx2);
+    line-height: 1.65; max-width: 560px; margin: 0 auto 32px;
+  }
+
+  /* ─── Primary CTA block ─── */
+  .ticket-cta {
+    margin-top: 20px;
+    display: inline-flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .btn-ticket {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; border-radius: var(--r-full);
+    background: var(--acc); color: #000;
+    font-family: var(--font); font-weight: 700; font-size: 1.02rem;
+    border: none; cursor: pointer;
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .btn-ticket:hover { transform: translateY(-2px); box-shadow: 0 12px 32px var(--acc-gl2); }
+  .btn-ticket .ic { font-size: 1.1rem; }
+  .cta-meta {
+    display: inline-flex; align-items: center; gap: 18px;
+    font-size: .82rem; color: var(--tx3); font-family: var(--mono);
+    flex-wrap: wrap; justify-content: center;
+  }
+  .cta-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .cta-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 8px var(--acc); }
+
+  /* ─── Categories ─── */
+  .section { padding: clamp(50px,7vw,90px) 0; }
+  .cats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  .cat {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 26px 22px; transition: border-color .35s var(--ease), transform .35s var(--ease);
+  }
+  .cat:hover { border-color: var(--brd-h); transform: translateY(-4px); }
+  .cat .ic {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--bg2); display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 16px;
+  }
+  .cat h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .cat p  { font-size: .85rem; color: var(--tx2); line-height: 1.55; }
+
+  /* ─── How it works ─── */
+  .how-wrap {
+    background: var(--bg2);
+    border-top: 1px solid var(--brd);
+    border-bottom: 1px solid var(--brd);
+  }
+  [data-theme="light"] .how-wrap { background: var(--bg3); }
+  .how {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    margin-top: 40px;
+  }
+  .step {
+    position: relative;
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 30px 26px;
+  }
+  .step .num {
+    font-family: var(--mono); font-size: .78rem; font-weight: 700;
+    color: var(--acc); letter-spacing: 2px;
+    margin-bottom: 14px; display: block;
+  }
+  .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .step p  { font-size: .88rem; color: var(--tx2); line-height: 1.6; }
+
+  /* ─── Split: tips + alt channels ─── */
+  .split { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  .panel {
+    background: var(--card); border: 1px solid var(--brd); border-radius: var(--r-xl);
+    padding: 34px;
+  }
+  .panel h3 {
+    font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .panel .sub { font-size: .85rem; color: var(--tx2); margin-bottom: 22px; line-height: 1.55; }
+  .tips { list-style: none; padding: 0; margin: 0; }
+  .tips li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0; border-top: 1px solid var(--brd);
+    font-size: .9rem; color: var(--tx); line-height: 1.55;
+  }
+  .tips li:first-child { border-top: none; padding-top: 0; }
+  .tips li::before {
+    content: '✓'; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--acc-gl2); color: var(--acc); font-weight: 700; font-size: .78rem;
+    display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  }
+  .tips li b { font-weight: 700; }
+
+  .alt-list { display: flex; flex-direction: column; gap: 12px; }
+  .alt {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; background: var(--bg2);
+    border: 1px solid var(--brd); border-radius: var(--r);
+    text-decoration: none; color: inherit;
+    transition: border-color .3s, transform .3s;
+  }
+  [data-theme="light"] .alt { background: var(--bg3); }
+  .alt:hover { border-color: var(--brd-h); transform: translateX(3px); }
+  .alt .ic {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--card); display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .alt .txt { flex: 1; min-width: 0; }
+  .alt strong { display: block; font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+  .alt span { font-size: .78rem; color: var(--tx2); font-family: var(--mono); word-break: break-all; }
+  .alt .arr { color: var(--tx3); font-size: 1.1rem; }
+
+  /* ─── SLA strip ─── */
+  .sla {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-top: 30px;
+  }
+  .sla-item {
+    text-align: center;
+    background: var(--card); border: 1px solid var(--brd);
+    border-radius: var(--r-xl); padding: 24px 18px;
+  }
+  .sla-item .v {
+    font-size: clamp(1.6rem,2.4vw,2rem); font-weight: 800;
+    color: var(--acc); letter-spacing: -.02em; margin-bottom: 6px;
+  }
+  .sla-item .l { font-size: .82rem; color: var(--tx2); line-height: 1.4; }
+
+  /* ─── FAQ overrides — keep page-local styling tight ─── */
+  .faq-local { padding: clamp(50px,7vw,90px) 0; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 1024px) {
+    .cats { grid-template-columns: repeat(2, 1fr); }
+    .how  { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .cats { grid-template-columns: 1fr; }
+    .sla  { grid-template-columns: 1fr; }
+    .panel { padding: 26px 22px; }
+  }
+</style>
 </head>
 <body>
 
@@ -148,85 +232,195 @@
   </nav>
 </header>
 
-<!-- ══════════ MAIN CONTENT ══════════ -->
 <main>
 
 <!-- ══════════ HERO ══════════ -->
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="ctn hero-inner">
-    <h2>Un probleme ? <br> Faites un ticket !</h2><br>
-    <div class="hero-btns">
-      <button id="zammad-feedback-form" class="ticket">Faire un ticket</button>
-    </div>
-    <div class="hero-stats">
-      <div class="hs"><div class="v" data-target="92" data-suffix="%">0%</div><div class="l">Taux de réussite</div></div>
-      <div class="hs"><div class="v">0€</div><div class="l">Frais de scolarité</div></div>
-      <div class="hs"><div class="v" data-target="500" data-prefix="+" data-suffix="">0</div><div class="l">Entreprises partenaires</div></div>
-      <div class="hs"><div class="v">4.7★</div><div class="l">Avis Google</div></div>
+<section class="page-hero" aria-labelledby="ticket-title">
+  <div class="page-hero-inner">
+    <div class="stag sr">Support · Cloud Campus</div>
+    <h1 class="sr" id="ticket-title">Un problème ?<br><span class="hl">Ouvrez un ticket.</span></h1>
+    <p class="lead sr">Bug technique, question administrative, accès à votre espace… Notre équipe vous répond sous 24h ouvrées et garde une trace écrite de votre demande.</p>
+
+    <div class="ticket-cta sr d1">
+      <button id="zammad-feedback-form" class="btn-ticket" type="button">
+        <span class="ic" aria-hidden="true">🎫</span>
+        Ouvrir un ticket
+      </button>
+      <div class="cta-meta">
+        <span><span class="dot" aria-hidden="true"></span> Support en ligne</span>
+        <span>⏱ Réponse sous 24h ouvrées</span>
+        <span>🔒 Conversation suivie</span>
+      </div>
     </div>
   </div>
 </section>
 
-
-<script id="zammad_form_script" src="https://zammad.cloud-securite.fr/assets/form/form.js"></script>
-
-<script>
-$(function() {
-  $('#zammad-feedback-form').ZammadForm({
-    messageTitle: 'Feedback Form',
-    messageSubmit: 'Submit',
-    messageThankYou: 'Thank you for your inquiry (#%s)! We\'ll contact you as soon as possible.',
-    modal: true
-  });
-});
-</script>
-
-<!-- ══════════ STATS ══════════ -->
-<section class="stats" aria-label="Cloud Campus en chiffres">
+<!-- ══════════ CATEGORIES ══════════ -->
+<section class="section" aria-labelledby="cats-title">
   <div class="ctn">
-    <div class="sg">
-      <div class="sb sr"><div class="sv">0€</div><div class="sl">Frais de formation<br>pour les apprentis</div></div>
-      <div class="sb sr d1"><div class="sv">92%</div><div class="sl">Taux de réussite</div></div>
-      <div class="sb sr d2"><div class="sv">+200</div><div class="sl">Étudiants<br>formés par an</div></div>
-      <div class="sb sr d3"><div class="sv">+500</div><div class="sl">Entreprises<br>partenaires</div></div>
-      <div class="sb sr d4"><div class="sv">85%</div><div class="sl">Taux d'insertion<br>dans l'emploi</div></div>
+    <div class="stag sr">Pour quel motif ?</div>
+    <h2 class="stit sr" id="cats-title">Quel type de demande ?</h2>
+    <p class="sr" style="color:var(--tx2);max-width:600px;margin-bottom:40px;line-height:1.65">Précisez la catégorie au moment d'ouvrir votre ticket — votre demande est routée vers la bonne équipe automatiquement.</p>
+
+    <div class="cats">
+      <div class="cat sr d1">
+        <div class="ic" aria-hidden="true">🐛</div>
+        <h3>Bug technique</h3>
+        <p>Plateforme, espace étudiant, vidéos qui ne chargent pas, erreurs d'affichage.</p>
+      </div>
+      <div class="cat sr d2">
+        <div class="ic" aria-hidden="true">🔑</div>
+        <h3>Accès & connexion</h3>
+        <p>Mot de passe oublié, compte bloqué, problème d'authentification.</p>
+      </div>
+      <div class="cat sr d3">
+        <div class="ic" aria-hidden="true">📋</div>
+        <h3>Administratif</h3>
+        <p>Convention de stage, attestation, planning, dossier d'inscription.</p>
+      </div>
+      <div class="cat sr d4">
+        <div class="ic" aria-hidden="true">💬</div>
+        <h3>Autre demande</h3>
+        <p>Tout ce qui ne rentre pas dans les cases ci-dessus — on s'en occupe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section class="how-wrap">
+  <div class="ctn section">
+    <div class="stag sr">Comment ça marche</div>
+    <h2 class="stit sr">Trois étapes, c'est tout.</h2>
+
+    <div class="how">
+      <div class="step sr d1">
+        <span class="num">ÉTAPE 01</span>
+        <h3>Vous décrivez le problème</h3>
+        <p>Catégorie, titre, description, et capture d'écran si besoin. Plus c'est précis, plus vite on résout.</p>
+      </div>
+      <div class="step sr d2">
+        <span class="num">ÉTAPE 02</span>
+        <h3>On vous attribue un agent</h3>
+        <p>Votre ticket est routé vers la personne compétente — pédagogie, IT, ou administration — dans la journée.</p>
+      </div>
+      <div class="step sr d3">
+        <span class="num">ÉTAPE 03</span>
+        <h3>Suivi par email</h3>
+        <p>Chaque échange est tracé. Vous répondez depuis votre boîte mail, l'historique reste accessible.</p>
+      </div>
+    </div>
+
+    <div class="sla">
+      <div class="sla-item sr d1"><div class="v">&lt; 24h</div><div class="l">Première réponse<br>en jours ouvrés</div></div>
+      <div class="sla-item sr d2"><div class="v">98%</div><div class="l">Tickets résolus<br>au premier échange</div></div>
+      <div class="sla-item sr d3"><div class="v">FR</div><div class="l">Support en français<br>par notre équipe interne</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIPS + ALT CHANNELS ══════════ -->
+<section class="section">
+  <div class="ctn">
+    <div class="split">
+      <div class="panel sr">
+        <h3><span aria-hidden="true">💡</span> Pour un ticket efficace</h3>
+        <p class="sub">Quelques infos à inclure pour qu'on traite votre demande dès le premier message.</p>
+        <ul class="tips">
+          <li><span><b>Soyez précis.</b> Indiquez la page exacte, l'heure du problème et ce que vous étiez en train de faire.</span></li>
+          <li><span><b>Ajoutez une capture d'écran.</b> Une image vaut mille mots — surtout pour un bug d'affichage.</span></li>
+          <li><span><b>Mentionnez votre formation.</b> Full Stack, Expert SI, Intégrateur IA — ça oriente le routage.</span></li>
+          <li><span><b>Une demande = un ticket.</b> Mieux vaut deux tickets clairs qu'un seul fourre-tout.</span></li>
+          <li><span><b>Vérifiez votre adresse mail.</b> C'est là que les réponses arriveront — pensez à regarder les spams.</span></li>
+        </ul>
+      </div>
+
+      <div class="panel sr d1">
+        <h3><span aria-hidden="true">📬</span> Autres canaux</h3>
+        <p class="sub">Le ticket reste la voie la plus rapide pour un suivi. Pour le reste :</p>
+        <div class="alt-list">
+          <a class="alt" href="mailto:contact@cloud-campus.fr">
+            <div class="ic" aria-hidden="true">✉️</div>
+            <div class="txt">
+              <strong>Email général</strong>
+              <span>contact@cloud-campus.fr</span>
+            </div>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+          <a class="alt" href="mailto:candidat@cloud-campus.fr">
+            <div class="ic" aria-hidden="true">🎓</div>
+            <div class="txt">
+              <strong>Admissions</strong>
+              <span>candidat@cloud-campus.fr</span>
+            </div>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+          <a class="alt" href="faq.html">
+            <div class="ic" aria-hidden="true">❓</div>
+            <div class="txt">
+              <strong>FAQ</strong>
+              <span>Réponses aux questions courantes</span>
+            </div>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+          <a class="alt" href="nous-contacter.html">
+            <div class="ic" aria-hidden="true">📍</div>
+            <div class="txt">
+              <strong>Page contact</strong>
+              <span>Tous les moyens de nous joindre</span>
+            </div>
+            <span class="arr" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════ FAQ ══════════ -->
-<section class="faq" id="faq" aria-labelledby="faq-title">
+<section class="faq faq-local" id="faq" aria-labelledby="faq-title">
   <div class="ctn">
-    <div class="stag sr">Questions fréquentes</div>
-    <h2 class="stit sr" id="faq-title">Toutes les réponses à vos questions</h2>
+    <div class="stag sr">À propos du support</div>
+    <h2 class="stit sr" id="faq-title">Questions sur les tickets</h2>
     <div class="faq-list">
       <div class="faq-item sr">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les formations Cloud Campus sont-elles gratuites ?<span class="arrow">+</span></div>
-        <div class="faq-a">Oui, en alternance toutes nos formations sont 100% financées par l'entreprise d'accueil via son OPCO. L'alternant ne paie aucun frais de scolarité et perçoit un salaire mensuel.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Sous quel délai vais-je recevoir une réponse ?<span class="arrow">+</span></div>
+        <div class="faq-a">Nous nous engageons sur une première réponse sous 24h en jours ouvrés (lundi-vendredi). La majorité des tickets reçoit une réponse le jour même.</div>
       </div>
       <div class="faq-item sr d1">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelles formations propose Cloud Campus ?<span class="arrow">+</span></div>
-        <div class="faq-a">Cloud Campus propose trois parcours : Développeur Web Full Stack (Bac+3/4), Expert en Système d'Information et Sécurité (Bac+5), et Développeur Intégrateur d'IA (Bac+3/4). Toutes intègrent l'intelligence artificielle.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Dois-je avoir un compte pour ouvrir un ticket ?<span class="arrow">+</span></div>
+        <div class="faq-a">Non. Le formulaire est ouvert à tous — étudiants, candidats, entreprises partenaires. Indiquez simplement une adresse email valide pour le suivi.</div>
       </div>
       <div class="faq-item sr d2">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les cours sont-ils en présentiel ou à distance ?<span class="arrow">+</span></div>
-        <div class="faq-a">Les cours sont dispensés en télé-présentiel : sessions live interactives sur Discord. Vous pouvez suivre la formation depuis partout en France.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment suivre l'avancement de ma demande ?<span class="arrow">+</span></div>
+        <div class="faq-a">Toutes les mises à jour vous sont envoyées par email à l'adresse fournie. Il vous suffit de répondre à ces emails pour continuer la conversation — votre réponse est automatiquement rattachée au ticket.</div>
       </div>
       <div class="faq-item sr d3">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud Campus aide-t-il à trouver une alternance ?<span class="arrow">+</span></div>
-        <div class="faq-a">Oui, 81% de nos étudiants trouvent leur alternance grâce à notre accompagnement : chargés de relations entreprises dédiés, jobs dating, coaching personnalisé et un réseau de plus de 500 entreprises partenaires.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Mes données sont-elles confidentielles ?<span class="arrow">+</span></div>
+        <div class="faq-a">Oui. Les tickets sont traités par notre support interne via une plateforme auto-hébergée. Aucune donnée n'est partagée avec des tiers et tout est conforme au RGPD.</div>
       </div>
       <div class="faq-item sr d4">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Cloud Campus est-il certifié ?<span class="arrow">+</span></div>
-        <div class="faq-a">Oui, Cloud Campus détient la certification Qualiopi pour les actions de formation et les actions de formation par apprentissage, gage de qualité reconnu par l'État.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je rouvrir un ticket résolu ?<span class="arrow">+</span></div>
+        <div class="faq-a">Oui. Répondez simplement au dernier email du ticket — il sera automatiquement réouvert et un agent reprendra le suivi.</div>
       </div>
     </div>
   </div>
 </section>
 
-
 </main>
+
+<!-- ══════════ Zammad form ══════════ -->
+<script id="zammad_form_script" src="https://zammad.cloud-securite.fr/assets/form/form.js"></script>
+<script>
+$(function() {
+  $('#zammad-feedback-form').ZammadForm({
+    messageTitle: 'Ouvrir un ticket',
+    messageSubmit: 'Envoyer',
+    messageThankYou: 'Merci pour votre message (#%s) ! Notre équipe vous recontacte au plus vite.',
+    modal: true
+  });
+});
+</script>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer role="contentinfo">
@@ -262,7 +456,6 @@ $(function() {
           <li><a href="recruter-un-alternant.html">Recruter un alternant</a></li>
           <li><a href="se-renseigner-et-candidater.html">Candidater</a></li>
         </ul>
-
       </div>
     </div>
     <div class="ft-bottom">
@@ -282,7 +475,6 @@ $(function() {
   </div>
 </footer>
 
-<!-- Script -->
 <script src="js/main.js"></script>
 </body>
 </html>
