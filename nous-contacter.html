@@ -174,6 +174,28 @@
   }
   .btn-discord:hover { transform: scale(1.04); }
 
+  /* Ticket CTA */
+  .ticket-card {
+    background: linear-gradient(135deg, var(--acc), var(--acc-2, #00d4ff));
+    border-radius: var(--r-xl); padding: 28px;
+    display: flex; align-items: center; gap: 16px; margin-top: 20px;
+    color: #000;
+  }
+  .ticket-card .t-icon { font-size: 2.2rem; flex-shrink: 0; }
+  .ticket-card h4 { font-size: .98rem; font-weight: 800; color: #000; margin-bottom: 4px; }
+  .ticket-card p  { font-size: .78rem; color: rgba(0,0,0,.72); line-height: 1.5; }
+  .btn-ticket {
+    margin-left: auto; padding: 10px 20px; border-radius: var(--r-full);
+    background: #000; color: #fff; font-weight: 700; font-size: .82rem;
+    border: none; cursor: pointer; white-space: nowrap; font-family: var(--font);
+    text-decoration: none; transition: all .3s; flex-shrink: 0;
+  }
+  .btn-ticket:hover { transform: scale(1.04); }
+  @media (max-width: 600px) {
+    .ticket-card { flex-wrap: wrap; }
+    .btn-ticket { margin-left: 0; }
+  }
+
   @media (max-width: 1024px) {
     .contact-layout { grid-template-columns: 1fr; }
     .form-card { position: static; }
@@ -235,12 +257,18 @@
 <!-- CHANNELS -->
 <section style="padding:0 0 80px">
   <div class="ctn">
-    <div class="channels" style="grid-template-columns:1fr">
+    <div class="channels" style="grid-template-columns:repeat(2,1fr)">
       <div class="channel-card sr d1">
         <div class="channel-icon">📧</div>
         <h3>Email</h3>
         <p>Pour toute demande détaillée. Réponse garantie sous 24h en semaine.</p>
         <a href="mailto:contact@cloud-campus.fr" class="channel-link">Envoyer un mail →</a>
+      </div>
+      <div class="channel-card sr d2">
+        <div class="channel-icon">🎫</div>
+        <h3>Ouvrir un ticket</h3>
+        <p>Un problème technique ou un suivi à tracer ? Notre support gère votre demande.</p>
+        <a href="ticket.html" class="channel-link">Créer un ticket →</a>
       </div>
     </div>
   </div>
@@ -280,6 +308,15 @@
           </div>
         </div>
 
+        <!-- TICKET CTA -->
+        <a href="ticket.html" class="ticket-card sr" style="text-decoration:none">
+          <span class="t-icon">🎫</span>
+          <div>
+            <h4>Support — Ouvrir un ticket</h4>
+            <p>Problème technique, demande de suivi ou incident&nbsp;? Tracez votre demande via notre système de tickets.</p>
+          </div>
+          <span class="btn-ticket">Créer un ticket →</span>
+        </a>
 
       </div>
 
