@@ -1,0 +1,10 @@
+services:
+  web:
+    image: php:8.3-apache
+    container_name: cloud-campus-web
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/security.conf:/etc/apache2/conf-enabled/security-extra.conf:ro
+    restart: unless-stopped
